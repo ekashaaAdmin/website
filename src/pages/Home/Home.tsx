@@ -30,7 +30,7 @@ export const Home = () => {
             />
             <div className="lottie-container" ref={container}></div>
             <div className="content">
-                <h2>This website is under construction, we will right back shortly.</h2>
+                <h2>This website is under construction, we will be right back shortly.</h2>
             </div>
         </div>
     );
