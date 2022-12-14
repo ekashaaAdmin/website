@@ -1,16 +1,16 @@
-import { useEffect, useRef } from "react";
-import "./home.scss";
 import lottie from "lottie-web";
+import { useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
-import underconstruction from "./underconstruction.json"
+import "./home.scss";
+import underconstruction from "./underconstruction.json";
 
 export const Home = () => {
-    const container = useRef(null);
+    const container = useRef<HTMLDivElement | null>(null);
     const navigate = useNavigate();
 
     useEffect(() => {
         lottie.loadAnimation({
-            container: container.current,
+            container: container.current as Element,
             renderer: "svg",
             loop: true,
             autoplay: true,

@@ -5,12 +5,12 @@ import { useNavigate } from "react-router-dom";
 import notFoundAnimation from "./notFoundAnimation.json"
 
 export const NotFound = () => {
-    const container = useRef(null);
+    const container = useRef<HTMLDivElement>(null);
     const navigate = useNavigate();
 
     useEffect(() => {
         lottie.loadAnimation({
-            container: container.current,
+            container: container.current as Element,
             renderer: "svg",
             loop: true,
             autoplay: true,
