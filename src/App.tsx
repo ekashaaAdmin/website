@@ -1,9 +1,10 @@
 import { useState } from "react";
-import "./App.css";
 import { NotFound } from "./pages/NotFound/NotFound";
 import { Home } from "./pages/Home/Home";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { globalStyles } from "@styles/globalStyles";
 
+globalStyles();
 function App() {
     const [ count, setCount ] = useState( 0 );
 
