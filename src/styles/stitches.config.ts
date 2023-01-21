@@ -26,20 +26,24 @@ export const {
         },
         fonts: {
             // alegreyaSans: "AlegreyaSans', sans-serif",
-            // exo2: "Exo2,sans-serif",
-            sans: [ "Exo2,sans-serif", "'AlegreyaSans', sans-serif" ].join( "," )
+            exo2: "Exo2,sans-serif"
+            // sans: [ "Exo2,sans-serif", "'AlegreyaSans', sans-serif" ].join( "," )
         },
         fontSizes: {
-            desktopLarge: ""
+            desktopLarge: "",
+            navOptions: "1rem"
         },
         fontWeights: {
-            desktopLarge: ""
+            desktopLarge: "",
+            navOptions: "300"
         },
         letterSpacings: {
-            desktopLarge: ""
+            desktopLarge: "",
+            navOptions: ""
         },
         lineHeights: {
-            desktopLarge: ""
+            desktopLarge: "",
+            navOptions: "1.2rem"
         },
         sizes: {
             0: "0rem",
@@ -59,6 +63,15 @@ export const {
             14: "7rem",
             productCardWidth: "15rem",
             productCardHeight: "20rem",
+            // Screens
+            mobileS: "320px",
+            mobileM: "375px",
+            mobileL: "425px",
+            tablet: "768px",
+            laptop: "1024px",
+            laptopL: "1440px",
+            hd: "1920px",
+            fourK: "2560px",
             full: "100%",
             half: "50%"
         },
@@ -262,7 +275,7 @@ export const {
             WebkitBackgroundClip: value,
             backgroundClip: value
         } ),
-        typography: ( value: ScaleValue<"lineHeight"> | string | number ) => ( {
+        typography: ( value: PropertyValue<"fontSize"> ) => ( {
             fontSize: value,
             fontWeight: value,
             lineHeight: value,
