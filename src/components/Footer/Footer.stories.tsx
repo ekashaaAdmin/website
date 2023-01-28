@@ -4,21 +4,16 @@ import { Flex } from "../Flex";
 import { Footerlinksgrid } from "./Footerlinksgrid";
 import { FooterSocials } from "./FooterSocials";
 import { globalStyles } from "@src/styles/globalStyles";
+import { ImgContainer } from "../ImgContainer";
 
 export const Footer = () => {
     return (
         <Box>
-            <Box
-                variants={"ImageContain"}
-                css={{
-                    textAlign: "end",
-                    margin: "0",
-                    padding: "0",
-                    display: "block"
-                }}
-            >
-                <img src={Footer_Design_Bat} />
-            </Box>
+            <ImgContainer
+                width={"full"}
+                src={Footer_Design_Bat}
+                alt="footer-design"
+            />
             <Box
                 css={{
                     padding: "$4",

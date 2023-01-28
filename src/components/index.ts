@@ -3,6 +3,7 @@ export * from "./Button";
 export * from "./Flex";
 export * from "./Container";
 export * from "./FlexBox";
+export * from "./Grid";
 export * from "./HamBurger";
 export * from "./Logo";
 export * from "./Layout";

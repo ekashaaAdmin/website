@@ -124,6 +124,7 @@ export const {
             inputFieldShadow: "rgba(183,193,189,255) 0 0.18rem 0.5rem",
             servicesCardShadow: "rgba(0, 0, 0, 0.16) 0px 1px 4px 0px",
             propertyCardShadow: "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;",
+            footerShadow: "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;",
             shadowtype1:
                 "rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px",
             shadowtype2: "rgba(0, 0, 0, 0.25) 0px 25px 50px -12px",
