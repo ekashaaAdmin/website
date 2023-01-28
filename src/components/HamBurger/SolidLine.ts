@@ -5,7 +5,7 @@ export const solidLineCss = css( {
     height: "$1",
     borderTopWidth: "thin",
     borderTopStyle: "solid",
-    borderTopColor: "White",
+    borderTopColor: "Black",
     translate: "(0, 0)",
     transition: "all .3s ease-in-out",
     variants: {

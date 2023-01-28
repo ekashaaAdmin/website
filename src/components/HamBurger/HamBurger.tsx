@@ -6,7 +6,10 @@ import { SolidLine } from "./SolidLine";
 export const hamBurgerCss: CSS = {
     cursor: "pointer",
     padding: "$1",
-    size: "$3"
+    size: "$5",
+    "@bp2": {
+        display: "none"
+    }
 };
 
 interface HamBurgerProps {
