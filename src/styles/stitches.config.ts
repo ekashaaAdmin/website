@@ -25,9 +25,7 @@ export const {
             primaryColor: "#ece1e0"
         },
         fonts: {
-            // alegreyaSans: "AlegreyaSans', sans-serif",
-            exo2: "Exo2,sans-serif"
-            // sans: [ "Exo2,sans-serif", "'AlegreyaSans', sans-serif" ].join( "," )
+            montserrat: "'Montserrat', sans-serif"
         },
         fontSizes: {
             desktopLarge: "",
@@ -63,17 +61,26 @@ export const {
             14: "7rem",
             productCardWidth: "15rem",
             productCardHeight: "20rem",
+            servicesCardWidth: "10rem",
+            servicesCardHeight: "8rem",
+            // Logo
+            logoMedium: "250px",
             // Screens
             mobileS: "320px",
             mobileM: "375px",
             mobileL: "425px",
             tablet: "768px",
-            laptop: "1024px",
-            laptopL: "1440px",
+            laptopS: "1024px",
+            laptopM: "1440px",
+            laptopL: "1600px",
             hd: "1920px",
             fourK: "2560px",
             full: "100%",
-            half: "50%"
+            half: "50%",
+            fullViewPortWidth: "100vw",
+            halfViewPortWidth: "50vw",
+            fullViewPortHeight: "100vh",
+            halfViewPortHeight: "50vh"
         },
         space: {
             0: "0rem",
@@ -115,13 +122,23 @@ export const {
         borderWidths: {},
         shadows: {
             inputFieldShadow: "rgba(183,193,189,255) 0 0.18rem 0.5rem",
+            servicesCardShadow: "rgba(0, 0, 0, 0.16) 0px 1px 4px 0px",
+            propertyCardShadow: "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;",
             shadowtype1:
                 "rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px",
             shadowtype2: "rgba(0, 0, 0, 0.25) 0px 25px 50px -12px",
             shadowtype3:
                 "rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px"
         },
-        typography: {}
+        zIndices: {
+            negativeOne: -1,
+            negativeTwo: -2,
+            1: 1,
+            2: 2,
+            3: 3,
+            4: 4,
+            5: 5
+        }
     },
     media: {
         dark: "(prefer-color-scheme: dark)",
