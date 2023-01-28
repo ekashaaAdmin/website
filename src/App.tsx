@@ -1,18 +1,21 @@
-import { useState } from "react";
+import { globalStyles } from "@styles";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import "swiper/css";
+import "swiper/css/pagination";
+import { Layout } from "./components";
+import { Home } from "./pages";
 import { NotFound } from "./pages/NotFound/NotFound";
-import { Home } from "./pages/Home/Home";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { globalStyles } from "@styles/globalStyles";
+import "./custom-swiper.css";
 
 globalStyles();
 function App() {
-    const [ count, setCount ] = useState( 0 );
-
     return (
         <div className="App">
             <BrowserRouter>
                 <Routes>
-                    <Route path="/" element={<Home />} />
+                    <Route path="/" element={<Layout />}>
+                        <Route index element={<Home />} />
+                    </Route>
                     <Route path="*" element={<NotFound />} />
                 </Routes>
             </BrowserRouter>
