@@ -10,15 +10,24 @@ interface dropDownProps extends PropsWithChildren {
 
 export const dropDownCss: CSS = {
     position: "relative",
-    [ `& ${DropDownContainer}` ]: {
+    cursor: "pointer",
+    [ `${DropDownContainer}` ]: {
         opacity: 0,
         position: "absolute",
-        zIndex: -3
+        pointerEvents: "none",
+        zIndex: "$negativeOne"
     },
     [ `&:hover ${DropDownContainer}` ]: {
         opacity: 1,
         position: "relative",
         zIndex: "unset"
+    },
+    "@bp2": {
+        [ `&:hover ${DropDownContainer}` ]: {
+            opacity: 1,
+            position: "absolute",
+            zIndex: "unset"
+        }
     }
 };
 
@@ -26,7 +35,9 @@ export const DropDown = ( { children, title }: dropDownProps ) => {
     return (
         <Box css={dropDownCss}>
             <Text typography={"navOptions"}>{title}</Text>
-            <DropDownContainer gap={1}>{children}</DropDownContainer>
+            <DropDownContainer className="collapsible" gap={1}>
+                {children}
+            </DropDownContainer>
         </Box>
     );
 };
