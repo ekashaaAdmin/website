@@ -12,5 +12,8 @@ export * from "./DropDown";
 export * from "./Text";
 export * from "./Section";
 export * from "./ServicesCard";
+export * from "./ServicesCarousel";
+export * from "./FeaturedCarousel";
+export * from "./DevelopersCarousel";
 export * from "./PropertyCard";
 export * from "./ImgContainer";
