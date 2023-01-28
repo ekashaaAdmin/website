@@ -144,6 +144,7 @@ export const {
     media: {
         dark: "(prefer-color-scheme: dark)",
         light: "(prefer-color-scheme: light)",
+        mobileM: "(min-width: 375px)",
         bp1: "(min-width: 640px)",
         bp2: "(min-width: 768px)",
         bp3: "(min-width: 1024px)"
