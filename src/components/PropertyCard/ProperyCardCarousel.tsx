@@ -4,9 +4,12 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { FlexBox } from "../FlexBox";
 import { ImgContainer } from "../ImgContainer";
 
-const propertyCardCss: CSS = {
+const propertyCardCarouselCss: CSS = {
     width: "$full",
-    overflow: "hidden"
+    overflow: "hidden",
+    "@bp2": {
+        width: "$half"
+    }
 };
 
 interface PropertyCardCarouselProps {
@@ -15,7 +18,7 @@ interface PropertyCardCarouselProps {
 
 export const ProperyCardCarousel = ( { src }: PropertyCardCarouselProps ) => {
     return (
-        <FlexBox css={propertyCardCss}>
+        <FlexBox css={propertyCardCarouselCss}>
             <Swiper
                 pagination={{ dynamicBullets: true }}
                 modules={[ Pagination ]}
@@ -23,7 +26,13 @@ export const ProperyCardCarousel = ( { src }: PropertyCardCarouselProps ) => {
                 {src.map( ( image, index ) => {
                     return (
                         <SwiperSlide key={index}>
-                            <ImgContainer src={image} alt="property-image" />
+                            <ImgContainer
+                                src={image}
+                                alt="property-image"
+                                css={{
+                                    overflow: "hidden"
+                                }}
+                            />
                         </SwiperSlide>
                     );
                 } )}

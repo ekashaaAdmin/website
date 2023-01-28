@@ -1,5 +1,9 @@
-import { PropertyCard } from "@src/components";
+import { FeaturedCarousel, Section, Text } from "@components";
 
 export const Featured = () => {
-    return <PropertyCard />;
+    return (
+        <Section direction="column" center>
+            <FeaturedCarousel />
+        </Section>
+    );
 };

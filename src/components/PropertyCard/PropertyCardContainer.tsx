@@ -1,5 +1,6 @@
 import { css, styled } from "@src/styles";
 import { FlexBox } from "../FlexBox";
+import { ImgContainer } from "../ImgContainer";
 
 export const propertyCardCss = css( {
     variants: {
