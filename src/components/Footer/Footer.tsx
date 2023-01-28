@@ -10,11 +10,11 @@ export const Footer = () => {
     return (
         <Box>
             <ImgContainer
-                width={"full"}
                 src={Footer_Design_Bat}
                 alt="footer-design"
                 css={{
-                    textAlign: "right"
+                    ml: "auto",
+                    width: "15rem"
                 }}
             />
             <Box
@@ -28,13 +28,13 @@ export const Footer = () => {
                     align={"center"}
                     gap={"2"}
                     css={{
-                        "@bp1": {
+                        mb: "$2",
+                        "@bp3": {
                             flexDirection: "row",
                             justifyContent: "center",
                             alignItems: "center",
-                            gap: "$6"
-                        },
-                        "@bp2": { gap: "$10" }
+                            gap: "$10"
+                        }
                     }}
                 >
                     <FooterSocials />
