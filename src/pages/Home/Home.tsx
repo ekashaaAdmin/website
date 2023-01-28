@@ -1,8 +1,15 @@
 import { Box, Container } from "@src/components";
 import { CSS } from "@src/styles";
-import { About, Intro, Services } from "./sections";
+import {
+    About,
+    Blogs,
+    Developers,
+    Featured,
+    Intro,
+    Services,
+    Stats
+} from "./sections";
 import { HomeBg } from "@src/assets";
-import { Featured } from "./sections/Featured";
 
 const homeIntroBgCss: CSS = {
     backgroundImage: `url(${HomeBg})`,
@@ -22,6 +29,9 @@ export const Home = () => {
             <About />
             <Services />
             <Featured />
+            <Blogs />
+            <Developers />
+            <Stats />
         </Container>
     );
 };
