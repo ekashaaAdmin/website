@@ -3,6 +3,7 @@ import { CSS } from "@src/styles";
 import { About, Intro, Services } from "./sections";
 import { HomeBg } from "@src/assets";
 import { Featured } from "./sections/Featured";
+import { Testimonials } from "@src/components/Testimonials";
 
 const homeIntroBgCss: CSS = {
     backgroundImage: `url(${HomeBg})`,
@@ -22,6 +23,7 @@ export const Home = () => {
             <About />
             <Services />
             <Featured />
+            <Testimonials />
         </Container>
     );
 };
