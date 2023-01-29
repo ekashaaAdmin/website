@@ -8,7 +8,7 @@ import { Text } from "../Text";
 
 const testimonialCardCss: CSS = {
     boxShadow: "$propertyCardShadow",
-    margin: "$4 auto",
+    margin: "$7 auto",
     width: "285px",
     height: "350px",
     alignItems: "center",

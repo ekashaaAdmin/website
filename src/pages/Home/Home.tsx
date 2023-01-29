@@ -7,7 +7,8 @@ import {
     Featured,
     Intro,
     Services,
-    Stats
+    Stats,
+    Testimonials
 } from "./sections";
 import { HomeBg } from "@src/assets";
 
@@ -23,7 +24,7 @@ const homeIntroBgCss: CSS = {
 
 export const Home = () => {
     return (
-        <Container>
+        <>
             <Box css={homeIntroBgCss}></Box>
             <Intro />
             <About />
@@ -32,6 +33,7 @@ export const Home = () => {
             <Blogs />
             <Developers />
             <Stats />
-        </Container>
+            <Testimonials />
+        </>
     );
 };

@@ -3,7 +3,6 @@ import { Box } from "../Box";
 
 export const containerCss = css( {
     mx: "auto",
-    px: "$3",
     maxWidth: "$laptopL"
 } );
 
