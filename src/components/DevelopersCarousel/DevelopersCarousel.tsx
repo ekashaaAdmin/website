@@ -1,31 +1,42 @@
-import { DeveloperGPL, DeveloperHiranandani, DeveloperLodha } from "@assets";
+import {
+    DeveloperLodha,
+    DeveloperBirlaEstates,
+    DeveloperPiramal,
+    DeveloperRustomjee,
+    DeveloperShapoorji
+} from "@assets";
 import { Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FlexBox } from "../FlexBox";
 import { ImgContainer } from "../ImgContainer";
 
 const developers: string[] = [
-    DeveloperGPL,
+    DeveloperBirlaEstates,
     DeveloperLodha,
-    DeveloperHiranandani,
-    DeveloperGPL,
-    DeveloperLodha,
-    DeveloperHiranandani
+    DeveloperPiramal,
+    DeveloperRustomjee,
+    DeveloperShapoorji
 ];
 
 export const DevelopersCarousel = () => {
     return (
         <FlexBox width={"half"}>
             <Swiper
-                slidesPerView={"auto"}
+                slidesPerView={1}
                 loop={true}
-                loopedSlides={3}
                 autoplay={{
-                    delay: 1,
+                    delay: 100,
                     pauseOnMouseEnter: true
                 }}
-                speed={800}
                 modules={[ Autoplay ]}
+                breakpoints={{
+                    650: {
+                        slidesPerView: 2
+                    },
+                    998: {
+                        slidesPerView: 3
+                    }
+                }}
             >
                 {developers.map( ( dev, key ) => {
                     return (
@@ -34,8 +45,8 @@ export const DevelopersCarousel = () => {
                                 src={dev}
                                 alt="developer-logo"
                                 css={{
-                                    width: "$14"
-                                    // height: "$14"
+                                    height: "8rem",
+                                    margin: "$5 auto"
                                 }}
                             />
                         </SwiperSlide>

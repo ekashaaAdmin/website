@@ -2,7 +2,7 @@ import { Flex, Section, Text } from "@components";
 
 export const Stats = () => {
     return (
-        <Section center direction={"column"} gap="5">
+        <Section id="stats" center direction={"column"} gap="5">
             <Flex direction="column">
                 <Text>A complete solution for</Text>
                 <Text>

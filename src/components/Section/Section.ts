@@ -8,4 +8,4 @@ export const sectionCss = css( {
     maxWidth: "$laptopL"
 } );
 
-export const Section = styled( FlexBox, sectionCss );
+export const Section = styled( "section", FlexBox, sectionCss );

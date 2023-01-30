@@ -16,7 +16,13 @@ const textContentCss: CSS = {
 
 export const About = () => {
     return (
-        <Section direction={"column"} center gap={"2"} css={aboutCss}>
+        <Section
+            id="about"
+            direction={"column"}
+            center
+            gap={"2"}
+            css={aboutCss}
+        >
             <LogoSmall css={{ minWidth: "$logoMedium" }} />
             <Flex direction={"column"} center gap={"2"} css={textContentCss}>
                 <Text>
