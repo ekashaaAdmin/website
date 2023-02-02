@@ -1,0 +1,9 @@
+#services-carousel2 .swiper-slide {
+    cursor: pointer;
+}
+
+#services-carousel2 .swiper-slide-active .services-card {
+    color: blue;
+    fill: blue;
+    box-shadow: rgba(50, 50, 240, 0.2) 0px 7px 29px 0px;
+}

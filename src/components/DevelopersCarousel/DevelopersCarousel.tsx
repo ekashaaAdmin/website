@@ -20,23 +20,17 @@ const developers: string[] = [
 
 export const DevelopersCarousel = () => {
     return (
-        <FlexBox width={"half"}>
+        <FlexBox width={{ "@initial": "full", "@bp3": "half" }}>
             <Swiper
-                slidesPerView={1}
+                slidesPerView={"auto"}
+                centeredSlides={true}
                 loop={true}
+                loopedSlides={2}
                 autoplay={{
-                    delay: 100,
-                    pauseOnMouseEnter: true
+                    delay: 1000,
+                    disableOnInteraction: false
                 }}
                 modules={[ Autoplay ]}
-                breakpoints={{
-                    650: {
-                        slidesPerView: 2
-                    },
-                    998: {
-                        slidesPerView: 3
-                    }
-                }}
             >
                 {developers.map( ( dev, key ) => {
                     return (
@@ -45,6 +39,7 @@ export const DevelopersCarousel = () => {
                                 src={dev}
                                 alt="developer-logo"
                                 css={{
+                                    width: "12rem",
                                     height: "8rem",
                                     margin: "$5 auto"
                                 }}
