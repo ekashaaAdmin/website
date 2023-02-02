@@ -28,19 +28,47 @@ export const {
             montserrat: "'Montserrat', sans-serif"
         },
         fontSizes: {
-            desktopLarge: "",
+            dtPageHead: "4rem",
+            dtHeading1: "2.875rem",
+            dtHeading2: "2.25rem",
+            dtHeading3: "1.5rem",
+            dtSubHeading1: "1.125rem",
+            dtPara1: "1.125rem",
+            dtPara2: "1rem",
+            dtPara3: "0.875rem",
+            mbHeading1: "2.25rem",
+            mbHeading2: "2.25rem",
+            mbSubHeading1: "1rem",
+            mbPara1: "1.25rem",
             navOptions: "1rem"
         },
         fontWeights: {
-            desktopLarge: "",
+            dtPageHead: "700",
+            dtHeading1: "600",
+            dtHeading2: "600",
+            dtHeading3: "600",
+            dtSubHeading1: "300",
+            dtPara1: "400",
+            dtPara2: "400",
+            dtPara3: "400",
+            mbHeading1: "600",
+            mbHeading2: "600",
+            mbPara1: "400",
             navOptions: "300"
         },
         letterSpacings: {
-            desktopLarge: "",
+            dtSubHeading1: "500",
             navOptions: ""
         },
         lineHeights: {
-            desktopLarge: "",
+            dtHeading3: "1.813rem",
+            dtSubHeading1: "1.375rem",
+            dtPara1: "1.5rem",
+            dtPara2: "1.5rem",
+            dtPara3: "1.125rem",
+            mbHeading2: "2.75rem",
+            mbSubHeading1: "1.25rem",
+            mbPara1: "1.875rem",
             navOptions: "1.2rem"
         },
         sizes: {
