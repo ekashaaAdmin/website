@@ -1,11 +1,13 @@
 import { CSS } from "@src/styles";
 import { PropsWithChildren, useState } from "react";
 import { Box } from "../Box";
+import { Link } from "../Link";
 import { Text } from "../Text";
 import { DropDownContainer } from "./DropDownContainer";
 
 interface dropDownProps extends PropsWithChildren {
     title: string;
+    linkTo?: string;
 }
 
 export const dropDownCss: CSS = {
@@ -23,18 +25,23 @@ export const dropDownCss: CSS = {
         zIndex: "unset"
     },
     "@bp2": {
-        [ `&:hover ${DropDownContainer}` ]: {
+        [ `&:hover ${DropDownContainer}` || `& ${DropDownContainer}:hover` ]: {
+            backgroundColor: "White",
             opacity: 1,
+            padding: "$2",
+            transform: "translateY(0)",
             position: "absolute",
             zIndex: "unset"
         }
     }
 };
 
-export const DropDown = ( { children, title }: dropDownProps ) => {
+export const DropDown = ( { children, title, linkTo }: dropDownProps ) => {
     return (
         <Box css={dropDownCss}>
-            <Text typography={"navOptions"}>{title}</Text>
+            <Text typography={"navOptions"}>
+                <Link to={linkTo ?? "/"}>{title}</Link>
+            </Text>
             <DropDownContainer className="collapsible" gap={1}>
                 {children}
             </DropDownContainer>

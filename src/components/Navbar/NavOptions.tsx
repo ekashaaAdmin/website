@@ -1,6 +1,7 @@
 import { CSS } from "@src/styles";
 import { DropDown } from "../DropDown";
 import { Flex } from "../Flex";
+import { Link } from "../Link";
 import { Text } from "../Text";
 
 interface NavOptions {}
@@ -36,13 +37,15 @@ export const navOptionsCss: CSS = {
 export const NavOptions = () => {
     return (
         <Flex direction={"column"} gap={"1"} css={navOptionsCss}>
-            <Text typography={"navOptions"}>Home</Text>
-            <DropDown title="About">
+            <Text typography={"navOptions"}>
+                <Link to={`/`}>Home</Link>
+            </Text>
+            <DropDown title="About" linkTo="/about">
                 <Text typography={"navOptions"}>Option</Text>
                 <Text typography={"navOptions"}>Option</Text>
                 <Text typography={"navOptions"}>Option</Text>
             </DropDown>
-            <DropDown title="Services">
+            <DropDown title="Services" linkTo="/services">
                 <Text typography={"navOptions"}>Option</Text>
                 <Text typography={"navOptions"}>Option</Text>
                 <Text typography={"navOptions"}>Option</Text>
