@@ -28,7 +28,7 @@ export const {
             montserrat: "'Montserrat', sans-serif"
         },
         fontSizes: {
-            dtPageHead: "4rem",
+            dtPageHead: "3.5rem",
             dtHeading1: "2.875rem",
             dtHeading2: "2.25rem",
             dtHeading3: "1.5rem",
@@ -57,7 +57,8 @@ export const {
             navOptions: "300"
         },
         letterSpacings: {
-            dtSubHeading1: "500",
+            dtSubHeading1: ".3rem",
+            mbSubHeading1: ".3rem",
             navOptions: ""
         },
         lineHeights: {

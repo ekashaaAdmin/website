@@ -3,10 +3,25 @@ import { Box, DevelopersCarousel, Section, Text } from "@components";
 export const Developers = () => {
     return (
         <Section center direction="column">
-            <Box>
-                <Text>Our Proud</Text>
+            <Box css={{ textAlign: "center" }}>
+                <Text
+                    typography={{
+                        "@initial": "mbHeading1",
+                        "@bp3": "dtHeading1"
+                    }}
+                >
+                    Our Proud
+                </Text>
                 <br />
-                <Text>Developers</Text>
+                <Text
+                    typography={{
+                        "@initial": "mbHeading2",
+                        "@bp3": "dtHeading2"
+                    }}
+                    css={{ fontWeight: "$dtPara1" }}
+                >
+                    Developers
+                </Text>
             </Box>
             <DevelopersCarousel />
         </Section>

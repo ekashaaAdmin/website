@@ -15,8 +15,19 @@ export const Management = () => {
             align="center"
             css={{ px: "$0", maxWidth: "$full" }}
         >
-            <Text>Meet the Team</Text>
-            <Text>MANAGEMENT</Text>
+            <Text
+                typography={{ "@initial": "mbHeading1", "@bp3": "dtHeading1" }}
+            >
+                Meet <Text css={{ fontWeight: "$dtPara1" }}>the Team</Text>
+            </Text>
+            <Text
+                typography={{
+                    "@initial": "mbSubHeading1",
+                    "@bp3": "dtSubHeading1"
+                }}
+            >
+                MANAGEMENT
+            </Text>
 
             <Flex
                 center
@@ -43,8 +54,21 @@ export const Management = () => {
                     css={{ flex: 1 }}
                 />
                 <Flex direction="column" gap="2" css={{ flex: 2 }}>
-                    <Text>Catchy Title/Heading Here</Text>
-                    <Text>
+                    <Text
+                        typography={{
+                            "@initial": "mbPara1",
+                            "@bp3": "dtHeading3"
+                        }}
+                        css={{ fontWeight: "$dtHeading1" }}
+                    >
+                        Catchy Title/Heading Here
+                    </Text>
+                    <Text
+                        typography={{
+                            "@initial": "mbPara1",
+                            "@bp3": "dtPara1"
+                        }}
+                    >
                         Lorem ipsum dolor, sit amet consectetur adipisicing
                         elit. Praesentium reiciendis, corrupti vel reprehenderit
                         nemo aliquid maiores suscipit. Ex, facilis consectetur?
@@ -83,8 +107,21 @@ export const Management = () => {
                         css={{ flex: 1 }}
                     />
                     <Flex direction="column" gap="2" css={{ flex: 2 }}>
-                        <Text>Catchy Title/Heading Here</Text>
-                        <Text>
+                        <Text
+                            typography={{
+                                "@initial": "mbPara1",
+                                "@bp3": "dtHeading3"
+                            }}
+                            css={{ fontWeight: "$dtHeading1" }}
+                        >
+                            Catchy Title/Heading Here
+                        </Text>
+                        <Text
+                            typography={{
+                                "@initial": "mbPara1",
+                                "@bp3": "dtPara1"
+                            }}
+                        >
                             Lorem ipsum dolor, sit amet consectetur adipisicing
                             elit. Praesentium reiciendis, corrupti vel
                             reprehenderit nemo aliquid maiores suscipit. Ex,

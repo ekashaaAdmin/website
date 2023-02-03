@@ -10,8 +10,16 @@ const introSectionCss: CSS = {
 export const Intro = () => {
     return (
         <Section direction="column" justify="center" css={introSectionCss}>
-            <Text>It's Time to</Text>
-            <Text>know our Services</Text>
+            <Text
+                typography={{ "@initial": "mbHeading1", "@bp3": "dtPageHead" }}
+            >
+                It's Time to
+            </Text>
+            <Text
+                typography={{ "@initial": "mbHeading1", "@bp3": "dtPageHead" }}
+            >
+                know our Services
+            </Text>
         </Section>
     );
 };

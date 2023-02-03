@@ -9,13 +9,15 @@ const propertyContentCss: CSS = {
 export const PropertyContent = () => {
     return (
         <FlexBox direction="column" css={propertyContentCss}>
-            <Text>Property Name</Text>
-            <Text>At Lower Parel by XYZ Property</Text>
-            <br />
-            <Text>
-                Rs. 3.25Cr <Text>Onwards</Text>
+            <Text typography={"dtPara1"} css={{ fontWeight: "$dtHeading1" }}>
+                Property Name
             </Text>
-            <Text>3BHK</Text>
+            <Text typography={"dtPara1"}>At Lower Parel by XYZ Property</Text>
+            <br />
+            <Text typography={"dtPara1"}>
+                Rs. 3.25Cr <Text typography={"dtPara3"}>Onwards</Text>
+            </Text>
+            <Text typography={"dtPara3"}>3BHK</Text>
         </FlexBox>
     );
 };

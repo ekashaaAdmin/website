@@ -8,6 +8,7 @@ const introCardCss = css( {
     maxWidth: "$mobileL",
     p: "$3",
     "@bp2": {
+        maxWidth: "34rem",
         mx: "$8"
     }
 } );
@@ -30,10 +31,15 @@ export const Intro = () => {
             align={"start"}
         >
             <IntroCard direction={"column"} css={{ mt: "$10" }}>
-                <Text>
-                    Find Your <br /> Perfect Home
+                <Text
+                    typography={{
+                        "@initial": "mbHeading1",
+                        "@bp3": "dtPageHead"
+                    }}
+                >
+                    FIND YOUR <br /> PERFECT HOME
                 </Text>
-                <Text>
+                <Text typography={{ "@initial": "mbPara1", "@bp3": "dtPara1" }}>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     Sapiente commodi pariatur cupiditate rem, odio ipsum?
                 </Text>
@@ -44,8 +50,8 @@ export const Intro = () => {
                 justify={"center"}
                 css={{ textAlign: "center", mb: "$8", mx: "auto" }}
             >
-                <Text>Explore Ekashaa</Text>
-                <Text>Scroll Down</Text>
+                <Text typography={"dtHeading3"}>Explore Ekashaa</Text>
+                <Text typography={"dtPara1"}>Scroll Down</Text>
             </Flex>
         </Section>
     );

@@ -7,6 +7,7 @@ import {
 } from "@src/assets";
 import { Flex, FlexBox, Section, ServicesCard, Text } from "@src/components";
 import { ReactNode, useState } from "react";
+import { Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "./ServicesCarousel2.css";
 
@@ -52,20 +53,43 @@ export const ServicesCarousel2 = () => {
         : null;
 
     return (
-        <Section id="services-carousel2" center direction={"column"}>
+        <Section id="services-carousel2" center direction={"column"} gap="10">
+            <Flex direction={"column"} center>
+                <Text
+                    typography={{
+                        "@initial": "mbHeading1",
+                        "@bp3": "dtHeading1"
+                    }}
+                    css={{ textAlign: "center" }}
+                >
+                    Ekaasha{" "}
+                    <Text css={{ fontWeight: "$dtPara1" }}>Exclusive</Text>
+                </Text>
+                <Text
+                    typography={{
+                        "@initial": "mbSubHeading1",
+                        "@bp3": "dtSubHeading1"
+                    }}
+                >
+                    SERVICES
+                </Text>
+            </Flex>
             <FlexBox
                 css={{
                     width: "$full"
                 }}
             >
                 <Swiper
-                    slidesPerView={3}
+                    slidesPerView={1}
                     loop={true}
                     centeredSlides={true}
                     slideToClickedSlide={true}
+                    pagination={{ dynamicBullets: true }}
+                    modules={[ Pagination ]}
                     breakpoints={{
                         1024: {
-                            slidesPerView: 4
+                            slidesPerView: 4,
+                            pagination: { enabled: false }
                         },
                         1200: {
                             slidesPerView: 5
@@ -88,8 +112,17 @@ export const ServicesCarousel2 = () => {
             </FlexBox>
             {activeService && (
                 <Flex center direction="column">
-                    <Text>{activeService.name}</Text>
-                    <Text>{activeService.description}</Text>
+                    <Text
+                        typography={{
+                            "@initial": "mbHeading1",
+                            "@bp3": "dtHeading1"
+                        }}
+                    >
+                        {activeService.name}
+                    </Text>
+                    <Text typography={"dtPara1"}>
+                        {activeService.description}
+                    </Text>
                 </Flex>
             )}
         </Section>

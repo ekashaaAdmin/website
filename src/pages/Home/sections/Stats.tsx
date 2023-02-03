@@ -2,11 +2,26 @@ import { Flex, Section, Text } from "@components";
 
 export const Stats = () => {
     return (
-        <Section id="stats" center direction={"column"} gap="5">
+        <Section id="stats" center direction={"column"} gap="10">
             <Flex direction="column">
-                <Text>A complete solution for</Text>
-                <Text>
-                    all you <Text>property needs!</Text>
+                <Text
+                    typography={{
+                        "@initial": "mbHeading1",
+                        "@bp3": "dtHeading1"
+                    }}
+                >
+                    A complete solution for
+                </Text>
+                <Text
+                    typography={{
+                        "@initial": "mbHeading1",
+                        "@bp3": "dtHeading1"
+                    }}
+                >
+                    all your{" "}
+                    <Text css={{ fontWeight: "$dtPara1" }}>
+                        property needs!
+                    </Text>
                 </Text>
             </Flex>
 
@@ -18,16 +33,58 @@ export const Stats = () => {
                 width={{ "@bp2": "full", "@bp3": "half" }}
             >
                 <Flex direction="column">
-                    <Text>10000+</Text>
-                    <Text>Total Properties</Text>
+                    <Text
+                        typography={{
+                            "@initial": "mbHeading1",
+                            "@bp3": "dtHeading2"
+                        }}
+                    >
+                        10000+
+                    </Text>
+                    <Text
+                        typography={{
+                            "@initial": "mbPara1",
+                            "@bp3": "dtPara1"
+                        }}
+                    >
+                        Total Properties
+                    </Text>
                 </Flex>
                 <Flex direction="column">
-                    <Text>50000+</Text>
-                    <Text>Happy Customers</Text>
+                    <Text
+                        typography={{
+                            "@initial": "mbHeading1",
+                            "@bp3": "dtHeading2"
+                        }}
+                    >
+                        50000+
+                    </Text>
+                    <Text
+                        typography={{
+                            "@initial": "mbPara1",
+                            "@bp3": "dtPara1"
+                        }}
+                    >
+                        Happy Customers
+                    </Text>
                 </Flex>
                 <Flex direction="column">
-                    <Text>1000+</Text>
-                    <Text>Developers</Text>
+                    <Text
+                        typography={{
+                            "@initial": "mbHeading1",
+                            "@bp3": "dtHeading2"
+                        }}
+                    >
+                        1000+
+                    </Text>
+                    <Text
+                        typography={{
+                            "@initial": "mbPara1",
+                            "@bp3": "dtPara1"
+                        }}
+                    >
+                        Developers
+                    </Text>
                 </Flex>
             </Flex>
         </Section>

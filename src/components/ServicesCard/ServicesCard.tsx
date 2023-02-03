@@ -36,7 +36,9 @@ export const ServicesCard = ( {
                 ) : (
                     logo
                 )}
-                <Text>{name}</Text>
+                <Text typography={{ "@initial": "mbPara1", "@bp3": "dtPara1" }}>
+                    {name}
+                </Text>
             </Flex>
         );
     }
@@ -55,7 +57,9 @@ export const ServicesCard = ( {
             ) : (
                 logo
             )}
-            <Text>{name}</Text>
+            <Text typography={{ "@initial": "mbPara1", "@bp3": "dtPara1" }}>
+                {name}
+            </Text>
         </Flex>
     );
 };

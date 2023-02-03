@@ -1,4 +1,4 @@
-import { Flex, Grid } from "@src/components";
+import { Flex, Grid, Text } from "@src/components";
 
 export const Footerlinksgrid = () => {
     return (
@@ -17,37 +17,37 @@ export const Footerlinksgrid = () => {
                 }}
             >
                 <Flex direction="column" gap="1">
-                    <h4>Services</h4>
-                    <p>Property Hunt</p>
-                    <p>Leasing</p>
-                    <p>Financial</p>
-                    <p>Loans</p>
+                    <Text css={{ fontWeight: "$dtHeading1" }}>Services</Text>
+                    <Text>Property Hunt</Text>
+                    <Text>Leasing</Text>
+                    <Text>Financial</Text>
+                    <Text>Loans</Text>
                 </Flex>
 
                 <Flex direction="column" gap="1">
-                    <h4>Know Us</h4>
-                    <p>Home</p>
-                    <p>About Us</p>
-                    <p>Blogs & Articles</p>
-                    <p>Testemonials</p>
+                    <Text css={{ fontWeight: "$dtHeading1" }}>Know Us</Text>
+                    <Text>Home</Text>
+                    <Text>About Us</Text>
+                    <Text>Blogs & Articles</Text>
+                    <Text>Testemonials</Text>
                 </Flex>
 
                 <Flex direction="column" gap="1">
-                    <h4>Reach Us</h4>
-                    <p>
+                    <Text css={{ fontWeight: "$dtHeading1" }}>Reach Us</Text>
+                    <Text>
                         Call us at
                         <br />
                         +91 9820 467249
-                    </p>
-                    <p>info@ekashaa.com</p>
+                    </Text>
+                    <Text>info@ekashaa.com</Text>
                 </Flex>
 
                 <Flex direction="column" gap="1">
-                    <h4>More Links</h4>
-                    <p>FAQ</p>
-                    <p>Privacy Policy</p>
-                    <p>User Agreements</p>
-                    <p>Disclaimer</p>
+                    <Text css={{ fontWeight: "$dtHeading1" }}>More Links</Text>
+                    <Text>FAQ</Text>
+                    <Text>Privacy Policy</Text>
+                    <Text>User Agreements</Text>
+                    <Text>Disclaimer</Text>
                 </Flex>
             </Grid>
         </Flex>

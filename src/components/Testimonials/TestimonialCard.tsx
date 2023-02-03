@@ -36,13 +36,17 @@ export const TestimonialCard = () => {
                     }}
                 ></Box>
                 <Flex direction={"column"} align={"center"}>
-                    <Text>KPMG</Text>
-                    <Text>Property Name Senior Manager</Text>
+                    <Text typography={"dtPara1"}>KPMG</Text>
+                    <Text typography={"dtPara2"} align={"center"}>
+                        Property Name Senior Manager
+                    </Text>
                 </Flex>
-                <Text>
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum has been the industry's
-                    standard dummy.
+                <Text typography={"dtPara3"}>
+                    <i>
+                        Lorem Ipsum is simply dummy text of the printing and
+                        typesetting industry. Lorem Ipsum has been the
+                        industry's standard dummy.
+                    </i>
                 </Text>
             </FlexBox>
         </>

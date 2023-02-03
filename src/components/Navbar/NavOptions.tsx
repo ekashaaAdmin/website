@@ -38,14 +38,14 @@ export const NavOptions = () => {
         <Flex direction={"column"} gap={"1"} css={navOptionsCss}>
             <Text typography={"navOptions"}>Home</Text>
             <DropDown title="About">
-                <Text>Option</Text>
-                <Text>Option</Text>
-                <Text>Option</Text>
+                <Text typography={"navOptions"}>Option</Text>
+                <Text typography={"navOptions"}>Option</Text>
+                <Text typography={"navOptions"}>Option</Text>
             </DropDown>
             <DropDown title="Services">
-                <Text>Option</Text>
-                <Text>Option</Text>
-                <Text>Option</Text>
+                <Text typography={"navOptions"}>Option</Text>
+                <Text typography={"navOptions"}>Option</Text>
+                <Text typography={"navOptions"}>Option</Text>
             </DropDown>
             <Text typography={"navOptions"}>Contact Us</Text>
         </Flex>

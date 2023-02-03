@@ -7,8 +7,12 @@ import { TestimonialCard } from "./TestimonialCard";
 
 export const TestimonialsCarousel = () => {
     return (
-        <Section direction={"column"} align={"center"}>
-            <Text>Testimonials</Text>
+        <Section direction={"column"} align={"center"} css={{ px: "0" }}>
+            <Text
+                typography={{ "@initial": "mbHeading1", "@bp3": "dtHeading1" }}
+            >
+                Testimonials
+            </Text>
 
             <FlexBox
                 css={{

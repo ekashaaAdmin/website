@@ -2,7 +2,7 @@ import { Button, Flex, LogoSmall, Section, Text } from "@src/components";
 import { CSS } from "@src/styles";
 
 const aboutCss: CSS = {
-    "@bp1": {
+    "@bp3": {
         flexDirection: "row"
     }
 };
@@ -10,7 +10,7 @@ const aboutCss: CSS = {
 const textContentCss: CSS = {
     maxWidth: "$mobileS",
     "@bp1": {
-        maxWidth: "unset"
+        maxWidth: "$tablet"
     }
 };
 
@@ -20,12 +20,12 @@ export const About = () => {
             id="about"
             direction={"column"}
             center
-            gap={"2"}
+            gap={"4"}
             css={aboutCss}
         >
             <LogoSmall css={{ minWidth: "$logoMedium" }} />
             <Flex direction={"column"} center gap={"2"} css={textContentCss}>
-                <Text>
+                <Text typography={{ "@initial": "mbPara1", "@bp3": "dtPara1" }}>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     Enim, hic illo! Deserunt ullam nobis hic accusantium
                     corporis veritatis tenetur nisi ipsum saepe aliquid! Iusto

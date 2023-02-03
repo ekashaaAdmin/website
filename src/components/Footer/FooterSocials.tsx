@@ -1,6 +1,7 @@
 import { Ekashaa_Footer_Logo } from "@src/assets";
 import { Box } from "../Box";
 import { Flex } from "../Flex";
+import { Text } from "../Text";
 
 export const FooterSocials = () => {
     return (
@@ -10,9 +11,10 @@ export const FooterSocials = () => {
             align={"center"}
             gap={"4"}
         >
-            <p>
-                <strong>Looking for a Property</strong> <br /> We got your back!
-            </p>
+            <Text typography={"dtHeading3"}>
+                Looking for a Property <br />{" "}
+                <Text css={{ fontWeight: "$dtPara1" }}>We got your back!</Text>
+            </Text>
             <img src={Ekashaa_Footer_Logo} />
             <Flex gap={"3"}>
                 <Box
