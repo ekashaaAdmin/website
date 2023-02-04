@@ -11,7 +11,7 @@ export const ContactFields = () => {
             <FlexBox>
                 <Text>Radio Button</Text>
             </FlexBox>
-            <Button />
+            <Button variant={"submitButton"}>Submit</Button>
         </FlexBox>
     );
 };

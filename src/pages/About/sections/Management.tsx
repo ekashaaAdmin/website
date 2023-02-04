@@ -53,7 +53,12 @@ export const Management = () => {
                     alt="blog-thubnail"
                     css={{ flex: 1 }}
                 />
-                <Flex direction="column" gap="2" css={{ flex: 2 }}>
+                <Flex
+                    direction="column"
+                    gap="2"
+                    css={{ flex: 2 }}
+                    align={"flexStart"}
+                >
                     <Text
                         typography={{
                             "@initial": "mbPara1",
@@ -73,7 +78,7 @@ export const Management = () => {
                         elit. Praesentium reiciendis, corrupti vel reprehenderit
                         nemo aliquid maiores suscipit. Ex, facilis consectetur?
                     </Text>
-                    <Button>Read More</Button>
+                    <Button variant={"blueButton"}>Read More</Button>
                 </Flex>
             </Flex>
             <Box
@@ -106,7 +111,12 @@ export const Management = () => {
                         alt="blog-thubnail"
                         css={{ flex: 1 }}
                     />
-                    <Flex direction="column" gap="2" css={{ flex: 2 }}>
+                    <Flex
+                        direction="column"
+                        gap="2"
+                        css={{ flex: 2, color: "White" }}
+                        align={"flexEnd"}
+                    >
                         <Text
                             typography={{
                                 "@initial": "mbPara1",
@@ -117,6 +127,7 @@ export const Management = () => {
                             Catchy Title/Heading Here
                         </Text>
                         <Text
+                            align={"right"}
                             typography={{
                                 "@initial": "mbPara1",
                                 "@bp3": "dtPara1"
@@ -127,7 +138,7 @@ export const Management = () => {
                             reprehenderit nemo aliquid maiores suscipit. Ex,
                             facilis consectetur?
                         </Text>
-                        <Button>Read More</Button>
+                        <Button variant={"whiteButton"}>Read More</Button>
                     </Flex>
                 </Flex>
             </Box>

@@ -1,3 +1,4 @@
+import { Button } from "@src/components";
 import type {
     CSS as StitchesCSS,
     PropertyValue,
@@ -20,7 +21,7 @@ export const {
     theme: {
         colors: {
             complentaryColor: "#1b1111",
-            accentColor: "#e82821",
+            accentColor: "#1C99CD",
             secondaryColor: "#b5c0bc",
             primaryColor: "#ece1e0"
         },
@@ -54,6 +55,7 @@ export const {
             mbHeading1: "600",
             mbHeading2: "600",
             mbPara1: "400",
+            buttonWeight: "",
             navOptions: "300"
         },
         letterSpacings: {
