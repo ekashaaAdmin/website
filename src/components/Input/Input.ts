@@ -1,15 +1,17 @@
 import { css, styled } from "@src/styles";
 
 export const inputCss = css( {
-    width: "100%",
-    position: "relative",
-    borderStyle: "solid",
-    padding: "$4",
     all: "unset",
-    maxWidth: "$full",
+    position: "relative",
+    padding: "$1",
+    border: "1px solid $formBorder",
+    borderRadius: "$inputFieldBorderRadius",
+    maxWidth: "calc(100% - $1)",
     typography: "$captionMedium",
     height: "$full",
-    variants: {}
+    [ `&[type="radio"]` ]: {
+        all: "revert"
+    }
 } );
 
 export const Input = styled( "input", inputCss );

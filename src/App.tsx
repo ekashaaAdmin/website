@@ -5,6 +5,8 @@ import "swiper/css/pagination";
 import { Layout } from "./components";
 import { About, Home, NotFound, Services } from "./pages";
 import "./custom-swiper.css";
+import "react-toastify/dist/ReactToastify.css";
+import { ToastContainer } from "react-toastify";
 
 globalStyles();
 function App() {
@@ -20,6 +22,12 @@ function App() {
                     <Route path="*" element={<NotFound />} />
                 </Routes>
             </BrowserRouter>
+            <ToastContainer
+                position="bottom-center"
+                autoClose={5000}
+                hideProgressBar={false}
+                theme={"dark"}
+            />
         </div>
     );
 }
