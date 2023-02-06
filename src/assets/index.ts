@@ -12,6 +12,7 @@ import DeveloperRustomjee from "./DeveloperRustomjee.png";
 import DeveloperShapoorji from "./DeveloperShapoorji.png";
 import Management1 from "./Management1.png";
 import Management2 from "./Management2.png";
+import ContactFormImg from "./ContactForm.png";
 import { LegalServicesLogo } from "./LegalServicesLogo";
 import { PropertyHuntLogo } from "./PropertyHuntLogo";
 import { FinanceLogo } from "./FinanceLogo";
@@ -37,5 +38,6 @@ export {
     DeveloperShapoorji,
     DeveloperRustomjee,
     Management1,
-    Management2
+    Management2,
+    ContactFormImg
 };

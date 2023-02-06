@@ -9,14 +9,18 @@
         "preview": "vite preview"
     },
     "dependencies": {
+        "@emailjs/browser": "^3.10.0",
         "@ladle/react": "^2.4.5",
         "@radix-ui/colors": "^0.1.8",
         "@stitches/react": "^1.2.8",
+        "formik": "^2.2.9",
         "lottie-web": "^5.10.0",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
         "react-router-dom": "^6.4.5",
-        "swiper": "^8.4.6"
+        "react-toastify": "^9.1.1",
+        "swiper": "^8.4.6",
+        "yup": "^0.32.11"
     },
     "devDependencies": {
         "@types/react": "^18.0.26",
