@@ -22,7 +22,8 @@ export const {
             complentaryColor: "#1b1111",
             accentColor: "#e82821",
             secondaryColor: "#b5c0bc",
-            primaryColor: "#ece1e0"
+            primaryColor: "#ece1e0",
+            formBorder: "#D4D4D4"
         },
         fonts: {
             montserrat: "'Montserrat', sans-serif"
@@ -37,7 +38,7 @@ export const {
             dtPara2: "1rem",
             dtPara3: "0.875rem",
             mbHeading1: "2.25rem",
-            mbHeading2: "2.25rem",
+            mbHeading2: "2rem",
             mbSubHeading1: "1rem",
             mbPara1: "1.25rem",
             navOptions: "1rem"
@@ -148,11 +149,12 @@ export const {
             inputFieldBorderRadius: "0.2rem",
             circle: "50%"
         },
-        borderWidths: {},
         shadows: {
             inputFieldShadow: "rgba(183,193,189,255) 0 0.18rem 0.5rem",
             servicesCardShadow: "rgba(0, 0, 0, 0.16) 0px 1px 4px 0px",
             propertyCardShadow: "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;",
+            contactFormShadow:
+                "rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;",
             footerShadow: "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;",
             shadowtype1:
                 "rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px",

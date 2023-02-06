@@ -12,25 +12,26 @@ export const navOptionsCss: CSS = {
     borderRadius: "$inputFieldBorderRadius",
     padding: "$3",
     position: "absolute",
+    pointerEvents: "none",
     right: "$0",
     top: "$10",
     width: "max-content",
     opacity: 0,
     transform: "translateY(-10%)",
     transition: "all .3s ease-in-out 0s",
-    zIndex: "$negativeTwo",
     ".active &": {
         opacity: 1,
+        pointerEvents: "all",
         transform: "translateY(0)"
     },
     "@bp2": {
         opacity: "unset",
         gap: "$4",
         flexDirection: "row",
+        pointerEvents: "all",
         position: "relative",
         padding: "$0",
-        top: "unset",
-        zIndex: "unset"
+        top: "unset"
     }
 };
 
@@ -41,15 +42,16 @@ export const NavOptions = () => {
                 <Link to={`/`}>Home</Link>
             </Text>
             <DropDown title="About" linkTo="/about">
-                <Text typography={"navOptions"}>Option</Text>
-                <Text typography={"navOptions"}>Option</Text>
-                <Text typography={"navOptions"}>Option</Text>
+                <Link to={`/about/#about`}>
+                    <Text typography={"navOptions"}>Ekashaa</Text>
+                </Link>
+                <Link to={`/about/#management`}>
+                    <Text typography={"navOptions"}>Management</Text>
+                </Link>
             </DropDown>
-            <DropDown title="Services" linkTo="/services">
-                <Text typography={"navOptions"}>Option</Text>
-                <Text typography={"navOptions"}>Option</Text>
-                <Text typography={"navOptions"}>Option</Text>
-            </DropDown>
+            <Text typography={"navOptions"}>
+                <Link to={`/services`}>Services</Link>
+            </Text>
             <Text typography={"navOptions"}>Contact Us</Text>
         </Flex>
     );

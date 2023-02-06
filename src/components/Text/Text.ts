@@ -54,6 +54,11 @@ export const textCss = css( {
             mbPara1: {
                 typography: "$mbPara1"
             }
+        },
+        color: {
+            error: {
+                color: "Red"
+            }
         }
     }
 } );

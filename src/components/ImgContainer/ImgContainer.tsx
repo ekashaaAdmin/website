@@ -1,4 +1,4 @@
-import { CSS, PropsWithCSS } from "@src/styles";
+import { PropsWithCSS } from "@src/styles";
 import { VariantProps } from "@stitches/react";
 import { Box, boxCss } from "../Box";
 interface ImgContainerProps extends PropsWithCSS, VariantProps<typeof boxCss> {
@@ -13,7 +13,6 @@ export const ImgContainer = ( { alt, src, ...props }: ImgContainerProps ) => {
                 src={src}
                 alt={alt}
                 width="100%"
-                height="100%"
                 style={{
                     objectFit: "cover",
                     objectPosition: "center"
