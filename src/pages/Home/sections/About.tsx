@@ -24,14 +24,14 @@ export const About = () => {
             css={aboutCss}
         >
             <LogoSmall css={{ minWidth: "$logoMedium" }} />
-            <Flex direction={"column"} center gap={"2"} css={textContentCss}>
+            <Flex direction={"column"} center gap={"4"} css={textContentCss}>
                 <Text typography={{ "@initial": "mbPara1", "@bp3": "dtPara1" }}>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     Enim, hic illo! Deserunt ullam nobis hic accusantium
                     corporis veritatis tenetur nisi ipsum saepe aliquid! Iusto
                     excepturi possimus aliquid illo impedit ducimus?
                 </Text>
-                <Button>More About Us</Button>
+                <Button variant={"generalButton"}>More About Us</Button>
             </Flex>
         </Section>
     );
