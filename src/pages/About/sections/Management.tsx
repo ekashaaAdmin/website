@@ -11,6 +11,7 @@ import {
 export const Management = () => {
     return (
         <Section
+            id="management"
             direction={"column"}
             align="center"
             css={{ px: "$0", maxWidth: "$full" }}

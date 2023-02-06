@@ -1,7 +1,5 @@
 import { CSS } from "@src/styles";
 import { useState } from "react";
-import { Box } from "../Box";
-import { Flex } from "../Flex";
 import { FlexBox } from "../FlexBox";
 import { HamBurger } from "../HamBurger/HamBurger";
 import { Link } from "../Link";
