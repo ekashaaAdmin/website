@@ -123,9 +123,10 @@ export const ContactForm = () => {
                 ) : null}
             </Flex>
             <Flex
-                direction="row"
+                direction={{ "@initial": "column", "@bp1": "row" }}
                 justify={"spaceAround"}
                 css={{ width: "$full" }}
+                gap="1"
             >
                 <Text>I'm a: </Text>
                 <label htmlFor="rd_buyer">
@@ -160,9 +161,13 @@ export const ContactForm = () => {
                 </label>
             </Flex>
 
-            <Flex gap="5">
-                <Button type="submit">Submit</Button>
-                <Button onClick={handleReset}>Clear</Button>
+            <Flex direction="column" gap="1" css={{ width: "$full" }}>
+                <Button variant={"submitButton"} type="submit">
+                    Submit
+                </Button>
+                <Button variant={"submitButton"} onClick={handleReset}>
+                    Clear
+                </Button>
             </Flex>
         </Form>
     );
