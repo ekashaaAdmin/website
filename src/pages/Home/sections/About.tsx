@@ -1,11 +1,11 @@
 import { Button, Flex, LogoSmall, Section, Text } from "@src/components";
 import { CSS } from "@src/styles";
 
-const aboutCss: CSS = {
-    "@bp3": {
-        flexDirection: "row"
-    }
-};
+// const aboutCss: CSS = {
+//     "@bp3": {
+//         flexDirection: "row"
+//     }
+// };
 
 const textContentCss: CSS = {
     maxWidth: "$mobileS",
@@ -21,7 +21,7 @@ export const About = () => {
             direction={"column"}
             center
             gap={"4"}
-            css={aboutCss}
+            // css={aboutCss}
         >
             <LogoSmall css={{ minWidth: "$logoMedium" }} />
             <Flex direction={"column"} center gap={"4"} css={textContentCss}>
@@ -31,7 +31,7 @@ export const About = () => {
                     corporis veritatis tenetur nisi ipsum saepe aliquid! Iusto
                     excepturi possimus aliquid illo impedit ducimus?
                 </Text>
-                <Button variant={"generalButton"}>More About Us</Button>
+                {/* <Button variant={"generalButton"}>More About Us</Button> */}
             </Flex>
         </Section>
     );

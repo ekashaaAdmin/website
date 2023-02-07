@@ -52,7 +52,6 @@ export const Contact = () => {
             <FlexBox
                 direction={{ "@initial": "column", "@bp3": "row" }}
                 center
-                gap={"1"}
                 css={{
                     "@bp3": {
                         alignItems: "stretch"
