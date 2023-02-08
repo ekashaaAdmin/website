@@ -7,12 +7,14 @@ import { About, Home, NotFound, Services } from "./pages";
 import "./custom-swiper.css";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
+import { ScrollToTop } from "@components";
 
 globalStyles();
 function App() {
     return (
         <div className="App">
             <BrowserRouter>
+                <ScrollToTop />
                 <Routes>
                     <Route path="/" element={<Layout />}>
                         <Route index element={<Home />} />

@@ -33,10 +33,8 @@ export const Management = () => {
             <Flex
                 center
                 direction="column"
-                gap="3"
                 css={{
                     mt: "$7",
-                    p: "$5 0",
                     "@mobileM": {
                         width: "$mobileS"
                     },
@@ -57,7 +55,7 @@ export const Management = () => {
                 <Flex
                     direction="column"
                     gap="2"
-                    css={{ flex: 2 }}
+                    css={{ flex: 2, p: "$3" }}
                     align={"flexStart"}
                 >
                     <Text
@@ -85,14 +83,12 @@ export const Management = () => {
             <Box
                 size={"full"}
                 css={{
-                    backgroundColor: "#4CABD2",
-                    p: "$5 0"
+                    backgroundColor: "#4CABD2"
                 }}
             >
                 <Flex
                     center
                     direction="column"
-                    gap="3"
                     css={{
                         margin: "auto",
                         "@mobileM": {
@@ -115,7 +111,7 @@ export const Management = () => {
                     <Flex
                         direction="column"
                         gap="2"
-                        css={{ flex: 2, color: "White" }}
+                        css={{ flex: 2, color: "White", p: "$3" }}
                         align={"flexEnd"}
                     >
                         <Text

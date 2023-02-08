@@ -51,6 +51,7 @@ export const Blogs = () => {
                 />
                 <Flex
                     direction="column"
+                    gap="2"
                     css={{ flex: 2, p: "$3" }}
                     align={"flexStart"}
                 >

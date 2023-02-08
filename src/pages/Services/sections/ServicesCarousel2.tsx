@@ -7,7 +7,7 @@ import {
 } from "@src/assets";
 import { Flex, FlexBox, Section, ServicesCard, Text } from "@src/components";
 import { ReactNode, useState } from "react";
-import { Pagination } from "swiper";
+import { Pagination, Swiper as SwiperS } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "./ServicesCarousel2.css";
 
@@ -46,11 +46,14 @@ const services: serviceType[] = [
 ];
 
 export const ServicesCarousel2 = () => {
-    const [ activeSlide, setActiveSlide ] = useState<string>( "Property Hunt" );
+    const [ activeService, setActiveService ] = useState<serviceType>(
+        services[ 0 ]
+    );
 
-    const activeService: serviceType | null = activeSlide
-        ? services.filter( ( service ) => service.name === activeSlide )[ 0 ]
-        : null;
+    const handleChange = ( swiper: SwiperS ) => {
+        const activeIndex = swiper.activeIndex % services.length;
+        setActiveService( services[ activeIndex ] );
+    };
 
     return (
         <Section id="services-carousel2" center direction={"column"} gap="10">
@@ -84,8 +87,9 @@ export const ServicesCarousel2 = () => {
                     loop={true}
                     centeredSlides={true}
                     slideToClickedSlide={true}
-                    pagination={{ dynamicBullets: true }}
+                    pagination={{ dynamicBullets: true, clickable: true }}
                     modules={[ Pagination ]}
+                    onActiveIndexChange={handleChange}
                     breakpoints={{
                         1024: {
                             slidesPerView: 4,
@@ -100,11 +104,7 @@ export const ServicesCarousel2 = () => {
                         const { logo, name } = service;
                         return (
                             <SwiperSlide key={key}>
-                                <ServicesCard
-                                    logo={logo}
-                                    name={name}
-                                    setActiveSlide={setActiveSlide}
-                                />
+                                <ServicesCard logo={logo} name={name} />
                             </SwiperSlide>
                         );
                     } )}

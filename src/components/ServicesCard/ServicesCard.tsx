@@ -7,7 +7,7 @@ import { Text } from "../Text";
 type ServicesCardProps = {
     logo: string | ReactNode | undefined;
     name: string;
-    setActiveSlide?: React.Dispatch<React.SetStateAction<string>>;
+    // setActiveSlide?: React.Dispatch<React.SetStateAction<string>>;
 };
 
 const serviceCardCss: CSS = {
@@ -17,39 +17,13 @@ const serviceCardCss: CSS = {
     height: "$servicesCardHeight"
 };
 
-export const ServicesCard = ( {
-    logo,
-    name,
-    setActiveSlide
-}: ServicesCardProps ) => {
-    if ( !setActiveSlide ) {
-        return (
-            <Flex
-                direction={"column"}
-                center
-                gap="1"
-                css={serviceCardCss}
-                className="services-card"
-            >
-                {typeof logo === "string" ? (
-                    <ImgContainer src={logo} alt="service-logo" />
-                ) : (
-                    logo
-                )}
-                <Text typography={{ "@initial": "mbPara1", "@bp3": "dtPara1" }}>
-                    {name}
-                </Text>
-            </Flex>
-        );
-    }
-
+export const ServicesCard = ( { logo, name }: ServicesCardProps ) => {
     return (
         <Flex
             direction={"column"}
             center
             gap="1"
             css={serviceCardCss}
-            onClick={() => setActiveSlide( name )}
             className="services-card"
         >
             {typeof logo === "string" ? (

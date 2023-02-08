@@ -18,4 +18,5 @@ export * from "./FeaturedCarousel";
 export * from "./DevelopersCarousel";
 export * from "./PropertyCard";
 export * from "./ImgContainer";
+export * from "./ScrollToTop";
 export * from "./Testimonials";
