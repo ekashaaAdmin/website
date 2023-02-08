@@ -59,10 +59,10 @@ export const ServicesCarousel = () => {
                     640: {
                         slidesPerView: 3
                     },
-                    1024: {
+                    768: {
                         slidesPerView: 4
                     },
-                    1200: {
+                    1024: {
                         slidesPerView: 5,
                         loop: false,
                         enabled: false

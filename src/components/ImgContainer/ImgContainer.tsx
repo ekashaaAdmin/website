@@ -6,9 +6,18 @@ interface ImgContainerProps extends PropsWithCSS, VariantProps<typeof boxCss> {
     alt: string;
 }
 
+import { css, styled } from "@src/styles";
+
+export const imgContainerBoxCss = css( {
+    lineHeight: 0,
+    fontSize: 0
+} );
+
+export const ImgContainerBox = styled( Box, imgContainerBoxCss );
+
 export const ImgContainer = ( { alt, src, ...props }: ImgContainerProps ) => {
     return (
-        <Box {...props}>
+        <ImgContainerBox {...props}>
             <img
                 src={src}
                 alt={alt}
@@ -18,6 +27,6 @@ export const ImgContainer = ( { alt, src, ...props }: ImgContainerProps ) => {
                     objectPosition: "center"
                 }}
             />
-        </Box>
+        </ImgContainerBox>
     );
 };

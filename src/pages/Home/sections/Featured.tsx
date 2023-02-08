@@ -2,7 +2,11 @@ import { FeaturedCarousel, Section, Text } from "@components";
 
 export const Featured = () => {
     return (
-        <Section direction="column" center>
+        <Section
+            direction="column"
+            center
+            css={{ px: "$0", maxWidth: "$featuredCarouselContainer" }}
+        >
             <Text
                 align={"center"}
                 typography={{ "@initial": "mbHeading1", "@bp3": "dtHeading2" }}

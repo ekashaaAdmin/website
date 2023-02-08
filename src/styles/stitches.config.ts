@@ -97,6 +97,7 @@ export const {
             servicesCardHeight: "8rem",
             // Logo
             logoMedium: "250px",
+            featuredCarouselContainer: "1250px",
             // Screens
             mobileS: "320px",
             mobileM: "375px",

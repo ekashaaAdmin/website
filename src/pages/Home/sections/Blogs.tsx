@@ -1,6 +1,5 @@
 import { Blog1 } from "@assets";
 import { Box, Button, Flex, ImgContainer, Section, Text } from "@components";
-import { CSS } from "@src/styles";
 
 export const Blogs = () => {
     return (
@@ -8,9 +7,8 @@ export const Blogs = () => {
             direction={"column"}
             align="center"
             css={{ px: "$0", maxWidth: "$full" }}
-            gap={"5"}
         >
-            <Box css={{ textAlign: "center" }}>
+            <Box css={{ textAlign: "center", mb: "$5" }}>
                 <Text
                     typography={{
                         "@initial": "mbHeading1",
@@ -33,7 +31,6 @@ export const Blogs = () => {
             <Flex
                 center
                 direction="column"
-                gap="3"
                 css={{
                     "@mobileM": {
                         width: "$mobileS"
@@ -54,8 +51,7 @@ export const Blogs = () => {
                 />
                 <Flex
                     direction="column"
-                    gap="2"
-                    css={{ flex: 2 }}
+                    css={{ flex: 2, p: "$3" }}
                     align={"flexStart"}
                 >
                     <Text
@@ -83,14 +79,12 @@ export const Blogs = () => {
             <Box
                 size={"full"}
                 css={{
-                    backgroundColor: "#4CABD2",
-                    p: "$5 0"
+                    backgroundColor: "#4CABD2"
                 }}
             >
                 <Flex
                     center
                     direction="column"
-                    gap="3"
                     css={{
                         margin: "auto",
                         "@mobileM": {
@@ -113,7 +107,7 @@ export const Blogs = () => {
                     <Flex
                         direction="column"
                         gap="2"
-                        css={{ flex: 2, color: "White" }}
+                        css={{ flex: 2, color: "White", p: "$3" }}
                         align={"flexEnd"}
                     >
                         <Text
