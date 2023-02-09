@@ -1,5 +1,6 @@
 import { Blog1 } from "@assets";
 import { Box, Button, Flex, ImgContainer, Section, Text } from "@components";
+import { Link } from "@src/components/Link";
 
 export const Blogs = () => {
     return (
@@ -74,7 +75,9 @@ export const Blogs = () => {
                         elit. Praesentium reiciendis, corrupti vel reprehenderit
                         nemo aliquid maiores suscipit. Ex, facilis consectetur?
                     </Text>
-                    <Button variant={"blueButton"}>Read More</Button>
+                    <Button variant={"blueButton"}>
+                        <Link to={`/blog`}>Read More</Link>
+                    </Button>
                 </Flex>
             </Flex>
             <Box
@@ -132,7 +135,9 @@ export const Blogs = () => {
                             reprehenderit nemo aliquid maiores suscipit. Ex
                             facilis consectetur?
                         </Text>
-                        <Button variant={"whiteButton"}>Read More</Button>
+                        <Button variant={"whiteButton"}>
+                            <Link to={`/blog`}>Read More</Link>
+                        </Button>
                     </Flex>
                 </Flex>
             </Box>
