@@ -75,9 +75,10 @@ export const Blogs = () => {
                         elit. Praesentium reiciendis, corrupti vel reprehenderit
                         nemo aliquid maiores suscipit. Ex, facilis consectetur?
                     </Text>
-                    <Button variant={"blueButton"}>
-                        <Link to={`/blog`}>Read More</Link>
-                    </Button>
+
+                    <Link to={`/blog`}>
+                        <Button variant={"blueButton"}>Read More</Button>
+                    </Link>
                 </Flex>
             </Flex>
             <Box
@@ -135,9 +136,9 @@ export const Blogs = () => {
                             reprehenderit nemo aliquid maiores suscipit. Ex
                             facilis consectetur?
                         </Text>
-                        <Button variant={"whiteButton"}>
-                            <Link to={`/blog`}>Read More</Link>
-                        </Button>
+                        <Link to={`/blog`}>
+                            <Button variant={"whiteButton"}>Read More</Button>
+                        </Link>
                     </Flex>
                 </Flex>
             </Box>

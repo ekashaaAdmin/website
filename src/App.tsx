@@ -3,7 +3,14 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Layout } from "./components";
-import { About, Home, NotFound, Services, Blog } from "./pages";
+import {
+    About,
+    Home,
+    NotFound,
+    Services,
+    Blog,
+    FeaturedProject
+} from "./pages";
 import "./custom-swiper.css";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
@@ -21,6 +28,10 @@ function App() {
                         <Route path="about" element={<About />} />
                         <Route path="services" element={<Services />} />
                         <Route path="blog" element={<Blog />} />
+                        <Route
+                            path="featuredproject"
+                            element={<FeaturedProject />}
+                        />
                     </Route>
                     <Route path="*" element={<NotFound />} />
                 </Routes>

@@ -6,6 +6,7 @@ import {
     BsFillArrowLeftCircleFill,
     BsFillArrowRightCircleFill
 } from "react-icons/bs";
+import { Link } from "react-router-dom";
 
 export const FeaturedCarousel = () => {
     return (
