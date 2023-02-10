@@ -19,4 +19,5 @@ export * from "./DevelopersCarousel";
 export * from "./PropertyCard";
 export * from "./ImgContainer";
 export * from "./ScrollToTop";
+export * from "./LocationLink";
 export * from "./Testimonials";
