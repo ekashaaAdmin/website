@@ -25,9 +25,6 @@ const homeIntroBgCss: CSS = {
 };
 
 export const Home = () => {
-    useEffect( () => {
-        console.log( "this is home" );
-    } );
 
     return (
         <>

@@ -7,7 +7,7 @@ import { ImgContainer } from "../ImgContainer";
 const propertyCardCarouselCss: CSS = {
     width: "$full",
     overflow: "hidden",
-    "@bp2": {
+    "@bp3": {
         width: "$half"
     }
 };

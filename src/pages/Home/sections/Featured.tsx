@@ -5,7 +5,7 @@ export const Featured = () => {
         <Section
             direction="column"
             center
-            css={{ px: "$0", maxWidth: "$featuredCarouselContainer" }}
+            css={{ px: "$0", maxWidth: "$laptopL" }}
         >
             <Text
                 align={"center"}

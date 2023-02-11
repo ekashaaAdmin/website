@@ -16,19 +16,58 @@ export const FeaturedCarousel = () => {
     return (
         <FlexBox width={"full"} css={{ position: "relative" }}>
             <FlexBox
-                css={{ position: "relative", maxWidth: "$laptopM", m: "auto" }}
+                justify="spaceBetween"
+                css={{
+                    position: "absolute",
+                    margin: "auto",
+                    left: 0,
+                    right: 0,
+                    top: "47%",
+                    bottom: "47%",
+                    width: "90%"
+                }}
+            >
+                <Box
+                    size={"4"}
+                    className="featured prev-btn"
+                    css={{ zIndex: "$3", cursor: "pointer" }}
+                >
+                    <BsFillArrowLeftCircleFill size={"100%"} />
+                </Box>
+                <Box
+                    size={"4"}
+                    className="featured next-btn"
+                    css={{ zIndex: "$3", cursor: "pointer" }}
+                >
+                    <BsFillArrowRightCircleFill size={"100%"} />
+                </Box>
+            </FlexBox>
+
+            <FlexBox
+                css={{
+                    position: "relative",
+                    maxWidth: "1200px",
+                    m: "auto",
+                    width: "90%"
+                }}
             >
                 <Swiper
-                    spaceBetween={-6}
+                    slidesPerView={1}
                     pagination={{ dynamicBullets: true, clickable: true }}
                     navigation={{
                         enabled: true,
-                        prevEl: navigationPrevRef.current,
-                        nextEl: navigationNextRef.current
+                        prevEl: ".featured.prev-btn",
+                        nextEl: ".featured.next-btn"
                     }}
                     modules={[ Pagination, Navigation ]}
                     loop={true}
                     breakpoints={{
+                        800: {
+                            slidesPerView: 2
+                        },
+                        1024: {
+                            slidesPerView: 1
+                        },
                         1200: {
                             slidesPerView: 2
                         }
@@ -42,31 +81,6 @@ export const FeaturedCarousel = () => {
                         );
                     } )}
                 </Swiper>
-            </FlexBox>
-
-            <FlexBox
-                width="full"
-                justify="spaceBetween"
-                css={{
-                    position: "absolute",
-                    top: "47%",
-                    bottom: "47%"
-                }}
-            >
-                <Box
-                    size={"4"}
-                    ref={navigationPrevRef}
-                    css={{ zIndex: "$3", cursor: "pointer" }}
-                >
-                    <BsFillArrowLeftCircleFill size={"100%"} />
-                </Box>
-                <Box
-                    size={"4"}
-                    ref={navigationNextRef}
-                    css={{ zIndex: "$3", cursor: "pointer" }}
-                >
-                    <BsFillArrowRightCircleFill size={"100%"} />
-                </Box>
             </FlexBox>
         </FlexBox>
     );

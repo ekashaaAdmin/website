@@ -20,7 +20,7 @@ export const propertyCardCss: CSS = {
     "@bp1": {
         width: "300px"
     },
-    "@bp2": {
+    "@bp3": {
         width: "550px",
         height: "250px"
     }
@@ -38,7 +38,7 @@ export const PropertyCard = () => {
         <PropertyCardContainer
             variant={{
                 "@initial": "verticalCard",
-                "@bp2": "horizontalCard"
+                "@bp3": "horizontalCard"
             }}
             css={propertyCardCss}
         >
