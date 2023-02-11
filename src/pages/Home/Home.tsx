@@ -2,6 +2,7 @@ import { HomeBg } from "@src/assets";
 import { Box } from "@src/components";
 import { Contact } from "@src/components/Contact";
 import { CSS } from "@src/styles";
+import { useEffect } from "react";
 import {
     About,
     Blogs,
@@ -24,6 +25,10 @@ const homeIntroBgCss: CSS = {
 };
 
 export const Home = () => {
+    useEffect( () => {
+        console.log( "this is home" );
+    } );
+
     return (
         <>
             <Box css={homeIntroBgCss}></Box>
