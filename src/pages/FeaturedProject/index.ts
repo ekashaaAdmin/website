@@ -1,1 +1,1 @@
-export * from "./FeaturedProject";
+export * from "./PropertyTemplate";

@@ -1,16 +1,5 @@
-import { useGetBlogs } from "@src/hooks";
-import { BlogCarousel, BlogSection, Intro } from "./sections";
+import React from "react";
 
 export const Blog = () => {
-    const { data } = useGetBlogs();
-
-    console.log( data );
-
-    return (
-        <>
-            <Intro />
-            <BlogSection />
-            <BlogCarousel />
-        </>
-    );
+    return <div>Blog</div>;
 };

@@ -8,31 +8,28 @@ const introSectionCss: CSS = {
 
 export const Intro = () => {
     return (
-        <>
-            <Section justify={"center"} css={introSectionCss}>
-                <FlexBox
-                    direction={"column"}
-                    align={"center"}
-                    justify={"center"}
-                >
-                    <Text
-                        typography={{
-                            "@initial": "mbHeading1",
-                            "@bp3": "dtPageHead"
-                        }}
-                    >
-                        ekashaa Blogs
-                    </Text>
-                    <Text
-                        typography={{
-                            "@initial": "mbSubHeading1",
-                            "@bp3": "dtSubHeading1"
-                        }}
-                    >
-                        TOP GOSSIPS ONLY FOR YOU
-                    </Text>
-                </FlexBox>
-            </Section>
-        </>
+        <FlexBox
+            direction={"column"}
+            align={"center"}
+            justify={"center"}
+            css={{ textAlign: "center", my: "$5" }}
+        >
+            <Text
+                typography={{
+                    "@initial": "mbHeading1",
+                    "@bp3": "dtPageHead"
+                }}
+            >
+                ekashaa Blogs
+            </Text>
+            <Text
+                typography={{
+                    "@initial": "mbSubHeading1",
+                    "@bp3": "dtSubHeading1"
+                }}
+            >
+                TOP GOSSIPS ONLY FOR YOU
+            </Text>
+        </FlexBox>
     );
 };

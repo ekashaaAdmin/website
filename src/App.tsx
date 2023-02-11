@@ -9,7 +9,8 @@ import {
     NotFound,
     Services,
     Blog,
-    FeaturedProject
+    BlogTemplate,
+    PropertyTemplate
 } from "./pages";
 import "./custom-swiper.css";
 import "react-toastify/dist/ReactToastify.css";
@@ -29,11 +30,15 @@ function App() {
                         <Route path="services" element={<Services />} />
                         <Route path="blog" element={<Blog />} />
                         <Route
-                            path="featuredproject"
-                            element={<FeaturedProject />}
+                            path="blog/:blogSlug"
+                            element={<BlogTemplate />}
+                        />
+                        <Route
+                            path="property/:propertyId"
+                            element={<PropertyTemplate />}
                         />
                     </Route>
-                    <Route path="*" element={<NotFound />} />
+                    {/* <Route path="*" element={<NotFound />} /> */}
                 </Routes>
             </BrowserRouter>
             <ToastContainer
