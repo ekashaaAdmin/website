@@ -1,3 +1,4 @@
+import { useGetTestimonials } from "@src/hooks";
 import { Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FlexBox } from "../FlexBox";
@@ -6,6 +7,8 @@ import { Text } from "../Text";
 import { TestimonialCard } from "./TestimonialCard";
 
 export const TestimonialsCarousel = () => {
+    const { data: testimonials } = useGetTestimonials();
+
     return (
         <Section direction={"column"} align={"center"} css={{ px: "0" }}>
             <Text
