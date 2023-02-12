@@ -1,20 +1,34 @@
-import { useQuery } from "@tanstack/react-query";
+import { Property } from "@src/utils";
 import client from "@src/utils/client";
+import { useQuery } from "@tanstack/react-query";
 
 export const getPropertiesFn = async () => {
-    const query = `*[_type == 'post'] 
-    { 
-        _id, 
-        publishedAt, 
-        title, 
-        body, 
-        'authorName': author -> {name}, 
-        'imageURL': mainImage.asset -> {url} 
+    const query = `*[_type == 'property'] {
+        _id,
+        'amenities': amenities[] -> {
+            _id,
+            amenityName
+        },
+        configuration,
+        'developer': developer -> {
+            developerName,
+            description,
+            'logo': logo.asset -> {url}
+        },
+        'imageUrls': imageUrls[].asset -> {url},
+        location,
+        name,
+        possessionDate,
+        priceInfo,
+        projectInfo,
+        reraVerified
     }`;
+
     const response = await client.fetch( query );
-    return response[ 0 ];
+
+    return response;
 };
 
 export const useGetProperties = () => {
-    return useQuery( [], () => getPropertiesFn() );
+    return useQuery<Partial<Property>>( [], () => getPropertiesFn() );
 };
