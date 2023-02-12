@@ -1,17 +1,18 @@
-import { Navigation, Pagination } from "swiper";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { FlexBox } from "../FlexBox";
-import { PropertyCard } from "../PropertyCard";
+import { useGetFeaturedProperties } from "@src/hooks";
 import {
     BsFillArrowLeftCircleFill,
     BsFillArrowRightCircleFill
 } from "react-icons/bs";
-import { useRef } from "react";
+import { Navigation, Pagination } from "swiper";
+import { Swiper, SwiperSlide } from "swiper/react";
 import { Box } from "../Box";
+import { FlexBox } from "../FlexBox";
+import { PropertyCard } from "../PropertyCard";
 
 export const FeaturedCarousel = () => {
-    const navigationPrevRef = useRef( null );
-    const navigationNextRef = useRef( null );
+    const { data: featuredProperties } = useGetFeaturedProperties();
+
+    console.log( featuredProperties );
 
     return (
         <FlexBox width={"full"} css={{ position: "relative" }}>
@@ -68,7 +69,7 @@ export const FeaturedCarousel = () => {
                         1024: {
                             slidesPerView: 1
                         },
-                        1200: {
+                        1440: {
                             slidesPerView: 2
                         }
                     }}
