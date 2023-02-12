@@ -2,8 +2,8 @@ import { Blog } from "@src/utils";
 import client from "@src/utils/client";
 import { useQuery } from "@tanstack/react-query";
 
-export const getBlogFn = async ( blogSlug: string ) => {
-    const query = `*[_type == 'post' && slug.current == '${blogSlug}'] 
+export const getFeaturedBlogsFn = async () => {
+    const query = `*[_type == 'post' && featured == true] 
     { 
         _id, 
         publishedAt, 
@@ -16,6 +16,6 @@ export const getBlogFn = async ( blogSlug: string ) => {
     return response[ 0 ];
 };
 
-export const useGetBlog = ( blogSlug: string ) => {
-    return useQuery<Partial<Blog>>( [ blogSlug ], () => getBlogFn( blogSlug ) );
+export const useFeaturedBlogs = () => {
+    return useQuery<Partial<Blog>>( [], () => getFeaturedBlogsFn() );
 };
