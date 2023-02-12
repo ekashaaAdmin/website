@@ -1,6 +1,9 @@
-import { Blog2 } from "@src/assets";
 import { FlexBox, ImgContainer, Text } from "@src/components";
+import { useGetBlog } from "@src/hooks";
 import { CSS } from "@src/styles";
+import { PortableText, PortableTextComponents } from "@portabletext/react";
+import { PortableTextComp } from "@src/components/PortableText";
+import { array } from "yup";
 
 const blogsectionCss: CSS = {
     margin: "$0 auto",
@@ -15,7 +18,24 @@ const blogsectionCss: CSS = {
     }
 };
 
-export const BlogSection = () => {
+interface BlogSectionProps {
+    blogSlug?: string;
+}
+
+const myComponents: PortableTextComponents = {
+    types: {
+        span: ( value ) => {
+            console.log( value );
+        },
+        image: ( value ) => {
+            console.log( value );
+        }
+    }
+};
+
+export const BlogSection = ( { blogSlug }: BlogSectionProps ) => {
+    const { data } = useGetBlog( blogSlug ?? "" );
+
     return (
         <FlexBox direction={"column"} gap={"1"} css={blogsectionCss}>
             <Text
@@ -24,7 +44,7 @@ export const BlogSection = () => {
                     "@bp3": "dtHeading1"
                 }}
             >
-                Blog Title
+                {data?.title}
             </Text>
             <Text
                 typography={{
@@ -32,7 +52,7 @@ export const BlogSection = () => {
                     "@bp3": "dtSubHeading1"
                 }}
             >
-                -Author
+                -{data?.authorName?.name}
             </Text>
             <Text
                 typography={{
@@ -40,13 +60,13 @@ export const BlogSection = () => {
                     "@bp3": "dtPara1"
                 }}
             >
-                Published at
+                Published at {` ${data?.publishedAt}`}
             </Text>
             <ImgContainer
                 css={{ flex: 1 }}
                 width={"full"}
                 heigth={"half"}
-                src={Blog2}
+                src={`${data?.imageURL?.url}`}
                 alt={"blogimage"}
             />
             <Text
@@ -56,39 +76,15 @@ export const BlogSection = () => {
                     },
                     "@bp3": {
                         padding: "$5 0"
-                    }
+                    },
+                    whiteSpace: "pre-line"
                 }}
                 typography={"dtPara1"}
             >
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy
-                text ever since the 1500s, when an unknown printer took a galley
-                of type and scrambled it to make a type specimen book. It has
-                survived not only five centuries, but also the leap into
-                electronic typesetting. Lorem Ipsum is simply dummy text of the
-                printing and typesetting industry. Lorem Ipsum has been the
-                industry's standard dummy text ever since the 1500s, when an
-                unknown printer took a galley of type and scrambled it to make a
-                type specimen book. It has survived not only five centuries, but
-                also the leap into electronic typesetting.
-                <br />
-                <br />
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy
-                text ever since the 1500s, when an unknown printer took a galley
-                of type and scrambled it to make a type specimen book. It has
-                survived not only five centuries, but also the leap into
-                electronic typesetting. Lorem Ipsum is simply dummy text of the
-                printing and typesetting industry.
-                <br />
-                <br />
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy
-                text ever since the 1500s, when an unknown printer took a galley
-                of type and scrambled it to make a type specimen book. It has
-                survived not only five centuries, but also the leap into
-                electronic typesetting. Lorem Ipsum is simply dummy text of the
-                printing and typesetting industry.
+                <PortableText
+                    value={data?.body as any}
+                    components={myComponents}
+                />
             </Text>
         </FlexBox>
     );
