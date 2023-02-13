@@ -1,5 +1,6 @@
 import { FlexBox, Grid, Section, Text } from "@src/components";
 import { CSS } from "@src/styles";
+import { Property } from "@src/utils";
 
 const configCardCss: CSS = {
     boxShadow: "$shadowtype1",
@@ -7,7 +8,14 @@ const configCardCss: CSS = {
     borderRadius: "$1",
     textAlign: "center"
 };
-export const Amenities = () => {
+
+interface AmenitiesProps {
+    amenitiesData: Partial<Property>;
+}
+
+export const Amenities = ( { amenitiesData }: AmenitiesProps ) => {
+    const { amenities } = amenitiesData;
+
     return (
         <>
             <Section id="amenities" variant={"propertyInfoCss"}>
@@ -18,33 +26,15 @@ export const Amenities = () => {
                         columns={"auto"}
                         gap={{ "@initial": "2", "@bp3": "3" }}
                     >
-                        <Text typography={"dtPara2"} css={configCardCss}>
-                            Gymnasium
-                        </Text>
-                        <Text typography={"dtPara2"} css={configCardCss}>
-                            Library
-                        </Text>
-                        <Text typography={"dtPara2"} css={configCardCss}>
-                            Convenience Store
-                        </Text>
-                        <Text typography={"dtPara2"} css={configCardCss}>
-                            Swimming Pool
-                        </Text>
-                        <Text typography={"dtPara2"} css={configCardCss}>
-                            Cafeteria
-                        </Text>
-                        <Text typography={"dtPara2"} css={configCardCss}>
-                            Banquet Hall
-                        </Text>
-                        <Text typography={"dtPara2"} css={configCardCss}>
-                            Children's Play Area
-                        </Text>
-                        <Text typography={"dtPara2"} css={configCardCss}>
-                            Amphitheatre
-                        </Text>
-                        <Text typography={"dtPara2"} css={configCardCss}>
-                            Indoor Games
-                        </Text>
+                        {amenities?.map( ( amenity ) => (
+                            <Text
+                                typography={"dtPara2"}
+                                css={configCardCss}
+                                key={amenity._id}
+                            >
+                                {amenity.amenityName}
+                            </Text>
+                        ) )}
                     </Grid>
                 </FlexBox>
             </Section>

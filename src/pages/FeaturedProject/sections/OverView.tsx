@@ -1,5 +1,6 @@
 import { Button, FlexBox, Text, Grid, Section } from "@src/components";
 import { CSS } from "@src/styles";
+import { Property } from "@src/utils";
 
 const downloadNowCss: CSS = {
     "@mobileS": {
@@ -10,7 +11,13 @@ const downloadNowCss: CSS = {
     }
 };
 
-export const OverView = () => {
+interface OverviewProps {
+    overviewData: Partial<Property>;
+}
+
+export const OverView = ( { overviewData }: OverviewProps ) => {
+    const { name, location, projectInfo } = overviewData;
+
     return (
         <>
             <Section id="overview" variant={"propertyInfoCss"}>
@@ -19,7 +26,7 @@ export const OverView = () => {
                     gap={{ "@initial": "7", "@bp2": "6" }}
                 >
                     <Text typography={"dtHeading3"}>
-                        Unity Towers, Malabar Hill, Mumbai
+                        {`${name}, ${location?.shortAddress}`}
                     </Text>
 
                     <Grid
@@ -33,7 +40,7 @@ export const OverView = () => {
                                 typography={"dtPara1"}
                                 css={{ fontWeight: "$dtHeading2" }}
                             >
-                                Completed
+                                {projectInfo?.projectStatus}
                             </Text>
                         </FlexBox>
                         <FlexBox direction={"column"} gap={"1"}>
@@ -42,7 +49,7 @@ export const OverView = () => {
                                 typography={"dtPara1"}
                                 css={{ fontWeight: "$dtHeading2" }}
                             >
-                                High Rise
+                                {projectInfo?.projectType}
                             </Text>
                         </FlexBox>
                         <FlexBox direction={"column"} gap={"1"}>
@@ -51,7 +58,7 @@ export const OverView = () => {
                                 typography={"dtPara1"}
                                 css={{ fontWeight: "$dtHeading2" }}
                             >
-                                27
+                                {projectInfo?.totalFloor}
                             </Text>
                         </FlexBox>
                         <FlexBox direction={"column"} gap={"1"}>
@@ -60,18 +67,12 @@ export const OverView = () => {
                                 typography={"dtPara1"}
                                 css={{ fontWeight: "$dtHeading2" }}
                             >
-                                13694450 SqFt
+                                {projectInfo?.plotArea} SqFt
                             </Text>
                         </FlexBox>
                     </Grid>
 
-                    <Text>
-                        Lorem Ipsum is simply dummy text of the printing and
-                        typesetting industry. Lorem Ipsum has been the
-                        industry's standard dummy text ever since the 1500s,
-                        when an unknown printer took a galley of type and
-                        scrambled.
-                    </Text>
+                    <Text>{projectInfo?.projectDescription}</Text>
 
                     <Button css={downloadNowCss} variant={"generalButton"}>
                         Download Brochure

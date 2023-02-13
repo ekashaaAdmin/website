@@ -69,7 +69,25 @@ const propertyInfoNavbarCss: CSS = {
     }
 };
 
-export const MorePropertyInfo = () => {
+interface MorePropertyInfoProps {
+    propertyData: Property;
+}
+
+export const MorePropertyInfo = ( { propertyData }: MorePropertyInfoProps ) => {
+    const {
+        _id,
+        amenities,
+        configuration,
+        developer,
+        imageUrls,
+        location,
+        name,
+        possessionDate,
+        priceInfo,
+        projectInfo,
+        reraVerified
+    } = propertyData;
+
     return (
         <>
             <FlexBox
@@ -94,7 +112,7 @@ export const MorePropertyInfo = () => {
                                 typography={"dtPara1"}
                                 css={{ fontWeight: "$dtHeading2" }}
                             >
-                                3 BHK
+                                {configuration[ 0 ].rooms} BHK
                             </Text>
                         </FlexBox>
                         <FlexBox direction={"column"} align={"flexStart"}>
@@ -103,7 +121,7 @@ export const MorePropertyInfo = () => {
                                 typography={"dtPara1"}
                                 css={{ fontWeight: "$dtHeading2" }}
                             >
-                                Feb 2023
+                                {possessionDate}
                             </Text>
                         </FlexBox>
                     </FlexBox>
@@ -130,7 +148,7 @@ export const MorePropertyInfo = () => {
                                 typography={"dtPara1"}
                                 css={{ fontWeight: "$dtHeading2" }}
                             >
-                                1200 SqFt.
+                                {configuration[ 0 ].carpetArea} SqFt.
                             </Text>
                         </FlexBox>
                     </FlexBox>
@@ -148,11 +166,11 @@ export const MorePropertyInfo = () => {
                 <Text typography={"dtPara1"}>Localilty</Text>
                 <Text typography={"dtPara1"}>Developer</Text>
             </FlexBox>
-            <OverView />
-            <Configuration />
-            <Amenities />
-            <Location />
-            <Developer />
+            <OverView overviewData={{ name, location, projectInfo }} />
+            <Configuration configurationData={{ configuration }} />
+            <Amenities amenitiesData={{ amenities }} />
+            <Location locationData={{ location }} />
+            <Developer developerData={{ developer }} />
         </>
     );
 };

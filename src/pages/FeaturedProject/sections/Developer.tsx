@@ -1,11 +1,19 @@
-import { Ekashaa_Logo } from "@src/assets";
 import { FlexBox, ImgContainer, Section, Text } from "@src/components";
+import { Property } from "@src/utils";
 
-export const Developer = () => {
+interface DeveloperProps {
+    developerData: Partial<Property>;
+}
+
+export const Developer = ( { developerData }: DeveloperProps ) => {
+    const { developer } = developerData;
+
     return (
         <Section id="developer" variant={"propertyInfoCss"}>
             <FlexBox direction={"column"} gap={"3"}>
-                <Text typography={"dtHeading3"}>Developer</Text>
+                <Text typography={"dtHeading3"}>
+                    {developer?.developerName}
+                </Text>
                 <FlexBox
                     direction={{ "@initial": "column", "@bp2": "row" }}
                     gap={"4"}
@@ -13,15 +21,10 @@ export const Developer = () => {
                 >
                     <ImgContainer
                         css={{ width: "7.5rem" }}
-                        src={Ekashaa_Logo}
+                        src={developer?.logo.url}
                         alt={"developerImage"}
                     />
-                    <Text>
-                        XYZ developer is one of the leading Real Estate Company
-                        which aims to set new standards in the real estate by
-                        being customer centricity, incorporating new
-                        architectural design.
-                    </Text>
+                    <Text>{developer?.description}</Text>
                 </FlexBox>
             </FlexBox>
         </Section>

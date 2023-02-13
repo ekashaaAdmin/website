@@ -7,12 +7,10 @@ export const PropertyTemplate = () => {
     const { propertyId } = useParams();
     const { data: propertyData } = useGetProperty( propertyId ?? "" );
 
-    console.log( propertyData );
-
     return (
         <>
             <CardDetails />
-            <MorePropertyInfo />
+            <MorePropertyInfo propertyData={propertyData!} />
         </>
     );
 };
