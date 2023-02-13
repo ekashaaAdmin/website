@@ -7,6 +7,7 @@ import {
     Text
 } from "@src/components";
 import { CSS } from "@src/styles";
+import { Property } from "@src/utils";
 import { Grid } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import {
@@ -147,16 +148,10 @@ export const MorePropertyInfo = () => {
                 <Text typography={"dtPara1"}>Localilty</Text>
                 <Text typography={"dtPara1"}>Developer</Text>
             </FlexBox>
-
-            <hr></hr>
             <OverView />
-            <hr></hr>
             <Configuration />
-            <hr></hr>
             <Amenities />
-            <hr></hr>
             <Location />
-            <hr></hr>
             <Developer />
         </>
     );

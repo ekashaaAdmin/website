@@ -9,87 +9,90 @@ const configCardCss: CSS = {
 
 export const Configuration = () => {
     return (
-        <Section id="configuration" variant={"propertyInfoCss"}>
-            <FlexBox direction={"column"} gap={"4"}>
-                <Text typography={"dtHeading3"}>Configuration</Text>
-                <Grid
-                    columns={{ "@initial": "2", "@bp2": "3" }}
-                    gap={{ "@initial": "2", "@bp2": "4" }}
-                >
-                    <FlexBox
-                        direction={"column"}
-                        align={"center"}
-                        gap={{ "@initial": "1", "@bp2": "2" }}
-                        css={configCardCss}
+        <>
+            <Section id="configuration" variant={"propertyInfoCss"}>
+                <FlexBox direction={"column"} gap={"4"}>
+                    <Text typography={"dtHeading3"}>Configuration</Text>
+                    <Grid
+                        columns={{ "@initial": "2", "@bp2": "3" }}
+                        gap={{ "@initial": "2", "@bp2": "4" }}
                     >
-                        <Text
-                            typography={"dtPara1"}
-                            css={{
-                                fontWeight: "$dtHeading2",
-                                borderBottom: "2px solid #1C99CD",
-                                paddingBottom: "$1"
-                            }}
+                        <FlexBox
+                            direction={"column"}
+                            align={"center"}
+                            gap={{ "@initial": "1", "@bp2": "2" }}
+                            css={configCardCss}
                         >
-                            2 BHK
-                        </Text>
-                        <Text typography={"dtPara3"}>Carpet Area</Text>
-                        <Text
-                            typography={"dtPara1"}
-                            css={{ fontWeight: "$dtHeading2" }}
+                            <Text
+                                typography={"dtPara1"}
+                                css={{
+                                    fontWeight: "$dtHeading2",
+                                    borderBottom: "2px solid #1C99CD",
+                                    paddingBottom: "$1"
+                                }}
+                            >
+                                2 BHK
+                            </Text>
+                            <Text typography={"dtPara3"}>Carpet Area</Text>
+                            <Text
+                                typography={"dtPara1"}
+                                css={{ fontWeight: "$dtHeading2" }}
+                            >
+                                565 SqFt.
+                            </Text>
+                        </FlexBox>
+                        <FlexBox
+                            direction={"column"}
+                            align={"center"}
+                            gap={{ "@initial": "1", "@bp2": "2" }}
+                            css={configCardCss}
                         >
-                            565 SqFt.
-                        </Text>
-                    </FlexBox>
-                    <FlexBox
-                        direction={"column"}
-                        align={"center"}
-                        gap={{ "@initial": "1", "@bp2": "2" }}
-                        css={configCardCss}
-                    >
-                        <Text
-                            typography={"dtPara1"}
-                            css={{
-                                fontWeight: "$dtHeading2",
-                                borderBottom: "2px solid #1C99CD",
-                                paddingBottom: "$1"
-                            }}
+                            <Text
+                                typography={"dtPara1"}
+                                css={{
+                                    fontWeight: "$dtHeading2",
+                                    borderBottom: "2px solid #1C99CD",
+                                    paddingBottom: "$1"
+                                }}
+                            >
+                                3 BHK
+                            </Text>
+                            <Text typography={"dtPara3"}>Carpet Area</Text>
+                            <Text
+                                typography={"dtPara1"}
+                                css={{ fontWeight: "$dtHeading2" }}
+                            >
+                                835 SqFt.
+                            </Text>
+                        </FlexBox>
+                        <FlexBox
+                            direction={"column"}
+                            align={"center"}
+                            gap={{ "@initial": "1", "@bp2": "2" }}
+                            css={configCardCss}
                         >
-                            3 BHK
-                        </Text>
-                        <Text typography={"dtPara3"}>Carpet Area</Text>
-                        <Text
-                            typography={"dtPara1"}
-                            css={{ fontWeight: "$dtHeading2" }}
-                        >
-                            835 SqFt.
-                        </Text>
-                    </FlexBox>
-                    <FlexBox
-                        direction={"column"}
-                        align={"center"}
-                        gap={{ "@initial": "1", "@bp2": "2" }}
-                        css={configCardCss}
-                    >
-                        <Text
-                            typography={"dtPara1"}
-                            css={{
-                                fontWeight: "$dtHeading2",
-                                borderBottom: "2px solid #1C99CD",
-                                paddingBottom: "$1"
-                            }}
-                        >
-                            4 BHK
-                        </Text>
-                        <Text typography={"dtPara3"}>Carpet Area</Text>
-                        <Text
-                            typography={"dtPara1"}
-                            css={{ fontWeight: "$dtHeading2" }}
-                        >
-                            1351 SqFt.
-                        </Text>
-                    </FlexBox>
-                </Grid>
-            </FlexBox>
-        </Section>
+                            <Text
+                                typography={"dtPara1"}
+                                css={{
+                                    fontWeight: "$dtHeading2",
+                                    borderBottom: "2px solid #1C99CD",
+                                    paddingBottom: "$1"
+                                }}
+                            >
+                                4 BHK
+                            </Text>
+                            <Text typography={"dtPara3"}>Carpet Area</Text>
+                            <Text
+                                typography={"dtPara1"}
+                                css={{ fontWeight: "$dtHeading2" }}
+                            >
+                                1351 SqFt.
+                            </Text>
+                        </FlexBox>
+                    </Grid>
+                </FlexBox>
+            </Section>
+            <Section variant={"seperatorCss"}></Section>
+        </>
     );
 };

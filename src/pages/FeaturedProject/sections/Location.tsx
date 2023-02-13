@@ -18,6 +18,7 @@ export const Location = () => {
                     />
                 </FlexBox>
             </Section>
+            <Section variant={"seperatorCss"}></Section>
         </>
     );
 };

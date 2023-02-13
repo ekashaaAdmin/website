@@ -10,7 +10,26 @@ export const sectionCss = css( {
         variant: {
             propertyInfoCss: {
                 padding: "$2",
-                margin: "0 auto",
+                margin: "$2 auto",
+                "@mobileS": {
+                    maxWidth: "$mobileS"
+                },
+                "@bp1": {
+                    maxWidth: "$mobileM"
+                },
+                "@bp2": {
+                    maxWidth: "$tablet"
+                },
+                "@bp3": {
+                    maxWidth: "$laptopS"
+                }
+            },
+            seperatorCss: {
+                height: "1px",
+                borderWidth: "0",
+                color: "gray",
+                backgroundColor: "gray",
+                margin: "$0 auto",
                 "@mobileS": {
                     maxWidth: "$mobileS"
                 },

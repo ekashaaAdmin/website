@@ -48,6 +48,7 @@ export const Amenities = () => {
                     </Grid>
                 </FlexBox>
             </Section>
+            <Section variant={"seperatorCss"}></Section>
         </>
     );
 };
