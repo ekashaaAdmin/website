@@ -8,3 +8,4 @@ export * from "./Featured";
 export * from "./Socials";
 export * from "./Stats";
 export * from "./Testimonials";
+export * from "./HomeAbout";

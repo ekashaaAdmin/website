@@ -1,4 +1,5 @@
 import { Flex, Grid, Text } from "@src/components";
+import { Link } from "../Link";
 
 export const Footerlinksgrid = () => {
     return (
@@ -11,25 +12,29 @@ export const Footerlinksgrid = () => {
                 justify={"center"}
                 css={{
                     "@bp1": {
-                        gridTemplateColumns: "repeat(4, 1fr)",
+                        gridTemplateColumns: "repeat(3, 1fr)",
                         columnGap: "$6"
                     }
                 }}
             >
                 <Flex direction="column" gap="1">
-                    <Text css={{ fontWeight: "$dtHeading1" }}>Services</Text>
-                    <Text>Property Hunt</Text>
-                    <Text>Leasing</Text>
-                    <Text>Financial</Text>
-                    <Text>Loans</Text>
-                </Flex>
-
-                <Flex direction="column" gap="1">
                     <Text css={{ fontWeight: "$dtHeading1" }}>Know Us</Text>
-                    <Text>Home</Text>
-                    <Text>About Us</Text>
-                    <Text>Blogs & Articles</Text>
-                    <Text>Testemonials</Text>
+                    <Link to={`/`}>
+                        <Text>Home</Text>
+                    </Link>
+
+                    <Link to={`/about`}>
+                        <Text>About Us</Text>
+                    </Link>
+                    <Link to={`/services`}>
+                        <Text>Services</Text>
+                    </Link>
+                    <Link to={`/`}>
+                        <Text>Testimonials</Text>
+                    </Link>
+                    <Link to={`/blog`}>
+                        <Text>Ekashaa Blogs</Text>
+                    </Link>
                 </Flex>
 
                 <Flex direction="column" gap="1">

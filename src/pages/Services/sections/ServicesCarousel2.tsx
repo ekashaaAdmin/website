@@ -79,7 +79,8 @@ export const ServicesCarousel2 = () => {
             </Flex>
             <FlexBox
                 css={{
-                    width: "$full"
+                    width: "$full",
+                    padding: "$3 0"
                 }}
             >
                 <Swiper

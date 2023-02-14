@@ -3,6 +3,7 @@ import { Box } from "@src/components";
 import { CSS } from "@src/styles";
 import { Intro, Management } from "./sections";
 import { About as AboutUs, Stats } from "../Home/sections";
+import { Contact } from "@src/components/Contact";
 
 const homeIntroBgCss: CSS = {
     backgroundImage: `url(${HomeBg})`,
@@ -22,6 +23,7 @@ export const About = () => {
             <AboutUs />
             <Management />
             <Stats />
+            <Contact />
         </>
     );
 };

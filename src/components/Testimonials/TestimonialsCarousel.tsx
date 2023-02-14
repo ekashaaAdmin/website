@@ -8,9 +8,17 @@ import { TestimonialCard } from "./TestimonialCard";
 
 export const TestimonialsCarousel = () => {
     const { data: testimonials } = useGetTestimonials();
+    console.log( testimonials );
 
     return (
-        <Section direction={"column"} align={"center"} css={{ px: "0" }}>
+        <Section
+            direction={"column"}
+            align={"center"}
+            css={{
+                px: "0",
+                "@bp3": { maxWidth: "$laptopS" }
+            }}
+        >
             <Text
                 typography={{ "@initial": "mbHeading1", "@bp3": "dtHeading1" }}
             >
@@ -25,6 +33,7 @@ export const TestimonialsCarousel = () => {
                 <Swiper
                     slidesPerView={1}
                     loop={true}
+                    spaceBetween={5}
                     pagination={{
                         clickable: true
                     }}
@@ -38,9 +47,6 @@ export const TestimonialsCarousel = () => {
                         }
                     }}
                 >
-                    <SwiperSlide>
-                        <TestimonialCard />
-                    </SwiperSlide>
                     <SwiperSlide>
                         <TestimonialCard />
                     </SwiperSlide>
