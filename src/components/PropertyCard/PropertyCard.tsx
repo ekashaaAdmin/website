@@ -1,10 +1,11 @@
+import { Property } from "@src/utils";
 import { CSS } from "@styles";
-import { Flex } from "../Flex";
-import { ProperyCardCarousel } from "./ProperyCardCarousel";
 import "swiper/css";
 import "swiper/css/pagination";
+import { Link } from "../Link";
 import { PropertyCardContainer } from "./PropertyCardContainer";
 import { PropertyContent } from "./PropertyContent";
+import { ProperyCardCarousel } from "./ProperyCardCarousel";
 
 export const propertyCardCss: CSS = {
     borderRadius: "$1",
@@ -26,24 +27,29 @@ export const propertyCardCss: CSS = {
     }
 };
 
-const images: string[] = [
-    "https://picsum.photos/300/400",
-    "https://picsum.photos/300/400",
-    "https://picsum.photos/300/400",
-    "https://picsum.photos/300/400"
-];
+interface PropertyCardProps {
+    propertyData: Partial<Property>;
+}
 
-export const PropertyCard = () => {
+export const PropertyCard = ( { propertyData }: PropertyCardProps ) => {
     return (
-        <PropertyCardContainer
-            variant={{
-                "@initial": "verticalCard",
-                "@bp3": "horizontalCard"
-            }}
-            css={propertyCardCss}
-        >
-            <ProperyCardCarousel src={images} />
-            <PropertyContent />
-        </PropertyCardContainer>
+        <Link to={`/property/${propertyData._id}`}>
+            <PropertyCardContainer
+                variant={{
+                    "@initial": "verticalCard",
+                    "@bp3": "horizontalCard"
+                }}
+                css={propertyCardCss}
+            >
+                <ProperyCardCarousel src={propertyData.imageUrls!} />
+                <PropertyContent
+                    price={propertyData.priceInfo?.price!}
+                    priceUnit={propertyData.priceInfo?.priceUnit!}
+                    propertyName={propertyData.name!}
+                    rooms={propertyData.configuration![ 0 ]?.rooms}
+                    shortAddress={propertyData.location?.shortAddress!}
+                />
+            </PropertyCardContainer>
+        </Link>
     );
 };

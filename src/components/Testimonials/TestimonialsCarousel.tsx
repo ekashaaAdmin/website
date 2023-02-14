@@ -1,4 +1,4 @@
-import { useGetTestimonials } from "@src/hooks";
+import { useHomePageHook } from "@src/hooks";
 import { Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FlexBox } from "../FlexBox";
@@ -7,10 +7,10 @@ import { Text } from "../Text";
 import { TestimonialCard } from "./TestimonialCard";
 
 export const TestimonialsCarousel = () => {
-    const { data: testimonials } = useGetTestimonials();
-    console.log( testimonials );
+    const { data } = useHomePageHook();
+    const testimonialData = data?.response;
 
-    return (
+    return testimonialData ? (
         <Section
             direction={"column"}
             align={"center"}
@@ -32,32 +32,31 @@ export const TestimonialsCarousel = () => {
             >
                 <Swiper
                     slidesPerView={1}
-                    loop={true}
-                    spaceBetween={5}
+                    spaceBetween={20}
                     pagination={{
                         clickable: true
                     }}
                     modules={[ Pagination ]}
-                    breakpoints={{
-                        640: {
-                            slidesPerView: 2
+                    breakpoints={
+                        ( 2 >= testimonialData?.length ?? {
+                            640: {
+                                slidesPerView: 2
+                            }
                         },
-                        1024: {
-                            slidesPerView: 3
-                        }
-                    }}
+                        3 >= testimonialData?.length ?? {
+                            1024: {
+                                slidesPerView: 3
+                            }
+                        } ) as any
+                    }
                 >
-                    <SwiperSlide>
-                        <TestimonialCard />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <TestimonialCard />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <TestimonialCard />
-                    </SwiperSlide>
+                    {testimonialData?.map( ( testimonial ) => (
+                        <SwiperSlide key={testimonial._id}>
+                            <TestimonialCard testimonialData={testimonial} />
+                        </SwiperSlide>
+                    ) )}
                 </Swiper>
             </FlexBox>
         </Section>
-    );
+    ) : null;
 };

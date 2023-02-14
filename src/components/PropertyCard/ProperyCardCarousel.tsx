@@ -13,7 +13,11 @@ const propertyCardCarouselCss: CSS = {
 };
 
 interface PropertyCardCarouselProps {
-    src: string[];
+    src: [
+        {
+            url: string;
+        }
+    ];
 }
 
 export const ProperyCardCarousel = ( { src }: PropertyCardCarouselProps ) => {
@@ -27,7 +31,7 @@ export const ProperyCardCarousel = ( { src }: PropertyCardCarouselProps ) => {
                     return (
                         <SwiperSlide key={index}>
                             <ImgContainer
-                                src={image}
+                                src={image.url}
                                 alt="property-image"
                                 css={{
                                     overflow: "hidden"

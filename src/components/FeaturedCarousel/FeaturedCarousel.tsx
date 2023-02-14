@@ -1,4 +1,4 @@
-import { useGetFeaturedProperties } from "@src/hooks";
+import { useHomePageHook } from "@src/hooks";
 import {
     BsFillArrowLeftCircleFill,
     BsFillArrowRightCircleFill
@@ -10,9 +10,8 @@ import { FlexBox } from "../FlexBox";
 import { PropertyCard } from "../PropertyCard";
 
 export const FeaturedCarousel = () => {
-    const { data: featuredProperties } = useGetFeaturedProperties();
-
-    console.log( featuredProperties );
+    const { data } = useHomePageHook();
+    const featuredProperties = data?.response2;
 
     return (
         <FlexBox width={"full"} css={{ position: "relative" }}>
@@ -74,13 +73,11 @@ export const FeaturedCarousel = () => {
                         }
                     }}
                 >
-                    {[ 1, 2, 3, 4, 5, 6 ].map( ( card, i ) => {
-                        return (
-                            <SwiperSlide key={i}>
-                                <PropertyCard />
-                            </SwiperSlide>
-                        );
-                    } )}
+                    {featuredProperties?.map( ( property ) => (
+                        <SwiperSlide key={property._id}>
+                            <PropertyCard propertyData={property} />
+                        </SwiperSlide>
+                    ) )}
                 </Swiper>
             </FlexBox>
         </FlexBox>

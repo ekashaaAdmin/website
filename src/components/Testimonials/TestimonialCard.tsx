@@ -1,5 +1,6 @@
 import { Ekashaa_Footer_Logo } from "@src/assets";
 import { CSS } from "@src/styles";
+import { Testimonial } from "@src/utils";
 import { Box } from "../Box";
 import { Flex } from "../Flex";
 import { FlexBox } from "../FlexBox";
@@ -15,19 +16,35 @@ const testimonialCardCss: CSS = {
     padding: "$3 $5"
 };
 
-export const TestimonialCard = () => {
+interface TestimonialProps {
+    testimonialData: Testimonial;
+}
+
+export const TestimonialCard = ( { testimonialData }: TestimonialProps ) => {
+    const { name, profilePicture, propertyTestimonial, testimonialContent } =
+        testimonialData;
+
     return (
-        <>
-            <FlexBox
-                direction={"column"}
-                align={"center"}
-                gap={"3"}
-                css={testimonialCardCss}
-            >
-                {/* <ImgContainer
-                    src={}
-                    alt=""
-                /> */}
+        <FlexBox
+            direction={"column"}
+            align={"center"}
+            gap={"3"}
+            css={testimonialCardCss}
+        >
+            {profilePicture ? (
+                <ImgContainer
+                    src={profilePicture.url}
+                    alt="profile-picture"
+                    css={{
+                        size: "$7",
+                        [ `img` ]: {
+                            borderRadius: "$circle",
+                            width: "$full",
+                            height: "$full"
+                        }
+                    }}
+                />
+            ) : (
                 <Box
                     css={{
                         backgroundColor: "$complentaryColor",
@@ -35,20 +52,17 @@ export const TestimonialCard = () => {
                         borderRadius: "$circle"
                     }}
                 ></Box>
-                <Flex direction={"column"} align={"center"}>
-                    <Text typography={"dtPara1"}>KPMG</Text>
-                    <Text typography={"dtPara2"} align={"center"}>
-                        Property Name Senior Manager
-                    </Text>
-                </Flex>
-                <Text typography={"dtPara3"}>
-                    <i>
-                        Lorem Ipsum is simply dummy text of the printing and
-                        typesetting industry. Lorem Ipsum has been the
-                        industry's standard dummy.
-                    </i>
+            )}
+
+            <Flex direction={"column"} align={"center"}>
+                <Text typography={"dtPara1"}>{name}</Text>
+                <Text typography={"dtPara2"} align={"center"}>
+                    {propertyTestimonial.name}
                 </Text>
-            </FlexBox>
-        </>
+            </Flex>
+            <Text typography={"dtPara3"} css={{ overflowY: "scroll" }}>
+                <i>{testimonialContent}</i>
+            </Text>
+        </FlexBox>
     );
 };
