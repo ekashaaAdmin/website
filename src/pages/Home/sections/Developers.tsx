@@ -26,7 +26,6 @@ export const Developers = () => {
                 </Box>
                 <DevelopersCarousel />
             </Section>
-            <Section variant={"seperatorCss"}></Section>
         </>
     );
 };

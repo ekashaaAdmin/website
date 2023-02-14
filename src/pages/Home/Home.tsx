@@ -8,6 +8,7 @@ import {
     Blogs,
     Developers,
     Featured,
+    HomeAbout,
     Intro,
     Services,
     Stats,
@@ -25,12 +26,11 @@ const homeIntroBgCss: CSS = {
 };
 
 export const Home = () => {
-
     return (
         <>
             <Box css={homeIntroBgCss}></Box>
             <Intro />
-            <About />
+            <HomeAbout />
             <Services />
             <Featured />
             <Blogs />

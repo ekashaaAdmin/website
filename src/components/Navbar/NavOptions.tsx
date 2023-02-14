@@ -41,14 +41,10 @@ export const NavOptions = () => {
             <Text typography={"navOptions"}>
                 <Link to={`/`}>Home</Link>
             </Text>
-            <DropDown title="About" linkTo="/about">
-                <Link to={`/about/#about`}>
-                    <Text typography={"navOptions"}>Ekashaa</Text>
-                </Link>
-                <Link to={`/about/#management`}>
-                    <Text typography={"navOptions"}>Management</Text>
-                </Link>
-            </DropDown>
+            <Text typography={"navOptions"}>
+                <Link to="/about">About</Link>
+            </Text>
+
             <Text typography={"navOptions"}>
                 <Link to={`/services`}>Services</Link>
             </Text>

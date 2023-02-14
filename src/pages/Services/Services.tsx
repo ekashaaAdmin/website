@@ -1,5 +1,6 @@
 import { HomeBg } from "@src/assets";
 import { Box } from "@src/components";
+import { Contact } from "@src/components/Contact";
 import { CSS } from "@src/styles";
 import { Intro } from "./sections";
 import { ServicesCarousel2 } from "./sections/ServicesCarousel2";
@@ -20,6 +21,7 @@ export const Services = () => {
             <Box css={homeIntroBgCss}></Box>
             <Intro />
             <ServicesCarousel2 />
+            <Contact />
         </>
     );
 };
