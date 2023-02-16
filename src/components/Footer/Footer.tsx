@@ -26,14 +26,15 @@ export const Footer = () => {
                 <Flex
                     direction={"column"}
                     align={"center"}
-                    gap={"2"}
+                    gap={"6"}
                     css={{
                         mb: "$2",
+                        width: "100%",
                         "@bp3": {
                             flexDirection: "row",
                             justifyContent: "center",
                             alignItems: "center",
-                            gap: "$10"
+                            gap: "15rem"
                         }
                     }}
                 >

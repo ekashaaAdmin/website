@@ -4,6 +4,14 @@ import { CSS } from "@src/styles";
 import { PortableText, PortableTextComponents } from "@portabletext/react";
 import { PortableTextComp } from "@src/components/PortableText";
 import { array } from "yup";
+import imageUrlBuilder from "@sanity/image-url";
+import client from "@src/utils/client";
+
+const builder = imageUrlBuilder( client );
+
+function urlFor( source: string ) {
+    return builder.image( source );
+}
 
 const blogsectionCss: CSS = {
     margin: "$0 auto",
@@ -24,11 +32,8 @@ interface BlogSectionProps {
 
 const myComponents: PortableTextComponents = {
     types: {
-        span: ( value ) => {
-            console.log( value );
-        },
-        image: ( value ) => {
-            console.log( value );
+        image: ( { value } ) => {
+            return <img alt=" here" src={urlFor( value.asset ).url()} />;
         }
     }
 };
@@ -69,23 +74,7 @@ export const BlogSection = ( { blogSlug }: BlogSectionProps ) => {
                 src={`${data?.imageURL?.url}`}
                 alt={"blogimage"}
             />
-            <Text
-                css={{
-                    "@bp1": {
-                        padding: "$2 0"
-                    },
-                    "@bp3": {
-                        padding: "$5 0"
-                    },
-                    whiteSpace: "pre-line"
-                }}
-                typography={"dtPara1"}
-            >
-                <PortableText
-                    value={data?.body as any}
-                    components={myComponents}
-                />
-            </Text>
+            <PortableText value={data?.body as any} components={myComponents} />{" "}
         </FlexBox>
     );
 };

@@ -12,6 +12,7 @@ export interface Blog {
         type: string;
     };
     body: unknown;
+    subTitle: string;
     categories: [];
     publishedAt: Date;
     slug: {

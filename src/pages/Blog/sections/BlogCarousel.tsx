@@ -1,9 +1,10 @@
 import { Blog2 } from "@src/assets";
+import { useGetBlogs } from "@src/hooks";
 import { Box, FlexBox, ImgContainer, Text } from "@src/components";
 import { CSS } from "@src/styles";
 import { A11y, Navigation, Pagination, Scrollbar } from "swiper";
 
-import { SwiperSlide, Swiper } from "swiper/react";
+import { Swiper, SwiperSlide } from "swiper/react";
 
 const blogCarouselCss: CSS = {
     margin: "$0 auto",
@@ -24,6 +25,10 @@ const blogCardCss: CSS = {
 };
 
 export const BlogCarousel = () => {
+    const { data } = useGetBlogs();
+    const blogCarouselData = data;
+    console.log( blogCarouselData );
+
     return (
         <Box css={blogCarouselCss}>
             <Swiper
@@ -31,7 +36,7 @@ export const BlogCarousel = () => {
                 pagination={{ clickable: true }}
                 modules={[ Navigation, Pagination, Scrollbar, A11y ]}
                 spaceBetween={1}
-                slidesPerView={3}
+                slidesPerView={1}
                 // breakpoints={{
                 //     640: {
                 //         slidesPerView: 2
@@ -41,73 +46,24 @@ export const BlogCarousel = () => {
                 //     }
                 // }}
             >
-                <SwiperSlide>
-                    <FlexBox css={blogCardCss} direction={"column"} gap={"1"}>
-                        <ImgContainer
-                            css={{ flex: 1 }}
-                            src={Blog2}
-                            alt={"blogimage"}
-                        />
-                        <Text typography={"dtPara1"}>
-                            Properties you can't miss-out!
-                        </Text>
-                        <Text typography={"dtPara3"}>
-                            Lorem Ipsum is simply dummy text of the printing
-                            industry.
-                        </Text>
-                    </FlexBox>
-                </SwiperSlide>
-
-                <SwiperSlide>
-                    <FlexBox css={blogCardCss} direction={"column"} gap={"1"}>
-                        <ImgContainer
-                            css={{ flex: 1 }}
-                            src={Blog2}
-                            alt={"blogimage"}
-                        />
-                        <Text typography={"dtPara1"}>
-                            Properties you can't miss-out!
-                        </Text>
-                        <Text typography={"dtPara3"}>
-                            Lorem Ipsum is simply dummy text of the printing
-                            industry.
-                        </Text>
-                    </FlexBox>
-                </SwiperSlide>
-
-                <SwiperSlide>
-                    <FlexBox css={blogCardCss} direction={"column"} gap={"1"}>
-                        <ImgContainer
-                            css={{ flex: 1 }}
-                            src={Blog2}
-                            alt={"blogimage"}
-                        />
-                        <Text typography={"dtPara1"}>
-                            Properties you can't miss-out!
-                        </Text>
-                        <Text typography={"dtPara3"}>
-                            Lorem Ipsum is simply dummy text of the printing
-                            industry.
-                        </Text>
-                    </FlexBox>
-                </SwiperSlide>
-
-                <SwiperSlide>
-                    <FlexBox css={blogCardCss} direction={"column"} gap={"1"}>
-                        <ImgContainer
-                            css={{ flex: 1 }}
-                            src={Blog2}
-                            alt={"blogimage"}
-                        />
-                        <Text typography={"dtPara1"}>
-                            Properties you can't miss-out!
-                        </Text>
-                        <Text typography={"dtPara3"}>
-                            Lorem Ipsum is simply dummy text of the printing
-                            industry.
-                        </Text>
-                    </FlexBox>
-                </SwiperSlide>
+                {blogCarouselData?.map( ( key ) => (
+                    <SwiperSlide key={key._id}>
+                        <FlexBox
+                            css={blogCardCss}
+                            direction={"column"}
+                            gap={"1"}
+                        >
+                            <ImgContainer
+                                css={{ flex: 1 }}
+                                src={Blog2}
+                                alt={"blogimage"}
+                            />
+                            <Text typography={"dtPara1"}>{key.title}</Text>
+                            <Text typography={"dtPara3"}>{key.subTitle}</Text>
+                        </FlexBox>
+                    </SwiperSlide>
+                ) )}
+                ;
             </Swiper>
         </Box>
     );
