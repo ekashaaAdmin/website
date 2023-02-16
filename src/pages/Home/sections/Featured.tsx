@@ -1,4 +1,5 @@
 import { FeaturedCarousel, Section, Text } from "@components";
+import { Suspense } from "react";
 
 export const Featured = () => {
     return (
@@ -13,7 +14,9 @@ export const Featured = () => {
             >
                 Featured Projects
             </Text>
-            <FeaturedCarousel />
+            <Suspense fallback={null}>
+                <FeaturedCarousel />
+            </Suspense>
         </Section>
     );
 };
