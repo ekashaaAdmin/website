@@ -70,7 +70,7 @@ const propertyInfoNavbarCss: CSS = {
 };
 
 interface MorePropertyInfoProps {
-    propertyData: Property;
+    propertyData: Partial<Property>;
 }
 
 export const MorePropertyInfo = ( { propertyData }: MorePropertyInfoProps ) => {
@@ -91,19 +91,31 @@ export const MorePropertyInfo = ( { propertyData }: MorePropertyInfoProps ) => {
     return (
         <>
             <FlexBox
+                align={"start"}
                 direction={{ "@initial": "column", "@bp2": "row" }}
                 css={propertyInfoCss}
             >
-                <ImgContainer
-                    src={"https://picsum.photos/300/400"}
-                    alt={"propertyImage"}
-                />
+                <FlexBox css={{ flex: 1, maxWidth: "50%" }}>
+                    <Swiper>
+                        {imageUrls?.map( ( img, key ) => (
+                            <SwiperSlide key={key}>
+                                <ImgContainer
+                                    src={img.url}
+                                    alt="property-image"
+                                    css={{
+                                        maxHeight: "$mobileL"
+                                    }}
+                                />
+                            </SwiperSlide>
+                        ) )}
+                    </Swiper>
+                </FlexBox>
                 <FlexBox
                     direction={"column"}
                     width={"full"}
                     gap={"3"}
                     align={"normal"}
-                    css={{ padding: "$3" }}
+                    css={{ padding: "$3", flex: 1 }}
                 >
                     <FlexBox direction={"row"} justify={"spaceBetween"}>
                         <FlexBox direction={"column"}>
@@ -112,7 +124,7 @@ export const MorePropertyInfo = ( { propertyData }: MorePropertyInfoProps ) => {
                                 typography={"dtPara1"}
                                 css={{ fontWeight: "$dtHeading2" }}
                             >
-                                {configuration[ 0 ].rooms} BHK
+                                {configuration?.[ 0 ].rooms} BHK
                             </Text>
                         </FlexBox>
                         <FlexBox direction={"column"} align={"flexStart"}>
@@ -148,7 +160,7 @@ export const MorePropertyInfo = ( { propertyData }: MorePropertyInfoProps ) => {
                                 typography={"dtPara1"}
                                 css={{ fontWeight: "$dtHeading2" }}
                             >
-                                {configuration[ 0 ].carpetArea} SqFt.
+                                {configuration?.[ 0 ].carpetArea} SqFt.
                             </Text>
                         </FlexBox>
                     </FlexBox>
