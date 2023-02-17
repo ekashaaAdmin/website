@@ -1,4 +1,4 @@
-import { useHomePageHook } from "@src/hooks";
+import { useGetTestimonials } from "@src/hooks";
 import { Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FlexBox } from "../FlexBox";
@@ -7,10 +7,9 @@ import { Text } from "../Text";
 import { TestimonialCard } from "./TestimonialCard";
 
 export const TestimonialsCarousel = () => {
-    const { data } = useHomePageHook();
-    const testimonialData = data?.response;
+    const { data: testimonialData } = useGetTestimonials();
 
-    return testimonialData ? (
+    return (
         <Section
             direction={"column"}
             align={"center"}
@@ -20,14 +19,20 @@ export const TestimonialsCarousel = () => {
             }}
         >
             <Text
-                typography={{ "@initial": "mbHeading1", "@bp3": "dtHeading1" }}
+                typography={{
+                    "@initial": "mbHeading1",
+                    "@bp3": "dtHeading1"
+                }}
             >
                 Testimonials
             </Text>
 
             <FlexBox
                 css={{
-                    width: "$full"
+                    maxWidth: "$full",
+                    "@bp2": {
+                        maxWidth: "$tablet"
+                    }
                 }}
             >
                 <Swiper
@@ -37,18 +42,11 @@ export const TestimonialsCarousel = () => {
                         clickable: true
                     }}
                     modules={[ Pagination ]}
-                    breakpoints={
-                        ( 2 >= testimonialData?.length ?? {
-                            640: {
-                                slidesPerView: 2
-                            }
-                        },
-                        3 >= testimonialData?.length ?? {
-                            1024: {
-                                slidesPerView: 3
-                            }
-                        } ) as any
-                    }
+                    breakpoints={{
+                        768: {
+                            slidesPerView: 2
+                        }
+                    }}
                 >
                     {testimonialData?.map( ( testimonial ) => (
                         <SwiperSlide key={testimonial._id}>
@@ -58,5 +56,5 @@ export const TestimonialsCarousel = () => {
                 </Swiper>
             </FlexBox>
         </Section>
-    ) : null;
+    );
 };

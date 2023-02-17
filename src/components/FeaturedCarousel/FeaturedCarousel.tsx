@@ -1,5 +1,5 @@
-import { useHomePageHook } from "@src/hooks";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
+import { useFeaturedProperties } from "@src/hooks";
 import { Navigation, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Box } from "../Box";
@@ -7,8 +7,8 @@ import { FlexBox } from "../FlexBox";
 import { PropertyCard } from "../PropertyCard";
 
 export const FeaturedCarousel = () => {
-    const { data } = useHomePageHook();
-    const featuredProperties = data?.response2;
+    const { data: featuredProperties } = useFeaturedProperties();
+    // const featuredProperties = data?.response2;
 
     return (
         <FlexBox width={"full"} css={{ position: "relative" }}>

@@ -6,7 +6,7 @@ import {
     PropertyHuntLogo
 } from "@src/assets";
 import { Flex, FlexBox, Section, ServicesCard, Text } from "@src/components";
-import { ReactNode, useState } from "react";
+import { ReactNode, useEffect, useState } from "react";
 import { Pagination, Swiper as SwiperS } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "./ServicesCarousel2.css";
@@ -52,8 +52,14 @@ export const ServicesCarousel2 = () => {
 
     const handleChange = ( swiper: SwiperS ) => {
         const activeIndex = swiper.activeIndex % services.length;
+        console.log( activeIndex );
+
         setActiveService( services[ activeIndex ] );
     };
+
+    // useEffect( () => {
+
+    // } );
 
     return (
         <Section id="services-carousel2" center direction={"column"} gap="10">

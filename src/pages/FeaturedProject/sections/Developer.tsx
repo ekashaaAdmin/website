@@ -20,9 +20,11 @@ export const Developer = ( { developerData }: DeveloperProps ) => {
                     align={{ "@initial": "center", "@bp2": "flexStart" }}
                 >
                     <ImgContainer
-                        css={{ width: "7.5rem" }}
                         src={developer?.logo.url}
                         alt={"developerImage"}
+                        css={{
+                            width: "10rem"
+                        }}
                     />
                     <Text>{developer?.description}</Text>
                 </FlexBox>

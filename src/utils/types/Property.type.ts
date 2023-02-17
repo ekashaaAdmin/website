@@ -43,6 +43,7 @@ export interface Property {
         projectStatus: string;
         projectType: string;
         totalFloor: number;
+        reraId: string;
     };
     reraVerified: true;
 }

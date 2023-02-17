@@ -1,5 +1,6 @@
 import { FlexBox, Text } from "@src/components";
 import { CSS } from "@src/styles";
+import { Property } from "@src/utils";
 
 const cardDetailsCss: CSS = {
     "@mobileS": { maxWidth: "$mobileS", margin: "$0 auto", padding: "$3" },
@@ -8,7 +9,13 @@ const cardDetailsCss: CSS = {
     "@bp3": { maxWidth: "$laptopS" }
 };
 
-export const CardDetails = () => {
+export interface CardDetailsProps {
+    overviewData: Partial<Property>;
+}
+
+export const CardDetails = ( { overviewData }: CardDetailsProps ) => {
+    const { name, developer, projectInfo, priceInfo } = overviewData;
+
     return (
         <FlexBox
             direction={{ "@initial": "column", "@bp2": "row" }}
@@ -23,12 +30,12 @@ export const CardDetails = () => {
                         "@bp3": "dtHeading2"
                     }}
                 >
-                    Unity Towers
+                    {name}
                 </Text>
                 <Text typography={"dtPara2"}>
                     by{" "}
                     <Text css={{ fontWeight: "$dtHeading1" }}>
-                        Developer Name
+                        {developer?.developerName}
                     </Text>
                 </Text>
                 <Text typography={"dtPara2"}>Malabar Hills, Mumbai</Text>
@@ -43,7 +50,7 @@ export const CardDetails = () => {
                         "@bp3": "dtHeading2"
                     }}
                 >
-                    ₹ 2.15 Cr
+                    ₹ {priceInfo?.price} {priceInfo?.priceUnit}
                 </Text>
                 <Text typography={"dtPara2"}>Onwards</Text>
             </FlexBox>

@@ -1,5 +1,4 @@
 import { useGetProperty } from "@src/hooks";
-import React from "react";
 import { useParams } from "react-router-dom";
 import { CardDetails, MorePropertyInfo } from "./sections";
 
@@ -9,7 +8,7 @@ export const PropertyTemplate = () => {
 
     return (
         <>
-            <CardDetails />
+            <CardDetails overviewData={propertyData!} />
             <MorePropertyInfo propertyData={propertyData!} />
         </>
     );

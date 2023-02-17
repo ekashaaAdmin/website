@@ -7,6 +7,7 @@ export * from "./FlexBox";
 export * from "./Grid";
 export * from "./HamBurger";
 export * from "./Logo";
+export * from "./Loader";
 export * from "./Layout";
 export * from "./Navbar";
 export * from "./DropDown";
