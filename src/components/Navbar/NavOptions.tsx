@@ -1,5 +1,4 @@
 import { CSS } from "@src/styles";
-import { DropDown } from "../DropDown";
 import { Flex } from "../Flex";
 import { Link } from "../Link";
 import { Text } from "../Text";
@@ -36,6 +35,7 @@ export const navOptionsCss: CSS = {
 };
 
 export const NavOptions = () => {
+    const element = document.getElementById( "#contactUs" );
     return (
         <Flex direction={"column"} gap={"1"} css={navOptionsCss}>
             <Text typography={"navOptions"}>
@@ -48,7 +48,14 @@ export const NavOptions = () => {
             <Text typography={"navOptions"}>
                 <Link to={`/services`}>Services</Link>
             </Text>
-            <Text typography={"navOptions"}>Contact Us</Text>
+            <Link
+                to={"#contactUs"}
+                onClick={() => {
+                    element?.scrollIntoView();
+                }}
+            >
+                <Text typography={"navOptions"}> Contact Us</Text>
+            </Link>
         </Flex>
     );
 };

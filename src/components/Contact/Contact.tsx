@@ -19,6 +19,8 @@ const contactInnerFlexCss: CSS = {
 export const Contact = () => {
     return (
         <Section
+            id="contactUs"
+            className="contactUs"
             direction="column"
             css={{
                 px: 0,
@@ -80,11 +82,11 @@ export const Contact = () => {
                 <Flex
                     direction="column"
                     center
-                    gap={"3"}
+                    gap={"1"}
                     css={contactInnerFlexCss}
                 >
-                    <Text>Get in touch</Text>
-                    <Text css={{ maxWidth: "$mobileS" }}>
+                    <Text typography={"dtHeading2"}>Get in touch</Text>
+                    <Text css={{ maxWidth: "$mobileS" }} typography={"dtPara2"}>
                         Get your queries resolved from our experts
                     </Text>
                     <ContactForm />
