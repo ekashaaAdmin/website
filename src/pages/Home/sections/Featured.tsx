@@ -1,4 +1,4 @@
-import { FeaturedCarousel, Section, Text } from "@components";
+import { FeaturedCarousel, Loader, Section, Text } from "@components";
 import { Suspense } from "react";
 
 export const Featured = () => {
@@ -14,7 +14,7 @@ export const Featured = () => {
             >
                 Featured Projects
             </Text>
-            <Suspense fallback={null}>
+            <Suspense fallback={<Loader />}>
                 <FeaturedCarousel />
             </Suspense>
         </Section>
