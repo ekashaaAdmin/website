@@ -19,7 +19,7 @@ export const featuredPropertiesFn = async () => {
 };
 
 export const useFeaturedProperties = () => {
-    return useQuery<Partial<Property>>( [ "featuredProperties" ], () =>
+    return useQuery<Partial<Property>[]>( [ "featuredProperties" ], () =>
         featuredPropertiesFn()
     );
 };
