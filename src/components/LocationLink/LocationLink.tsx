@@ -12,7 +12,8 @@ interface iframeContainerProps
 
 export const iframeContainerBoxCss = css( {
     lineHeight: 0,
-    fontSize: 0
+    fontSize: 0,
+    width: "$full"
 } );
 
 export const IframeContainerBox = styled( Box, iframeContainerBoxCss );
@@ -22,7 +23,7 @@ export const LocationLink = ( { src, ...props }: iframeContainerProps ) => {
         <IframeContainerBox {...props}>
             <iframe
                 src={src}
-                width={"700px"}
+                width={"100%"}
                 height={"300px"}
                 style={{ border: 0 }}
             ></iframe>
