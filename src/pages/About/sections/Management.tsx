@@ -77,7 +77,6 @@ export const Management = () => {
                         elit. Praesentium reiciendis, corrupti vel reprehenderit
                         nemo aliquid maiores suscipit. Ex, facilis consectetur?
                     </Text>
-                    <Button variant={"blueButton"}>Read More</Button>
                 </Flex>
             </Flex>
             <Box
@@ -135,7 +134,6 @@ export const Management = () => {
                             reprehenderit nemo aliquid maiores suscipit. Ex,
                             facilis consectetur?
                         </Text>
-                        <Button variant={"whiteButton"}>Read More</Button>
                     </Flex>
                 </Flex>
             </Box>

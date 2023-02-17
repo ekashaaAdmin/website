@@ -1,8 +1,5 @@
 import { useHomePageHook } from "@src/hooks";
-import {
-    BsFillArrowLeftCircleFill,
-    BsFillArrowRightCircleFill
-} from "react-icons/bs";
+import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import { Navigation, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Box } from "../Box";
@@ -30,16 +27,16 @@ export const FeaturedCarousel = () => {
                 <Box
                     size={"4"}
                     className="featured prev-btn"
-                    css={{ zIndex: "$3", cursor: "pointer" }}
+                    css={{ zIndex: "$3", cursor: "pointer", opacity: "0.4" }}
                 >
-                    <BsFillArrowLeftCircleFill size={"100%"} />
+                    <IoIosArrowBack size={"100%"} />
                 </Box>
                 <Box
                     size={"4"}
                     className="featured next-btn"
-                    css={{ zIndex: "$3", cursor: "pointer" }}
+                    css={{ zIndex: "$3", cursor: "pointer", opacity: "0.4" }}
                 >
-                    <BsFillArrowRightCircleFill size={"100%"} />
+                    <IoIosArrowForward size={"100%"} />
                 </Box>
             </FlexBox>
 

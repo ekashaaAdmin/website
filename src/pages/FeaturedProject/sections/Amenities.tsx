@@ -1,4 +1,4 @@
-import { FlexBox, Grid, Section, Text } from "@src/components";
+import { Box, Flex, FlexBox, Grid, Section, Text } from "@src/components";
 import { CSS } from "@src/styles";
 import { Property } from "@src/utils";
 
@@ -21,21 +21,22 @@ export const Amenities = ( { amenitiesData }: AmenitiesProps ) => {
             <Section id="amenities" variant={"propertyInfoCss"}>
                 <FlexBox direction={"column"} gap={"4"} width={"full"}>
                     <Text typography={"dtHeading3"}>Amenities</Text>
-                    <Grid
-                        css={{ gridTemplateAreas: "none" }}
-                        columns={"auto"}
-                        gap={{ "@initial": "2", "@bp3": "3" }}
-                    >
+                    <Flex direction={"column"} gap={"2"}>
                         {amenities?.map( ( amenity ) => (
-                            <Text
-                                typography={"dtPara2"}
-                                css={configCardCss}
-                                key={amenity._id}
-                            >
-                                {amenity.amenityName}
-                            </Text>
+                            <Flex align={"center"} gap={"2"}>
+                                <Box
+                                    size={"1"}
+                                    css={{
+                                        backgroundColor: "$accentColor",
+                                        borderRadius: "$2"
+                                    }}
+                                ></Box>
+                                <Text typography={"dtPara1"} key={amenity._id}>
+                                    {amenity.amenityName}
+                                </Text>
+                            </Flex>
                         ) )}
-                    </Grid>
+                    </Flex>
                 </FlexBox>
             </Section>
             <Section variant={"seperatorCss"}></Section>

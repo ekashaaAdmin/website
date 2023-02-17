@@ -33,10 +33,10 @@ export const Home = () => {
             <HomeAbout />
             <Services />
             <Featured />
-            <Blogs />
+            <Testimonials />
             <Developers />
             <Stats />
-            <Testimonials />
+            <Blogs />
             <Contact />
         </>
     );

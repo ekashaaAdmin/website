@@ -3,4 +3,4 @@ export * from "./About";
 export * from "./Services";
 export * from "./Blog";
 export * from "./FeaturedProject";
-export * from "./NotFound";
+export * from "../components/NotFound";
