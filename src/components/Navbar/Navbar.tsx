@@ -1,9 +1,7 @@
-import { Ekashaa_Favicon } from "@src/assets";
 import { CSS } from "@src/styles";
 import { useState } from "react";
 import { FlexBox } from "../FlexBox";
 import { HamBurger } from "../HamBurger/HamBurger";
-import { ImgContainer } from "../ImgContainer";
 import { Link } from "../Link";
 import { LogoSmall } from "../Logo";
 import { NavOptions } from "./NavOptions";
