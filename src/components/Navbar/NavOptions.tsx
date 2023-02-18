@@ -1,4 +1,5 @@
 import { CSS } from "@src/styles";
+import { Anchor } from "../Anchor";
 import { Flex } from "../Flex";
 import { Link } from "../Link";
 import { Text } from "../Text";
@@ -48,14 +49,14 @@ export const NavOptions = () => {
             <Text typography={"navOptions"}>
                 <Link to={`/services`}>Services</Link>
             </Text>
-            <Link
-                to={"#contactUs"}
-                onClick={() => {
-                    element?.scrollIntoView();
-                }}
+            <Anchor
+                href={"#contactUs"}
+                // onClick={() => {
+                //     element?.scrollIntoView();
+                // }}
             >
                 <Text typography={"navOptions"}> Contact Us</Text>
-            </Link>
+            </Anchor>
         </Flex>
     );
 };

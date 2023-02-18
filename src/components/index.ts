@@ -1,3 +1,4 @@
+export * from "./Anchor";
 export * from "./Input";
 export * from "./Box";
 export * from "./Button";

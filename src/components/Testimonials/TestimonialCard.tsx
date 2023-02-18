@@ -60,7 +60,13 @@ export const TestimonialCard = ( { testimonialData }: TestimonialProps ) => {
                     {propertyTestimonial.name}
                 </Text>
             </Flex>
-            <Text typography={"dtPara3"} css={{ overflowY: "scroll" }}>
+            <Text
+                typography={"dtPara3"}
+                css={{
+                    overflowY: "auto",
+                    scrollStyling: ""
+                }}
+            >
                 <i>{testimonialContent}</i>
             </Text>
         </FlexBox>
