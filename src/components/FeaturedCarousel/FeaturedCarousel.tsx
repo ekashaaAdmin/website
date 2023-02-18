@@ -8,7 +8,6 @@ import { PropertyCard } from "../PropertyCard";
 
 export const FeaturedCarousel = () => {
     const { data: featuredProperties } = useFeaturedProperties();
-    // const featuredProperties = data?.response2;
 
     return (
         <FlexBox width={"full"} css={{ position: "relative" }}>

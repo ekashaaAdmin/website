@@ -1,6 +1,5 @@
 import Ekashaa_Footer_Logo from "./Ekashaa_Footer_Logo.png";
 import Desktop_Footer_bar from "./Desktop_Footer_bar.svg";
-import Ekashaa_Favicon from "./Ekashaa_Favicon.svg";
 import Ekashaa_Logo from "./Ekashaa_Logo.svg";
 import EkashaaLogoSmallSVG from "./EkashaaLogoSmall.svg";
 import HomeBg from "./HomeBg.webp";
@@ -25,7 +24,6 @@ export {
     EkashaaLogoSmallSVG,
     Ekashaa_Logo,
     Desktop_Footer_bar,
-    Ekashaa_Favicon,
     HomeBg,
     PropertyHuntLogo,
     LegalServicesLogo,

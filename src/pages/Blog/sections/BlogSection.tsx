@@ -33,7 +33,14 @@ interface BlogSectionProps {
 const myComponents: PortableTextComponents = {
     types: {
         image: ( { value } ) => {
-            return <img alt=" here" src={urlFor( value.asset ).url()} />;
+            return (
+                <ImgContainer
+                    size={"half"}
+                    // @ts-ignore
+                    src={urlFor( value.asset ).url()}
+                    alt="blog-img"
+                />
+            );
         }
     }
 };
@@ -74,7 +81,7 @@ export const BlogSection = ( { blogSlug }: BlogSectionProps ) => {
                 src={`${data?.imageURL?.url}`}
                 alt={"blogimage"}
             />
-            <PortableText value={data?.body as any} components={myComponents} />{" "}
+            <PortableText value={data?.body as any} components={myComponents} />
         </FlexBox>
     );
 };
