@@ -50,8 +50,10 @@ export const ServicesCarousel2 = () => {
         services[ 0 ]
     );
 
+
     const handleChange = useCallback( ( swiper: SwiperS ) => {
         const activeIndex = swiper.realIndex % services.length;
+
         setActiveService( services[ activeIndex ] );
     }, [] );
 
