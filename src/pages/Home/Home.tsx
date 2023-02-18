@@ -1,11 +1,6 @@
-import { HomeBg } from "@src/assets";
-import { Box } from "@src/components";
 import { BackgroundCarousel } from "@src/components/BackgroundCarousel";
 import { Contact } from "@src/components/Contact";
-import { CSS } from "@src/styles";
-import { useEffect } from "react";
 import {
-    About,
     Blogs,
     Developers,
     Featured,
@@ -16,27 +11,18 @@ import {
     Testimonials
 } from "./sections";
 
-const homeIntroBgCss: CSS = {
-    backgroundImage: `url(${HomeBg})`,
-    backgroundSize: "cover",
-    backgroundPosition: "center",
-    left: "$0",
-    height: "80vh",
-    width: "100%",
-    position: "absolute"
-};
-
 export const Home = () => {
     return (
         <>
             <BackgroundCarousel
-                height={"80vh"}
+                height={"75vh"}
                 imgSrc={[
-                    "https://images.pexels.com/photos/1732414/pexels-photo-1732414.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                    "https://images.pexels.com/photos/126271/pexels-photo-126271.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+                    "https://images.pexels.com/photos/2555635/pexels-photo-2555635.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+                    "https://images.pexels.com/photos/4322027/pexels-photo-4322027.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
                 ]}
             />
-            {/* <Box css={homeIntroBgCss}></Box>
-            <Intro /> */}
+            <Intro />
             <HomeAbout />
             <Services />
             <Featured />

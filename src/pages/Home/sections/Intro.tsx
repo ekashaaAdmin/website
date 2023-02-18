@@ -1,11 +1,13 @@
 import { Flex, FlexBox, Section, Text } from "@src/components";
 import { CSS, css, styled } from "@src/styles";
+import { IoIosArrowDropdownCircle } from "react-icons/io";
 
 const introCardCss = css( {
     backgroundColor: "transparent",
     backdropFilter: "blur(20px)",
     borderRadius: "$4",
-    maxWidth: "$mobileL",
+    maxWidth: "fit-content",
+    height: "fit-content",
     p: "$3",
     "@bp2": {
         maxWidth: "34rem",
@@ -17,8 +19,16 @@ const IntroCard = styled( FlexBox, introCardCss );
 
 const introSectionCss: CSS = {
     color: "White",
-    height: "80vh",
+    height: "75vh",
     position: "relative"
+};
+
+const arrowDownCss: CSS = {
+    position: "absolute",
+    bottom: "-2rem",
+    left: 0,
+    right: 0,
+    margin: "auto"
 };
 
 export const Intro = () => {
@@ -30,7 +40,10 @@ export const Intro = () => {
             css={introSectionCss}
             align={"start"}
         >
-            <IntroCard direction={"column"} css={{ mt: "$10" }}>
+            <IntroCard
+                direction={"column"}
+                css={{ mt: "$14", height: "fit-content" }}
+            >
                 <Text
                     typography={{
                         "@initial": "mbHeading1",
@@ -53,6 +66,11 @@ export const Intro = () => {
                 <Text typography={"dtHeading3"}>Explore Ekashaa</Text>
                 <Text typography={"dtPara1"}>Scroll Down</Text>
             </Flex>
+            <IoIosArrowDropdownCircle
+                color="#1C99CD"
+                size={"2rem"}
+                style={arrowDownCss as any}
+            />
         </Section>
     );
 };

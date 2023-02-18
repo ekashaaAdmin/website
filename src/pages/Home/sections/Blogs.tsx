@@ -38,7 +38,8 @@ export const Blogs = () => {
                     },
                     "@bp1": {
                         width: "$full",
-                        flexDirection: "row"
+                        flexDirection: "row",
+                        alignItems: "stretch"
                     },
                     "@bp3": {
                         width: "998px"
@@ -46,6 +47,7 @@ export const Blogs = () => {
                 }}
             >
                 <ImgContainer
+                    fullHeight
                     src={Blog1}
                     alt="blog-thubnail"
                     css={{ flex: 1 }}
@@ -63,7 +65,7 @@ export const Blogs = () => {
                         }}
                         css={{ fontWeight: "$dtHeading1" }}
                     >
-                        Catchy Title/Heading Here
+                        Blog 1
                     </Text>
                     <Text
                         typography={{
@@ -97,7 +99,8 @@ export const Blogs = () => {
                         },
                         "@bp1": {
                             width: "$full",
-                            flexDirection: "row-reverse"
+                            flexDirection: "row-reverse",
+                            alignItems: "stretch"
                         },
                         "@bp3": {
                             width: "998px"
@@ -105,6 +108,7 @@ export const Blogs = () => {
                     }}
                 >
                     <ImgContainer
+                        fullHeight
                         src={Blog1}
                         alt="blog-thubnail"
                         css={{ flex: 1 }}
@@ -122,7 +126,7 @@ export const Blogs = () => {
                             }}
                             css={{ fontWeight: "$dtHeading1" }}
                         >
-                            Catchy Title/Heading Here
+                            Blog 2
                         </Text>
                         <Text
                             align={"right"}
