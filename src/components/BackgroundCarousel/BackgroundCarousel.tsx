@@ -24,15 +24,16 @@ export const BackgroundCarousel = ( { height, imgSrc }: BackgroundCarousel ) => 
             }}
         >
             <Swiper
-                autoplay={{
-                    delay: 2000
-                }}
+                // autoplay={{
+                //     delay: 2000
+                // }}
                 loop={true}
                 modules={[ Autoplay ]}
             >
                 {imgSrc.map( ( src, key ) => (
                     <SwiperSlide key={key}>
                         <ImgContainer
+                            fullHeight
                             css={{ height: `${height}` }}
                             src={src}
                             alt={"imgSrc"}
