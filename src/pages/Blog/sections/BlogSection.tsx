@@ -77,7 +77,7 @@ export const BlogSection = ( { blogSlug }: BlogSectionProps ) => {
                 css={{ flex: 1 }}
                 width={"full"}
                 heigth={"half"}
-                src={`${data?.imageURL?.url}`}
+                src={`${data?.mainImage?.url}`}
                 alt={"blogimage"}
             />
             <PortableText value={data?.body as any} components={myComponents} />
