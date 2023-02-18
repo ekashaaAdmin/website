@@ -23,7 +23,7 @@ export const Amenities = ( { amenitiesData }: AmenitiesProps ) => {
                     <Text typography={"dtHeading3"}>Amenities</Text>
                     <Flex direction={"column"} gap={"2"}>
                         {amenities?.map( ( amenity ) => (
-                            <Flex align={"center"} gap={"2"}>
+                            <Flex align={"center"} gap={"2"} key={amenity._id}>
                                 <Box
                                     size={"1"}
                                     css={{

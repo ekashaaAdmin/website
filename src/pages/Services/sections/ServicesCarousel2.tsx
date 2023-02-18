@@ -52,8 +52,6 @@ export const ServicesCarousel2 = () => {
 
     const handleChange = ( swiper: SwiperS ) => {
         const activeIndex = swiper.activeIndex % services.length;
-        console.log( activeIndex );
-
         setActiveService( services[ activeIndex ] );
     };
 
