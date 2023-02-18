@@ -95,6 +95,7 @@ export const {
             productCardHeight: "20rem",
             servicesCardWidth: "10rem",
             servicesCardHeight: "8rem",
+            featuredBlogImageHeight: "20rem",
             // Logo
             logoMedium: "250px",
             featuredCarouselContainer: "1250px",
@@ -339,6 +340,20 @@ export const {
             overflow: "hidden",
             whiteSpace: "nowrap",
             textOverflow: value
+        } ),
+        scrollStyling: () => ( {
+            [ `&::-webkit-scrollbar` ]: {
+                width: "10px"
+            },
+            [ `&::-webkit-scrollbar-track` ]: {
+                background: "#f1f1f1"
+            },
+            [ `&::-webkit-scrollbar-thumb` ]: {
+                background: "#888"
+            },
+            [ `&::-webkit-scrollbar-thumb:hover` ]: {
+                background: "#555"
+            }
         } )
     }
 } );

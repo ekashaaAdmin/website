@@ -25,33 +25,12 @@ export const globalStyles = globalCss( {
         //     boxSizing: "border-box"
     },
     "html, body, #root": {
+        scrollBehavior: "smooth",
         height: "$full",
-        width: "$full",
-        [ `&::-webkit-scrollbar` ]: {
-            width: "10px"
-        },
-        [ `&::-webkit-scrollbar-track` ]: {
-            background: "#f1f1f1"
-        },
-        [ `&::-webkit-scrollbar-thumb` ]: {
-            background: "#888"
-        },
-        [ `&::-webkit-scrollbar-thumb:hover` ]: {
-            background: "#555"
-        }
+        width: "$full"
     },
     body: {
-        fontFamily: "$montserrat"
-        // typography: "$bodyMedium",
-        // color: "$appText",
-        // fontFamily: "$fonts$sans",
-        // WebkitFontSmoothing: "antialiased",
-        // MozOsxFontSmoothing: "grayscale",
-        // WebkitTextSizeAdjust: "100%",
-        // "&::-webkit-scrollbar": {
-        //     "@bp1": {
-        //         display: "none"
-        //     }
-        // }
+        fontFamily: "$montserrat",
+        scrollStyling: ""
     }
 } );
