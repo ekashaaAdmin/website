@@ -27,7 +27,6 @@ const blogCardCss: CSS = {
 export const BlogCarousel = () => {
     const { data } = useGetBlogs();
     const blogCarouselData = data;
-    console.log( blogCarouselData );
 
     return (
         <Box css={blogCarouselCss}>

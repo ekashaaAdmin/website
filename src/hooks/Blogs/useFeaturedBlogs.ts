@@ -3,19 +3,22 @@ import client from "@src/utils/client";
 import { useQuery } from "@tanstack/react-query";
 
 export const getFeaturedBlogsFn = async () => {
-    const query = `*[_type == 'post' && featured == true] 
+    const query = `*[_type == 'post' && featuredblog == true && !(_id in path('drafts.**'))] | order(publishedAt desc)
     { 
         _id, 
         publishedAt, 
+        subTitle,
+        slug,
         title, 
         body, 
         'authorName': author -> {name}, 
-        'imageURL': mainImage.asset -> {url} 
+        'mainImage': mainImage.asset -> {url} 
     }`;
     const response = await client.fetch( query );
-    return response[ 0 ];
+
+    return response;
 };
 
 export const useFeaturedBlogs = () => {
-    return useQuery<Partial<Blog>>( [], () => getFeaturedBlogsFn() );
+    return useQuery<Partial<Blog>[]>( [], () => getFeaturedBlogsFn() );
 };

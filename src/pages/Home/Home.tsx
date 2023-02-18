@@ -1,8 +1,8 @@
 import { HomeBg } from "@src/assets";
-import { Box } from "@src/components";
+import { Box, Loader } from "@src/components";
 import { Contact } from "@src/components/Contact";
 import { CSS } from "@src/styles";
-import { useEffect } from "react";
+import { Suspense } from "react";
 import {
     About,
     Blogs,
@@ -36,7 +36,9 @@ export const Home = () => {
             <Testimonials />
             <Developers />
             <Stats />
-            <Blogs />
+            <Suspense fallback={<Loader />}>
+                <Blogs />
+            </Suspense>
             <Contact />
         </>
     );
