@@ -1,8 +1,11 @@
 import { Blog1 } from "@assets";
 import { Box, Button, Flex, ImgContainer, Section, Text } from "@components";
 import { Link } from "@src/components/Link";
+import { useFeaturedBlogs } from "@src/hooks/Blogs/useFeaturedBlogs";
 
 export const Blogs = () => {
+    const { data: featuredBlogData } = useFeaturedBlogs();
+
     return (
         <Section
             direction={"column"}
@@ -47,8 +50,9 @@ export const Blogs = () => {
                 }}
             >
                 <ImgContainer
+                    src={featuredBlogData![ 0 ].mainImage?.url}
                     fullHeight
-                    src={Blog1}
+
                     alt="blog-thubnail"
                     css={{ flex: 1 }}
                 />
@@ -65,7 +69,8 @@ export const Blogs = () => {
                         }}
                         css={{ fontWeight: "$dtHeading1" }}
                     >
-                        Blog 1
+                        {featuredBlogData![ 0 ].title}
+
                     </Text>
                     <Text
                         typography={{
@@ -73,12 +78,10 @@ export const Blogs = () => {
                             "@bp3": "dtPara1"
                         }}
                     >
-                        Lorem ipsum dolor, sit amet consectetur adipisicing
-                        elit. Praesentium reiciendis, corrupti vel reprehenderit
-                        nemo aliquid maiores suscipit. Ex, facilis consectetur?
+                        {featuredBlogData![ 0 ].subTitle}
                     </Text>
 
-                    <Link to={`/blog`}>
+                    <Link to={`/blog/${featuredBlogData![ 0 ].slug?.current}`}>
                         <Button variant={"blueButton"}>Read More</Button>
                     </Link>
                 </Flex>
@@ -108,8 +111,8 @@ export const Blogs = () => {
                     }}
                 >
                     <ImgContainer
+                        src={featuredBlogData![ 1 ].mainImage?.url}
                         fullHeight
-                        src={Blog1}
                         alt="blog-thubnail"
                         css={{ flex: 1 }}
                     />
@@ -126,7 +129,8 @@ export const Blogs = () => {
                             }}
                             css={{ fontWeight: "$dtHeading1" }}
                         >
-                            Blog 2
+                            {featuredBlogData![ 1 ].title}
+
                         </Text>
                         <Text
                             align={"right"}
@@ -135,12 +139,11 @@ export const Blogs = () => {
                                 "@bp3": "dtPara1"
                             }}
                         >
-                            Lorem ipsum dolor, sit amet consectetur adipisicing
-                            elit. Praesentium reiciendis, corrupti vel
-                            reprehenderit nemo aliquid maiores suscipit. Ex
-                            facilis consectetur?
+                            {featuredBlogData![ 1 ].subTitle}
                         </Text>
-                        <Link to={`/blog`}>
+                        <Link
+                            to={`/blog/${featuredBlogData![ 1 ].slug?.current}`}
+                        >
                             <Button variant={"whiteButton"}>Read More</Button>
                         </Link>
                     </Flex>

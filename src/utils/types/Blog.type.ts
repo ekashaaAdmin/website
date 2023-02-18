@@ -8,6 +8,7 @@ export interface Blog {
         name: string;
     };
     body: unknown;
+    subTitle: string;
     categories: [
         {
             title: string;
@@ -20,7 +21,7 @@ export interface Blog {
         current: string;
     };
     title: string;
-    imageURL: {
+    mainImage: {
         url: string;
     };
 }
