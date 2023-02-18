@@ -53,6 +53,7 @@ export const BlogCarousel = () => {
                             gap={"1"}
                         >
                             <ImgContainer
+                                fullHeight
                                 css={{ flex: 1 }}
                                 src={Blog2}
                                 alt={"blogimage"}
@@ -62,7 +63,6 @@ export const BlogCarousel = () => {
                         </FlexBox>
                     </SwiperSlide>
                 ) )}
-                ;
             </Swiper>
         </Box>
     );

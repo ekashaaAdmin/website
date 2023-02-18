@@ -41,7 +41,8 @@ export const Blogs = () => {
                     },
                     "@bp1": {
                         width: "$full",
-                        flexDirection: "row"
+                        flexDirection: "row",
+                        alignItems: "stretch"
                     },
                     "@bp3": {
                         width: "998px"
@@ -50,6 +51,8 @@ export const Blogs = () => {
             >
                 <ImgContainer
                     src={featuredBlogData![ 0 ].mainImage?.url}
+                    fullHeight
+
                     alt="blog-thubnail"
                     css={{ flex: 1 }}
                 />
@@ -67,6 +70,7 @@ export const Blogs = () => {
                         css={{ fontWeight: "$dtHeading1" }}
                     >
                         {featuredBlogData![ 0 ].title}
+
                     </Text>
                     <Text
                         typography={{
@@ -98,7 +102,8 @@ export const Blogs = () => {
                         },
                         "@bp1": {
                             width: "$full",
-                            flexDirection: "row-reverse"
+                            flexDirection: "row-reverse",
+                            alignItems: "stretch"
                         },
                         "@bp3": {
                             width: "998px"
@@ -107,6 +112,7 @@ export const Blogs = () => {
                 >
                     <ImgContainer
                         src={featuredBlogData![ 1 ].mainImage?.url}
+                        fullHeight
                         alt="blog-thubnail"
                         css={{ flex: 1 }}
                     />
@@ -124,6 +130,7 @@ export const Blogs = () => {
                             css={{ fontWeight: "$dtHeading1" }}
                         >
                             {featuredBlogData![ 1 ].title}
+
                         </Text>
                         <Text
                             align={"right"}
