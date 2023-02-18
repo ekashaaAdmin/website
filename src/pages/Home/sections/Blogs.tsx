@@ -36,6 +36,7 @@ export const Blogs = () => {
                 center
                 direction="column"
                 css={{
+                    height: "max-content",
                     "@mobileM": {
                         width: "$mobileS"
                     },
@@ -52,9 +53,8 @@ export const Blogs = () => {
                 <ImgContainer
                     src={featuredBlogData![ 0 ].mainImage?.url}
                     fullHeight
-
                     alt="blog-thubnail"
-                    css={{ flex: 1 }}
+                    css={{ flex: 1, size: "$featuredBlogImageHeight" }}
                 />
                 <Flex
                     direction="column"
@@ -70,7 +70,6 @@ export const Blogs = () => {
                         css={{ fontWeight: "$dtHeading1" }}
                     >
                         {featuredBlogData![ 0 ].title}
-
                     </Text>
                     <Text
                         typography={{
@@ -96,6 +95,7 @@ export const Blogs = () => {
                     center
                     direction="column"
                     css={{
+                        height: "max-content",
                         margin: "auto",
                         "@mobileM": {
                             width: "$mobileS"
@@ -114,7 +114,7 @@ export const Blogs = () => {
                         src={featuredBlogData![ 1 ].mainImage?.url}
                         fullHeight
                         alt="blog-thubnail"
-                        css={{ flex: 1 }}
+                        css={{ flex: 1, size: "$featuredBlogImageHeight" }}
                     />
                     <Flex
                         direction="column"
@@ -130,7 +130,6 @@ export const Blogs = () => {
                             css={{ fontWeight: "$dtHeading1" }}
                         >
                             {featuredBlogData![ 1 ].title}
-
                         </Text>
                         <Text
                             align={"right"}

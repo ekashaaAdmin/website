@@ -1,4 +1,5 @@
 import { axiosInstance } from "@src/utils";
+import client from "@src/utils/client";
 import { useQuery } from "@tanstack/react-query";
 
 export interface Blog {
@@ -23,13 +24,18 @@ export interface Blog {
 }
 
 export const getBlogsFn = async () => {
-    const response = await axiosInstance.get( "?query=*%5B_type%3D%3D'post'%5D" );
-    if ( response.status === 200 ) {
-        const {
-            data: { result }
-        } = response;
-        return result;
-    }
+    const query = `*[_type == 'post'] 
+    { 
+        _id, 
+        publishedAt, 
+        subTitle,
+        title, 
+        body,
+        'authorName': author -> {name}, 
+        'mainImage': mainImage.asset -> {url} 
+    }`;
+    const response = await client.fetch( query );
+    return response;
 };
 
 export const useGetBlogs = () => {

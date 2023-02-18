@@ -6,11 +6,11 @@ export const getBlogFn = async ( blogSlug: string ) => {
     const query = `*[_type == 'post' && slug.current == '${blogSlug}'] 
     { 
         _id, 
-        publishedAt, 
+        publishedAt,
         title, 
         body, 
         'authorName': author -> {name}, 
-        'imageURL': mainImage.asset -> {url} 
+        'mainImage': mainImage.asset -> {url} 
     }`;
     const response = await client.fetch( query );
     return response[ 0 ];
