@@ -6,7 +6,7 @@ import {
     PropertyHuntLogo
 } from "@src/assets";
 import { Flex, FlexBox, Section, ServicesCard, Text } from "@src/components";
-import { ReactNode, useEffect, useState } from "react";
+import { ReactNode, useCallback, useEffect, useState } from "react";
 import { Pagination, Swiper as SwiperS } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "./ServicesCarousel2.css";
@@ -50,16 +50,14 @@ export const ServicesCarousel2 = () => {
         services[ 0 ]
     );
 
-    const handleChange = ( swiper: SwiperS ) => {
-        const activeIndex = swiper.activeIndex % services.length;
-        console.log( activeIndex );
-
+    const handleChange = useCallback( ( swiper: SwiperS ) => {
+        const activeIndex = swiper.realIndex % services.length;
         setActiveService( services[ activeIndex ] );
-    };
+    }, [] );
 
-    // useEffect( () => {
-
-    // } );
+    useEffect( () => {
+        setActiveService( activeService );
+    } );
 
     return (
         <Section id="services-carousel2" center direction={"column"} gap="10">
@@ -86,7 +84,8 @@ export const ServicesCarousel2 = () => {
             <FlexBox
                 css={{
                     width: "$full",
-                    padding: "$3 0"
+                    padding: "$3 0",
+                    maxWidth: "$laptopM"
                 }}
             >
                 <Swiper
@@ -96,8 +95,12 @@ export const ServicesCarousel2 = () => {
                     slideToClickedSlide={true}
                     pagination={{ dynamicBullets: true, clickable: true }}
                     modules={[ Pagination ]}
-                    onActiveIndexChange={handleChange}
+                    onSlideChange={handleChange}
                     breakpoints={{
+                        768: {
+                            slidesPerView: 3,
+                            pagination: { enabled: false }
+                        },
                         1024: {
                             slidesPerView: 4,
                             pagination: { enabled: false }
