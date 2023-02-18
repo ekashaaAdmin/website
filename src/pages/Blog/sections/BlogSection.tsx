@@ -2,7 +2,6 @@ import { FlexBox, ImgContainer, Text } from "@src/components";
 import { useGetBlog } from "@src/hooks";
 import { CSS } from "@src/styles";
 import { PortableText, PortableTextComponents } from "@portabletext/react";
-import { PortableTextComp } from "@src/components/PortableText";
 import { array } from "yup";
 import imageUrlBuilder from "@sanity/image-url";
 import client from "@src/utils/client";

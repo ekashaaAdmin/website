@@ -4,7 +4,6 @@ import { Contact } from "@src/components/Contact";
 import { CSS } from "@src/styles";
 import { Suspense } from "react";
 import { BackgroundCarousel } from "@src/components/BackgroundCarousel";
-import { Contact } from "@src/components/Contact";
 
 import {
     Blogs,
