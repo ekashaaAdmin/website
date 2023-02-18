@@ -24,9 +24,9 @@ export const BackgroundCarousel = ( { height, imgSrc }: BackgroundCarousel ) => 
             }}
         >
             <Swiper
-                // autoplay={{
-                //     delay: 2000
-                // }}
+                autoplay={{
+                    delay: 2000
+                }}
                 loop={true}
                 modules={[ Autoplay ]}
             >
