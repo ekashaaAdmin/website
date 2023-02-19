@@ -24,8 +24,7 @@ const schema = yup.object().shape( {
         .matches( /^(\+?91|0)?[6789]\d{9}$/, {
             message: "Invalid valid number.",
             excludeEmptyString: false
-        } ),
-    role: yup.string().required()
+        } )
 } );
 
 export const ContactForm = () => {
@@ -64,8 +63,7 @@ export const ContactForm = () => {
         initialValues: {
             name: "",
             email: "",
-            phone: "",
-            role: ""
+            phone: ""
         },
         validationSchema: schema,
         onSubmit: () => {
@@ -121,44 +119,6 @@ export const ContactForm = () => {
                 {touched.phone && errors.phone ? (
                     <Text color={"error"}>{errors.phone}</Text>
                 ) : null}
-            </Flex>
-            <Flex
-                direction={{ "@initial": "column", "@bp1": "row" }}
-                justify={"spaceAround"}
-                css={{ width: "$full" }}
-                gap="1"
-            >
-                <Text>I'm a: </Text>
-                <label htmlFor="rd_buyer">
-                    <Input
-                        id="rd_buyer"
-                        type="radio"
-                        name="role"
-                        value={"buyer"}
-                        onChange={handleChange}
-                    />
-                    Buyer
-                </label>
-                <label htmlFor="rd_buyer">
-                    <Input
-                        id="rd_seller"
-                        type="radio"
-                        name="role"
-                        value={"seller"}
-                        onChange={handleChange}
-                    />
-                    Seller
-                </label>
-                <label htmlFor="rd_buyer">
-                    <Input
-                        id="rd_builder"
-                        type="radio"
-                        name="role"
-                        value={"builder"}
-                        onChange={handleChange}
-                    />
-                    Builder
-                </label>
             </Flex>
 
             <Flex direction="column" gap="1" css={{ width: "$full" }}>

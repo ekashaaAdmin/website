@@ -1,4 +1,15 @@
-import { Button, FlexBox, Text, Grid, Section } from "@src/components";
+import * as Dialog from "@radix-ui/react-dialog";
+import {
+    Button,
+    FlexBox,
+    Text,
+    Grid,
+    Section,
+    Box,
+    DialogTrigger,
+    DialogRoot,
+    DialogPortal
+} from "@src/components";
 import { CSS } from "@src/styles";
 import { Property } from "@src/utils";
 
@@ -9,6 +20,10 @@ const downloadNowCss: CSS = {
     "@bp2": {
         alignItems: "flex-start"
     }
+};
+
+const dialogContentCss: CSS = {
+    maxWidth: "$halfViewPortWidth"
 };
 
 interface OverviewProps {
@@ -73,10 +88,26 @@ export const OverView = ( { overviewData }: OverviewProps ) => {
                     </Grid>
 
                     <Text>{projectInfo?.projectDescription}</Text>
-
-                    <Button css={downloadNowCss} variant={"generalButton"}>
-                        Download Brochure
-                    </Button>
+                    <DialogRoot>
+                        <DialogTrigger asChild>
+                            <Button
+                                css={downloadNowCss}
+                                variant={"generalButton"}
+                            >
+                                Download Brochure
+                            </Button>
+                        </DialogTrigger>
+                        <DialogPortal>
+                            <Dialog.Title className="DialogTitle">
+                                <Text typography={"dtHeading2"}>Email</Text>
+                            </Dialog.Title>
+                            <Dialog.Description className="DialogDescription">
+                                <Text typography={"dtPara1"}>
+                                    Provide your email address
+                                </Text>
+                            </Dialog.Description>
+                        </DialogPortal>
+                    </DialogRoot>
                 </FlexBox>
             </Section>
             <Section variant={"seperatorCss"}></Section>
