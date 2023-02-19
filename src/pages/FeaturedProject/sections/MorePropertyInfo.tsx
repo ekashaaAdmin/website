@@ -144,14 +144,12 @@ export const MorePropertyInfo = ( { propertyData }: MorePropertyInfoProps ) => {
                         align={"flexStart"}
                     >
                         <FlexBox direction={"column"}>
-                            <Text typography={"dtPara3"}>
-                                Min. Price per Sqft.
-                            </Text>
+                            <Text typography={"dtPara3"}>ReraID</Text>
                             <Text
                                 typography={"dtPara1"}
                                 css={{ fontWeight: "$dtHeading2" }}
                             >
-                                ₹ 28 K per SqFt.
+                                {projectInfo?.reraId}
                             </Text>
                         </FlexBox>
                         <FlexBox direction={"column"}>

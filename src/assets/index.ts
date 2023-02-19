@@ -6,6 +6,7 @@ import HomeBg from "./HomeBg.webp";
 import Footer_Design_Bat from "./Footer_Design_Bat.png";
 import Blog1 from "./Blog1.png";
 import Blog2 from "./Blog2.png";
+import belaShah_pic1 from "./belaShah_pic1.png";
 import DeveloperLodha from "./DeveloperLodha.png";
 import DeveloperBirlaEstates from "./DeveloperBirlaEstates.png";
 import DeveloperPiramal from "./DeveloperPiramal.png";
@@ -19,6 +20,8 @@ import { PropertyHuntLogo } from "./PropertyHuntLogo";
 import { FinanceLogo } from "./FinanceLogo";
 import { LeasingLogo } from "./LeasingLogo";
 import { LoansLogo } from "./LoansLogo";
+import Buyer_Journey from "./Buyer_Journey.png";
+import Mobile_Buyer_Journey from "./Mobile_Buyer_Journey.png";
 
 export {
     EkashaaLogoSmallSVG,
@@ -41,5 +44,8 @@ export {
     DeveloperRustomjee,
     Management1,
     Management2,
-    ContactFormImg
+    ContactFormImg,
+    belaShah_pic1,
+    Buyer_Journey,
+    Mobile_Buyer_Journey
 };

@@ -9,9 +9,6 @@ export const Services = () => {
                 maxWidth: "$mobileL",
                 "@bp1": {
                     maxWidth: "$tablet"
-                },
-                "@bp3": {
-                    maxWidth: "$laptopS"
                 }
             }}
         >

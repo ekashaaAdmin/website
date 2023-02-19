@@ -19,12 +19,12 @@ type serviceType = {
 const services: serviceType[] = [
     {
         logo: <PropertyHuntLogo />,
-        name: "Property Hunt"
+        name: "Property Scouting"
     },
-    {
-        logo: <LoansLogo />,
-        name: "Loans"
-    },
+    // {
+    //     logo: <LoansLogo />,
+    //     name: "Loans"
+    // },
     {
         logo: <LegalServicesLogo />,
         name: "Legal Services"
@@ -32,11 +32,11 @@ const services: serviceType[] = [
     {
         logo: <FinanceLogo />,
         name: "Finance"
-    },
-    {
-        logo: <LeasingLogo />,
-        name: "Leasing"
     }
+    // {
+    //     logo: <LeasingLogo />,
+    //     name: "Leasing"
+    // }
 ];
 
 export const ServicesCarousel = () => {
@@ -58,15 +58,15 @@ export const ServicesCarousel = () => {
                     },
                     640: {
                         slidesPerView: 3
-                    },
-                    768: {
-                        slidesPerView: 4
-                    },
-                    1024: {
-                        slidesPerView: 5,
-                        loop: false,
-                        enabled: false
                     }
+                    // 768: {
+                    //     slidesPerView: 4
+                    // },
+                    // 1024: {
+                    //     slidesPerView: 5,
+                    //     loop: false,
+                    //     enabled: false
+                    // }
                 }}
             >
                 {services.map( ( service, key ) => {

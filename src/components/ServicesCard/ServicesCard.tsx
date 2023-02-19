@@ -13,7 +13,7 @@ type ServicesCardProps = {
 const serviceCardCss: CSS = {
     boxShadow: "$shadowtype3",
     margin: "$4 auto",
-
+    textAlign: "center",
     width: "$servicesCardWidth",
     height: "$servicesCardHeight"
 };
