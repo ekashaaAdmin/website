@@ -95,7 +95,10 @@ export const MorePropertyInfo = ( { propertyData }: MorePropertyInfoProps ) => {
                 direction={{ "@initial": "column", "@bp2": "row" }}
                 css={propertyInfoCss}
             >
-                <FlexBox css={{ flex: 1, maxWidth: "50%" }}>
+                <FlexBox
+                    css={{ flex: 1 }}
+                    width={{ "@initial": "full", "@bp2": "half" }}
+                >
                     <Swiper>
                         {imageUrls?.map( ( img, key ) => (
                             <SwiperSlide key={key}>
