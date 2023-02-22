@@ -1,9 +1,15 @@
-import { Box, DevelopersCarousel, Section, Text } from "@components";
+import {
+    Box,
+    DevelopersCarousel,
+    DevelopersGrid,
+    Section,
+    Text
+} from "@components";
 
 export const Developers = () => {
     return (
         <>
-            <Section center direction="column">
+            <Section center direction="column" css={{ margin: "$0 auto" }}>
                 <Box css={{ textAlign: "center" }}>
                     <Text
                         typography={{
@@ -24,7 +30,7 @@ export const Developers = () => {
                         Developers
                     </Text>
                 </Box>
-                <DevelopersCarousel />
+                <DevelopersGrid />
             </Section>
         </>
     );
