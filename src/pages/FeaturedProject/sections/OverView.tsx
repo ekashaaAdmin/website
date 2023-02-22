@@ -4,6 +4,7 @@ import { CSS } from "@src/styles";
 import { Property } from "@src/utils";
 
 const downloadNowCss: CSS = {
+    width: "max-content",
     "@mobileS": {
         alignItems: "center"
     },
