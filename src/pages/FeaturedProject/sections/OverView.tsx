@@ -1,4 +1,3 @@
-import * as Dialog from "@radix-ui/react-dialog";
 import { Button, FlexBox, Text, Grid, Section } from "@src/components";
 import { CSS } from "@src/styles";
 import { Property } from "@src/utils";
