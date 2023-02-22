@@ -2,6 +2,8 @@ import { ReactNode } from "react";
 import {
     Buyer_Journey,
     FinanceLogo,
+    Legal_Services,
+    Finance,
     LeasingLogo,
     LegalServicesLogo,
     LoansLogo,
@@ -82,12 +84,12 @@ export const servicesData: serviceType[] = [
     //     description: "Loop Desc"
     // },
     {
-        logo: <LegalServicesLogo />,
+        logo: <Legal_Services />,
         name: "Legal Services",
         description: <Legal />
     },
     {
-        logo: <FinanceLogo />,
+        logo: <Finance />,
         name: "Finance",
         description: <Finanical />
     }
