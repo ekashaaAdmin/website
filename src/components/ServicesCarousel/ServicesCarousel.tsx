@@ -1,9 +1,11 @@
 import {
     FinanceLogo,
     LeasingLogo,
-    LegalServicesLogo,
     LoansLogo,
-    PropertyHuntLogo
+    LegalServicesLogo,
+    PropertyHuntLogo,
+    Legal_Services,
+    Finance
 } from "@src/assets";
 import { ReactNode } from "react";
 import { Pagination } from "swiper";
@@ -26,11 +28,11 @@ const services: serviceType[] = [
     //     name: "Loans"
     // },
     {
-        logo: <LegalServicesLogo />,
+        logo: <Legal_Services />,
         name: "Legal Services"
     },
     {
-        logo: <FinanceLogo />,
+        logo: <Finance />,
         name: "Finance"
     }
     // {
