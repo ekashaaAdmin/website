@@ -35,13 +35,13 @@ export const {
             dtHeading2: "2.25rem",
             dtHeading3: "1.5rem",
             dtSubHeading1: "1.125rem",
-            dtPara1: "1.125rem",
+            dtPara1: "1.2rem",
             dtPara2: "1rem",
             dtPara3: "0.875rem",
             mbHeading1: "2.25rem",
             mbHeading2: "2rem",
             mbSubHeading1: "1rem",
-            mbPara1: "1.25rem",
+            mbPara1: "1.4rem",
             navOptions: "1rem"
         },
         fontWeights: {
@@ -353,6 +353,20 @@ export const {
             },
             [ `&::-webkit-scrollbar-thumb:hover` ]: {
                 background: "#555"
+            }
+        } ),
+        scrollStylingTestimonials: () => ( {
+            [ `&::-webkit-scrollbar` ]: {
+                width: "4px"
+            },
+            [ `&::-webkit-scrollbar-track` ]: {
+                background: "#ededed"
+            },
+            [ `&::-webkit-scrollbar-thumb` ]: {
+                background: "#b3b6b6"
+            },
+            [ `&::-webkit-scrollbar-thumb:hover` ]: {
+                background: "#ededed"
             }
         } )
     }
