@@ -1,3 +1,5 @@
+import { BuildingPage } from "./BuildingPage";
+
 export const Loader = () => {
-    return <div>Loader...</div>;
+    return <BuildingPage />;
 };
