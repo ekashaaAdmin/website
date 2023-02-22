@@ -3,6 +3,7 @@ import { CSS } from "@src/styles";
 import { Property } from "@src/utils";
 
 const configCardCss: CSS = {
+    textAlign: "center",
     padding: "$2 $4",
     borderRadius: "$1",
     boxShadow: "rgba(0, 0, 0, 0.16) 0px 1px 4px"
@@ -21,7 +22,6 @@ export const Configuration = ( { configurationData }: ConfigurationProps ) => {
                     <Grid
                         columns={{
                             "@initial": "2",
-                            "@bp1": "2",
                             "@bp2": "4",
                             "@bp3": "5"
                         }}
@@ -36,7 +36,18 @@ export const Configuration = ( { configurationData }: ConfigurationProps ) => {
                                 key={config._key}
                             >
                                 <Text
-                                    typography={"dtPara1"}
+                                    typography={{
+                                        "@initial": "dtPara3",
+                                        "@bp2": "dtPara1"
+                                    }}
+                                >
+                                    {config?.configurationType}
+                                </Text>
+                                <Text
+                                    typography={{
+                                        "@initial": "dtPara3",
+                                        "@bp2": "dtPara1"
+                                    }}
                                     css={{
                                         fontWeight: "$dtHeading2",
                                         borderBottom: "2px solid #1C99CD",
@@ -47,10 +58,25 @@ export const Configuration = ( { configurationData }: ConfigurationProps ) => {
                                 </Text>
                                 <Text typography={"dtPara3"}>Carpet Area</Text>
                                 <Text
-                                    typography={"dtPara1"}
-                                    css={{ fontWeight: "$dtHeading2" }}
+                                    typography={{
+                                        "@initial": "dtPara3",
+                                        "@bp2": "dtPara1"
+                                    }}
+                                    css={{
+                                        fontWeight: "$dtHeading2",
+                                        borderBottom: "2px solid #1C99CD",
+                                        paddingBottom: "$1"
+                                    }}
                                 >
                                     {config.carpetArea} SqFt.
+                                </Text>
+                                <Text
+                                    typography={{
+                                        "@initial": "dtPara3",
+                                        "@bp2": "dtPara1"
+                                    }}
+                                >
+                                    {config?.configurationPrice}
                                 </Text>
                             </FlexBox>
                         ) )}
