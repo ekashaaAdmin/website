@@ -22,8 +22,19 @@ import { LeasingLogo } from "./LeasingLogo";
 import { LoansLogo } from "./LoansLogo";
 import Buyer_Journey from "./Buyer_Journey.png";
 import Mobile_Buyer_Journey from "./Mobile_Buyer_Journey.png";
+import Lodha from "./Lodha.webp";
+import Piramal from "./Piramal.webp";
+import Rustomjee from "./Rustomjee.webp";
+import Shapoorji_Po from "./Shapoorji_Po.webp";
+import Birla_Estates from "./Birla_Estates.webp";
+import { Legal_Services } from "./Legal_Services";
+import { Finance } from "./Finance";
+import { Profile } from "./Profile";
 
 export {
+    Legal_Services,
+    Finance,
+    Profile,
     EkashaaLogoSmallSVG,
     Ekashaa_Logo,
     Desktop_Footer_bar,
@@ -47,5 +58,10 @@ export {
     ContactFormImg,
     belaShah_pic1,
     Buyer_Journey,
-    Mobile_Buyer_Journey
+    Mobile_Buyer_Journey,
+    Lodha,
+    Piramal,
+    Rustomjee,
+    Shapoorji_Po,
+    Birla_Estates
 };
