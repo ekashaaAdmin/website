@@ -1,4 +1,4 @@
-import { Ekashaa_Footer_Logo } from "@src/assets";
+import { Ekashaa_Footer_Logo, Profile } from "@src/assets";
 import { CSS } from "@src/styles";
 import { Testimonial } from "@src/utils";
 import { Box } from "../Box";
@@ -13,7 +13,8 @@ const testimonialCardCss: CSS = {
     width: "285px",
     height: "400px",
     alignItems: "center",
-    padding: "$3"
+    padding: "$3",
+    textAlign: "center"
 };
 
 interface TestimonialProps {
@@ -46,13 +47,7 @@ export const TestimonialCard = ( { testimonialData }: TestimonialProps ) => {
                         }}
                     />
                 ) : (
-                    <Box
-                        css={{
-                            backgroundColor: "$complentaryColor",
-                            size: "$7",
-                            borderRadius: "$circle"
-                        }}
-                    ></Box>
+                    <Profile />
                 )}
 
                 <Flex direction={"column"} align={"center"}>
@@ -66,7 +61,7 @@ export const TestimonialCard = ( { testimonialData }: TestimonialProps ) => {
                 typography={"dtPara3"}
                 css={{
                     overflowY: "auto",
-                    scrollStyling: ""
+                    scrollStylingTestimonials: ""
                 }}
             >
                 <i>{testimonialContent}</i>
