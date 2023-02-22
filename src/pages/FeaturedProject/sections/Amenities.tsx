@@ -21,22 +21,31 @@ export const Amenities = ( { amenitiesData }: AmenitiesProps ) => {
             <Section id="amenities" variant={"propertyInfoCss"}>
                 <FlexBox direction={"column"} gap={"4"} width={"full"}>
                     <Text typography={"dtHeading3"}>Amenities</Text>
-                    <Flex direction={"column"} gap={"2"}>
-                        {amenities?.map( ( amenity ) => (
-                            <Flex align={"center"} gap={"2"} key={amenity._id}>
-                                <Box
-                                    size={"1"}
-                                    css={{
-                                        backgroundColor: "$accentColor",
-                                        borderRadius: "$2"
-                                    }}
-                                ></Box>
-                                <Text typography={"dtPara1"} key={amenity._id}>
-                                    {amenity.amenityName}
-                                </Text>
-                            </Flex>
-                        ) )}
-                    </Flex>
+                    <Grid columns={"1"}>
+                        <Flex direction={"column"} gap={"2"}>
+                            {amenities?.map( ( amenity ) => (
+                                <Flex
+                                    align={"center"}
+                                    gap={"2"}
+                                    key={amenity._id}
+                                >
+                                    <Box
+                                        size={"1"}
+                                        css={{
+                                            backgroundColor: "$accentColor",
+                                            borderRadius: "$2"
+                                        }}
+                                    ></Box>
+                                    <Text
+                                        typography={"dtPara1"}
+                                        key={amenity._id}
+                                    >
+                                        {amenity.amenityName}
+                                    </Text>
+                                </Flex>
+                            ) )}
+                        </Flex>
+                    </Grid>
                 </FlexBox>
             </Section>
             <Section variant={"seperatorCss"}></Section>

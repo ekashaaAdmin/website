@@ -10,9 +10,9 @@ export const Featured = () => {
         >
             <Text
                 align={"center"}
-                typography={{ "@initial": "mbHeading1", "@bp3": "dtHeading2" }}
+                typography={{ "@initial": "mbHeading1", "@bp3": "dtHeading1" }}
             >
-                Featured Projects
+                Featured <Text css={{ fontWeight: "$dtPara1" }}> Projects</Text>
             </Text>
             <Suspense fallback={<Loader />}>
                 <FeaturedCarousel />

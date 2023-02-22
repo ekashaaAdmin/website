@@ -11,6 +11,8 @@ export interface Property {
             _key: string;
             carpetArea: number;
             rooms: number;
+            configurationType: string;
+            configurationPrice: string;
         }
     ];
     developer: {

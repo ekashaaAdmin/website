@@ -6,10 +6,13 @@ import { ImgContainer } from "../ImgContainer";
 
 const propertyCardCarouselCss: CSS = {
     width: "$full",
+    height: "$full",
     overflow: "hidden",
     "@bp3": {
         width: "$half"
-    }
+    },
+    objectFit: "cover",
+    objectPosition: "center"
 };
 
 interface PropertyCardCarouselProps {
@@ -34,7 +37,10 @@ export const ProperyCardCarousel = ( { src }: PropertyCardCarouselProps ) => {
                                 src={image.url}
                                 alt="property-image"
                                 css={{
-                                    overflow: "hidden"
+                                    objectFit: "cover",
+                                    objectPosition: "center",
+                                    width: "100%",
+                                    height: "100%"
                                 }}
                             />
                         </SwiperSlide>

@@ -4,11 +4,11 @@ import {
     FlexBox,
     ImgContainer,
     ProperyCardCarousel,
+    Grid,
     Text
 } from "@src/components";
 import { CSS } from "@src/styles";
 import { Property } from "@src/utils";
-import { Grid } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import {
     OverView,
@@ -95,14 +95,20 @@ export const MorePropertyInfo = ( { propertyData }: MorePropertyInfoProps ) => {
                 direction={{ "@initial": "column", "@bp2": "row" }}
                 css={propertyInfoCss}
             >
-                <FlexBox css={{ flex: 1, maxWidth: "50%" }}>
+                <FlexBox
+                    css={{ flex: 1 }}
+                    width={{ "@initial": "full", "@bp2": "half" }}
+                >
                     <Swiper>
                         {imageUrls?.map( ( img, key ) => (
                             <SwiperSlide key={key}>
                                 <ImgContainer
                                     src={img.url}
                                     alt="property-image"
+                                    fullHeight
+                                    width={"full"}
                                     css={{
+                                        objectFit: "cover",
                                         maxHeight: "$mobileL"
                                     }}
                                 />
@@ -117,7 +123,54 @@ export const MorePropertyInfo = ( { propertyData }: MorePropertyInfoProps ) => {
                     align={"normal"}
                     css={{ padding: "$3", flex: 1 }}
                 >
-                    <FlexBox direction={"row"} justify={"spaceBetween"}>
+                    <Grid columns={"1"} gap={"3"} justify={"between"}>
+                        <Grid columns={"2"} gap={"7"} justify={"between"}>
+                            <FlexBox direction={"column"}>
+                                <Text typography={"dtPara3"}>
+                                    Configurations
+                                </Text>
+                                <Text
+                                    typography={"dtPara1"}
+                                    css={{ fontWeight: "$dtHeading2" }}
+                                >
+                                    {configuration?.[ 0 ].rooms} BHK
+                                </Text>
+                            </FlexBox>
+                            <FlexBox direction={"column"} align={"flexStart"}>
+                                <Text typography={"dtPara3"}>
+                                    Possession Date
+                                </Text>
+                                <Text
+                                    typography={"dtPara1"}
+                                    css={{ fontWeight: "$dtHeading2" }}
+                                >
+                                    {possessionDate?.slice( 0, 7 )}
+                                </Text>
+                            </FlexBox>
+                        </Grid>
+                        <hr />
+                        <Grid columns={"2"} gap={"7"} justify={"between"}>
+                            <FlexBox direction={"column"}>
+                                <Text typography={"dtPara3"}>ReraID</Text>
+                                <Text
+                                    typography={"dtPara1"}
+                                    css={{ fontWeight: "$dtHeading2" }}
+                                >
+                                    {projectInfo?.reraId}
+                                </Text>
+                            </FlexBox>
+                            <FlexBox direction={"column"}>
+                                <Text typography={"dtPara3"}>Carpet Area</Text>
+                                <Text
+                                    typography={"dtPara1"}
+                                    css={{ fontWeight: "$dtHeading2" }}
+                                >
+                                    {configuration?.[ 0 ].carpetArea} SqFt.
+                                </Text>
+                            </FlexBox>
+                        </Grid>
+                    </Grid>
+                    {/* <FlexBox direction={"row"} justify={"spaceBetween"}>
                         <FlexBox direction={"column"}>
                             <Text typography={"dtPara3"}>Configurations</Text>
                             <Text
@@ -133,7 +186,7 @@ export const MorePropertyInfo = ( { propertyData }: MorePropertyInfoProps ) => {
                                 typography={"dtPara1"}
                                 css={{ fontWeight: "$dtHeading2" }}
                             >
-                                {possessionDate}
+                                {possessionDate?.slice( 0, 7 )}
                             </Text>
                         </FlexBox>
                     </FlexBox>
@@ -144,14 +197,12 @@ export const MorePropertyInfo = ( { propertyData }: MorePropertyInfoProps ) => {
                         align={"flexStart"}
                     >
                         <FlexBox direction={"column"}>
-                            <Text typography={"dtPara3"}>
-                                Min. Price per Sqft.
-                            </Text>
+                            <Text typography={"dtPara3"}>ReraID</Text>
                             <Text
                                 typography={"dtPara1"}
                                 css={{ fontWeight: "$dtHeading2" }}
                             >
-                                ₹ 28 K per SqFt.
+                                {projectInfo?.reraId}
                             </Text>
                         </FlexBox>
                         <FlexBox direction={"column"}>
@@ -163,7 +214,7 @@ export const MorePropertyInfo = ( { propertyData }: MorePropertyInfoProps ) => {
                                 {configuration?.[ 0 ].carpetArea} SqFt.
                             </Text>
                         </FlexBox>
-                    </FlexBox>
+                    </FlexBox> */}
                     <hr />
                     <Box css={enquireNowCss} width={"half"}>
                         <Button variant={"generalButton"}>Enquire Now</Button>

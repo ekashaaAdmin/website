@@ -1,3 +1,4 @@
+import { Profile } from "@src/assets";
 import { FlexBox, ImgContainer, Section, Text } from "@src/components";
 import { Property } from "@src/utils";
 
@@ -20,7 +21,7 @@ export const Developer = ( { developerData }: DeveloperProps ) => {
                     align={{ "@initial": "center", "@bp2": "flexStart" }}
                 >
                     <ImgContainer
-                        src={developer?.logo.url}
+                        src={developer?.logo?.url}
                         alt={"developerImage"}
                         css={{
                             width: "10rem"

@@ -2,6 +2,7 @@ import { Property } from "@src/utils";
 import { CSS } from "@styles";
 import "swiper/css";
 import "swiper/css/pagination";
+import { ImgContainer } from "../ImgContainer";
 import { Link } from "../Link";
 import { PropertyCardContainer } from "./PropertyCardContainer";
 import { PropertyContent } from "./PropertyContent";
@@ -27,6 +28,18 @@ export const propertyCardCss: CSS = {
     }
 };
 
+export const propertyImageCardCss: CSS = {
+    width: "$full",
+    height: "$half",
+    overflow: "hidden",
+    objectFit: "cover",
+    "@bp3": {
+        width: "50%",
+        height: "$full",
+        objectFit: "fill"
+    }
+};
+
 interface PropertyCardProps {
     propertyData: Partial<Property>;
 }
@@ -41,7 +54,13 @@ export const PropertyCard = ( { propertyData }: PropertyCardProps ) => {
                 }}
                 css={propertyCardCss}
             >
-                <ProperyCardCarousel src={propertyData.imageUrls!} />
+                <ImgContainer
+                    src={propertyData.imageUrls![ 0 ].url}
+                    alt="property image"
+                    fullHeight
+                    css={propertyImageCardCss}
+                />
+                {/* <ProperyCardCarousel src={propertyData.imageUrls!} /> */}
                 <PropertyContent
                     price={propertyData.priceInfo?.price!}
                     priceUnit={propertyData.priceInfo?.priceUnit!}

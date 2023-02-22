@@ -1,60 +1,20 @@
-import {
-    FinanceLogo,
-    LeasingLogo,
-    LegalServicesLogo,
-    LoansLogo,
-    PropertyHuntLogo
-} from "@src/assets";
 import { Flex, FlexBox, Section, ServicesCard, Text } from "@src/components";
 import { ReactNode, useCallback, useEffect, useState } from "react";
 import { Pagination, Swiper as SwiperS } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "./ServicesCarousel2.css";
 
-type serviceType = {
-    logo: ReactNode;
-    name: string;
-    description: string;
-};
-
-const services: serviceType[] = [
-    {
-        logo: <PropertyHuntLogo />,
-        name: "Property Hunt",
-        description: "Property Hunt Desc"
-    },
-    {
-        logo: <LoansLogo />,
-        name: "Loans",
-        description: "Loop Desc"
-    },
-    {
-        logo: <LegalServicesLogo />,
-        name: "Legal Services",
-        description: "Legal Services Desc"
-    },
-    {
-        logo: <FinanceLogo />,
-        name: "Finance",
-        description: "Finance Desc"
-    },
-    {
-        logo: <LeasingLogo />,
-        name: "Leasing",
-        description: "Leasing Desc"
-    }
-];
+import { servicesData, serviceType } from "./servicesData";
 
 export const ServicesCarousel2 = () => {
     const [ activeService, setActiveService ] = useState<serviceType>(
-        services[ 0 ]
+        servicesData[ 0 ]
     );
 
-
     const handleChange = useCallback( ( swiper: SwiperS ) => {
-        const activeIndex = swiper.realIndex % services.length;
+        const activeIndex = swiper.realIndex % servicesData.length;
 
-        setActiveService( services[ activeIndex ] );
+        setActiveService( servicesData[ activeIndex ] );
     }, [] );
 
     useEffect( () => {
@@ -87,7 +47,7 @@ export const ServicesCarousel2 = () => {
                 css={{
                     width: "$full",
                     padding: "$3 0",
-                    maxWidth: "$laptopM"
+                    maxWidth: "$laptopS"
                 }}
             >
                 <Swiper
@@ -102,17 +62,14 @@ export const ServicesCarousel2 = () => {
                         768: {
                             slidesPerView: 3,
                             pagination: { enabled: false }
-                        },
-                        1024: {
-                            slidesPerView: 4,
-                            pagination: { enabled: false }
-                        },
-                        1200: {
-                            slidesPerView: 5
                         }
+                        // 1024: {
+                        //     slidesPerView: 3,
+                        //     pagination: { enabled: false }
+                        // }
                     }}
                 >
-                    {services.map( ( service, key ) => {
+                    {servicesData.map( ( service, key ) => {
                         const { logo, name } = service;
                         return (
                             <SwiperSlide key={key}>
@@ -123,7 +80,19 @@ export const ServicesCarousel2 = () => {
                 </Swiper>
             </FlexBox>
             {activeService && (
-                <Flex center direction="column">
+                <Flex
+                    center
+                    direction="column"
+                    css={{
+                        maxWidth: "$mobileS",
+                        "@bp1": {
+                            maxWidth: "$tablet"
+                        },
+                        "@bp3": {
+                            maxWidth: "$laptopS"
+                        }
+                    }}
+                >
                     <Text
                         typography={{
                             "@initial": "mbHeading1",

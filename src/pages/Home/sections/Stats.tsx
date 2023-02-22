@@ -25,7 +25,7 @@ export const Stats = () => {
                 </Text>
             </Flex>
 
-            <Flex
+            {/* <Flex
                 direction={{ "@initial": "column", "@bp2": "row" }}
                 css={{ textAlign: "center" }}
                 gap={{ "@initial": "2" }}
@@ -86,7 +86,7 @@ export const Stats = () => {
                         Developers
                     </Text>
                 </Flex>
-            </Flex>
+            </Flex> */}
         </Section>
     );
 };

@@ -9,9 +9,6 @@ export const Services = () => {
                 maxWidth: "$mobileL",
                 "@bp1": {
                     maxWidth: "$tablet"
-                },
-                "@bp3": {
-                    maxWidth: "$laptopS"
                 }
             }}
         >
@@ -19,16 +16,14 @@ export const Services = () => {
                 typography={{ "@initial": "mbHeading1", "@bp3": "dtHeading1" }}
                 css={{ textAlign: "center" }}
             >
-                Ekaasha <Text css={{ fontWeight: "$dtPara1" }}>Exclusive</Text>
+                Ekashaa <Text css={{ fontWeight: "$dtPara1" }}>Services</Text>
             </Text>
             <Text
                 typography={{
                     "@initial": "mbSubHeading1",
                     "@bp3": "dtSubHeading1"
                 }}
-            >
-                SERVICES
-            </Text>
+            ></Text>
             <ServicesCarousel />
         </Section>
     );

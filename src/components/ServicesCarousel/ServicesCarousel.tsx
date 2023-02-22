@@ -1,9 +1,11 @@
 import {
     FinanceLogo,
     LeasingLogo,
-    LegalServicesLogo,
     LoansLogo,
-    PropertyHuntLogo
+    LegalServicesLogo,
+    PropertyHuntLogo,
+    Legal_Services,
+    Finance
 } from "@src/assets";
 import { ReactNode } from "react";
 import { Pagination } from "swiper";
@@ -19,24 +21,24 @@ type serviceType = {
 const services: serviceType[] = [
     {
         logo: <PropertyHuntLogo />,
-        name: "Property Hunt"
+        name: "Property Scouting"
     },
+    // {
+    //     logo: <LoansLogo />,
+    //     name: "Loans"
+    // },
     {
-        logo: <LoansLogo />,
-        name: "Loans"
-    },
-    {
-        logo: <LegalServicesLogo />,
+        logo: <Legal_Services />,
         name: "Legal Services"
     },
     {
-        logo: <FinanceLogo />,
+        logo: <Finance />,
         name: "Finance"
-    },
-    {
-        logo: <LeasingLogo />,
-        name: "Leasing"
     }
+    // {
+    //     logo: <LeasingLogo />,
+    //     name: "Leasing"
+    // }
 ];
 
 export const ServicesCarousel = () => {
@@ -58,15 +60,15 @@ export const ServicesCarousel = () => {
                     },
                     640: {
                         slidesPerView: 3
-                    },
-                    768: {
-                        slidesPerView: 4
-                    },
-                    1024: {
-                        slidesPerView: 5,
-                        loop: false,
-                        enabled: false
                     }
+                    // 768: {
+                    //     slidesPerView: 4
+                    // },
+                    // 1024: {
+                    //     slidesPerView: 5,
+                    //     loop: false,
+                    //     enabled: false
+                    // }
                 }}
             >
                 {services.map( ( service, key ) => {

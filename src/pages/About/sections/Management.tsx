@@ -1,4 +1,4 @@
-import { Management1, Management2 } from "@src/assets";
+import { belaShah_pic1, Management1, Management2 } from "@src/assets";
 import {
     Box,
     Button,
@@ -40,7 +40,8 @@ export const Management = () => {
                     },
                     "@bp1": {
                         width: "$full",
-                        flexDirection: "row"
+                        flexDirection: "column"
+                        // flexDirection: "row"
                     },
                     "@bp3": {
                         width: "998px"
@@ -48,9 +49,10 @@ export const Management = () => {
                 }}
             >
                 <ImgContainer
-                    src={Management1}
+                    src={belaShah_pic1}
                     alt="blog-thubnail"
                     css={{ flex: 1 }}
+                    width={"half"}
                 />
                 <Flex
                     direction="column"
@@ -63,9 +65,10 @@ export const Management = () => {
                             "@initial": "mbPara1",
                             "@bp3": "dtHeading3"
                         }}
+                        align={"center"}
                         css={{ fontWeight: "$dtHeading1" }}
                     >
-                        Catchy Title/Heading Here
+                        Bela Shah
                     </Text>
                     <Text
                         typography={{
@@ -73,13 +76,31 @@ export const Management = () => {
                             "@bp3": "dtPara1"
                         }}
                     >
-                        Lorem ipsum dolor, sit amet consectetur adipisicing
-                        elit. Praesentium reiciendis, corrupti vel reprehenderit
-                        nemo aliquid maiores suscipit. Ex, facilis consectetur?
+                        Bela Shah is founder and proprietor of Ekashaa Realty.
+                        She has recorded sales worth ₹1900 million (₹190 crores)
+                        in the last five years alone. In terms of area, her
+                        sales accounts for a staggering 32000 square feet of
+                        premium real estate in South Mumbai. Over the year, she
+                        has been associated with prestigious residential
+                        projects that house Bollywood celebrities and well-known
+                        industrialists such as Piramal Mahalaxmi, XXX, XXXX.
+                        <br />
+                        Among her clients are CEOs and CFOs of tech, advertising
+                        and automotive firms, who rely on her deep market
+                        knowledge and insights for their purchase decisions. A
+                        keen listener with an affable personality, Bela is well
+                        known for her ability to find and make personal
+                        connections everywhere she goes. Her intuitive
+                        understanding of client needs and her knack to persuade
+                        without pestering sets her apart from the rest.
+                        <br />
+                        Through Ekashaa, Bela hopes to augment the unique voice
+                        and vision that she brings to the premium real estate
+                        market.
                     </Text>
                 </Flex>
             </Flex>
-            <Box
+            {/* <Box
                 size={"full"}
                 css={{
                     backgroundColor: "#4CABD2"
@@ -136,7 +157,7 @@ export const Management = () => {
                         </Text>
                     </Flex>
                 </Flex>
-            </Box>
+            </Box> */}
         </Section>
     );
 };
