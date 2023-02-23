@@ -65,7 +65,8 @@ export const PropertyCard = ( { propertyData }: PropertyCardProps ) => {
                     price={propertyData.priceInfo?.price!}
                     priceUnit={propertyData.priceInfo?.priceUnit!}
                     propertyName={propertyData.name!}
-                    rooms={propertyData.configuration![ 0 ]?.rooms}
+                    rooms={[ propertyData.configuration![ 0 ]?.rooms ]}
+                    multipleConfigs={propertyData.configuration?.length! > 1}
                     shortAddress={propertyData.location?.shortAddress!}
                 />
             </PropertyCardContainer>

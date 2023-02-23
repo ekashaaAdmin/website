@@ -11,7 +11,8 @@ interface PropertyContentProps {
     shortAddress: string;
     price: number;
     priceUnit: string;
-    rooms: number;
+    rooms: number[];
+    multipleConfigs: boolean;
 }
 
 export const PropertyContent = ( {
@@ -19,7 +20,8 @@ export const PropertyContent = ( {
     priceUnit,
     propertyName,
     rooms,
-    shortAddress
+    shortAddress,
+    multipleConfigs
 }: PropertyContentProps ) => {
     return (
         <FlexBox direction="column" css={propertyContentCss}>
@@ -30,9 +32,11 @@ export const PropertyContent = ( {
             <br />
             <Text typography={"dtPara1"}>
                 Rs. {price}
-                {priceUnit} <Text typography={"dtPara3"}>Onwards</Text>
+                {priceUnit} <Text typography={"dtPara3"}> Onwards</Text>
             </Text>
-            <Text typography={"dtPara3"}>{rooms}BHK</Text>
+            <Text typography={"dtPara3"}>
+                {rooms}BHK {multipleConfigs && <Text>and more... </Text>}
+            </Text>
         </FlexBox>
     );
 };
