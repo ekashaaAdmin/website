@@ -1,10 +1,11 @@
-import { FlexBox, Grid, Section, Text } from "@src/components";
+import { Flex, FlexBox, Grid, Section, Text } from "@src/components";
 import { CSS } from "@src/styles";
+import { BiRupee } from "react-icons/bi";
 import { Property } from "@src/utils";
 
 const configCardCss: CSS = {
     textAlign: "center",
-    padding: "$2 $4",
+    padding: "$2",
     borderRadius: "$1",
     boxShadow: "rgba(0, 0, 0, 0.16) 0px 1px 4px"
 };
@@ -17,7 +18,7 @@ export const Configuration = ( { configurationData }: ConfigurationProps ) => {
     return (
         <>
             <Section id="configuration" variant={"propertyInfoCss"}>
-                <FlexBox direction={"column"} gap={"4"} width={"full"}>
+                <FlexBox direction={"column"} gap={"2"} width={"full"}>
                     <Text typography={"dtHeading3"}>Configuration</Text>
                     <Grid
                         columns={{
@@ -70,14 +71,17 @@ export const Configuration = ( { configurationData }: ConfigurationProps ) => {
                                 >
                                     {config.carpetArea} SqFt.
                                 </Text>
-                                <Text
-                                    typography={{
-                                        "@initial": "dtPara3",
-                                        "@bp2": "dtPara1"
-                                    }}
-                                >
-                                    {config?.configurationPrice}
-                                </Text>
+                                <Flex align={"center"} justify={"center"}>
+                                    {config?.configurationPrice && <BiRupee />}{" "}
+                                    <Text
+                                        typography={{
+                                            "@initial": "dtPara3",
+                                            "@bp2": "dtPara1"
+                                        }}
+                                    >
+                                        {config?.configurationPrice}
+                                    </Text>
+                                </Flex>
                             </FlexBox>
                         ) )}
                     </Grid>

@@ -18,14 +18,13 @@ export const Developer = ( { developerData }: DeveloperProps ) => {
                 <FlexBox
                     direction={{ "@initial": "column", "@bp2": "row" }}
                     gap={"4"}
-                    align={{ "@initial": "center", "@bp2": "flexStart" }}
+                    align={{ "@initial": "center" }}
+                    justify={"center"}
                 >
                     <ImgContainer
                         src={developer?.logo?.url}
                         alt={"developerImage"}
-                        css={{
-                            width: "10rem"
-                        }}
+                        css={{ width: "$full" }}
                     />
                     <Text>{developer?.description}</Text>
                 </FlexBox>

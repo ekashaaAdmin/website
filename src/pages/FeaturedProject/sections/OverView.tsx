@@ -68,7 +68,7 @@ export const OverView = ( { overviewData }: OverviewProps ) => {
                                 typography={"dtPara1"}
                                 css={{ fontWeight: "$dtHeading2" }}
                             >
-                                {projectInfo?.plotArea} SqFt
+                                {projectInfo?.plotArea} acre
                             </Text>
                         </FlexBox>
                     </Grid>

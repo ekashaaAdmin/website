@@ -9,6 +9,7 @@ import {
 } from "@src/components";
 import { CSS } from "@src/styles";
 import { Property } from "@src/utils";
+import { A11y, EffectFade, Navigation, Pagination, Scrollbar } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import {
     OverView,
@@ -99,7 +100,15 @@ export const MorePropertyInfo = ( { propertyData }: MorePropertyInfoProps ) => {
                     css={{ flex: 1 }}
                     width={{ "@initial": "full", "@bp2": "half" }}
                 >
-                    <Swiper>
+                    <Swiper
+                        navigation={{
+                            nextEl: ".swiper-button-next",
+                            prevEl: ".swiper-button-prev"
+                        }}
+                        pagination={{ clickable: true }}
+                        modules={[ Navigation, Pagination, Scrollbar, A11y ]}
+                        scrollbar={{ draggable: true }}
+                    >
                         {imageUrls?.map( ( img, key ) => (
                             <SwiperSlide key={key}>
                                 <ImgContainer
@@ -222,13 +231,13 @@ export const MorePropertyInfo = ( { propertyData }: MorePropertyInfoProps ) => {
                 </FlexBox>
             </FlexBox>
 
-            <FlexBox css={propertyInfoNavbarCss} gap={5} align={"center"}>
+            {/* <FlexBox css={propertyInfoNavbarCss} gap={5} align={"center"}>
                 <Text typography={"dtPara1"}>Overview</Text>
                 <Text typography={"dtPara1"}>Configurations</Text>
                 <Text typography={"dtPara1"}>Amenities</Text>
                 <Text typography={"dtPara1"}>Localilty</Text>
                 <Text typography={"dtPara1"}>Developer</Text>
-            </FlexBox>
+            </FlexBox> */}
             <OverView overviewData={{ name, location, projectInfo }} />
             <Configuration configurationData={{ configuration }} />
             <Amenities amenitiesData={{ amenities }} />
