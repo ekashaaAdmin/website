@@ -30,8 +30,42 @@ import Birla_Estates from "./Birla_Estates.webp";
 import { Legal_Services } from "./Legal_Services";
 import { Finance } from "./Finance";
 import { Profile } from "./Profile";
+import Zero_Commission from "./Zero_Commission.png";
+import Unmatched_Price from "./Unmatched_Price.png";
+import Cream_South from "./Cream_South.png";
+import Geography from "./Geography.png";
+import NRI from "./NRI.png";
+import Honesty from "./Honesty.png";
+import services1 from "./services1.png";
+import services2 from "./services2.png";
+import services3 from "./services3.png";
+import services4 from "./services4.png";
+import services5 from "./services5.png";
+import services6 from "./services6.png";
+import Marina_Bay_2 from "./Marina_Bay_2.webp";
+import Marina_Bay_1 from "./Marina_Bay_1.webp";
+import Racecourse from "./Racecourse.webp";
+import RustomjeeBanner from "./RustomjeeBanner.webp";
+import Birla_Niyara_banner from "./Birla_Niyara_banner.webp";
 
 export {
+    Marina_Bay_1,
+    Racecourse,
+    RustomjeeBanner,
+    Birla_Niyara_banner,
+    Marina_Bay_2,
+    services1,
+    services2,
+    services3,
+    services4,
+    services5,
+    services6,
+    Honesty,
+    Cream_South,
+    Geography,
+    NRI,
+    Zero_Commission,
+    Unmatched_Price,
     Legal_Services,
     Finance,
     Profile,
