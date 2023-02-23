@@ -11,12 +11,12 @@ type ServicesCardProps = {
 };
 
 const serviceCardCss: CSS = {
-    boxShadow: "$shadowtype1",
+    boxShadow: "rgba(94, 94, 94, 0.2) 0px 7px 29px 0px",
     margin: "$4 auto",
-    padding: "$1",
     textAlign: "center",
     width: "$servicesCardWidth",
-    height: "$servicesCardHeight"
+    height: "$servicesCardHeight",
+    padding: "$1"
 };
 
 export const ServicesCard = ( { logo, name }: ServicesCardProps ) => {
@@ -33,9 +33,7 @@ export const ServicesCard = ( { logo, name }: ServicesCardProps ) => {
             ) : (
                 logo
             )}
-            <Text typography={{ "@initial": "mbPara1", "@bp3": "dtPara1" }}>
-                {name}
-            </Text>
+            <Text typography={"dtPara2"}>{name}</Text>
         </Flex>
     );
 };
