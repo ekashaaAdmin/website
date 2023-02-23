@@ -31,16 +31,8 @@ export const ServicesCarousel2 = () => {
                     }}
                     css={{ textAlign: "center" }}
                 >
-                    Ekaasha{" "}
-                    <Text css={{ fontWeight: "$dtPara1" }}>Exclusive</Text>
-                </Text>
-                <Text
-                    typography={{
-                        "@initial": "mbSubHeading1",
-                        "@bp3": "dtSubHeading1"
-                    }}
-                >
-                    SERVICES
+                    Ekashaa{" "}
+                    <Text css={{ fontWeight: "$dtPara1" }}>Services</Text>
                 </Text>
             </Flex>
             <FlexBox
