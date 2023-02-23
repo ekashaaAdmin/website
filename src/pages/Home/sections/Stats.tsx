@@ -19,7 +19,7 @@ export const Stats = () => {
                         "@bp3": "dtHeading1"
                     }}
                 >
-                    <Text css={{ fontWeight: "$dtPara1" }}>
+                    <Text align={"center"} css={{ fontWeight: "$dtPara1" }}>
                         property needs!
                     </Text>
                 </Text>

@@ -42,7 +42,16 @@ export const Intro = () => {
         >
             <IntroCard
                 direction={"column"}
-                css={{ mt: "$14", height: "fit-content" }}
+                css={{
+                    mt: "$14",
+                    height: "fit-content",
+                    "@mobileS": {
+                        mt: "$6"
+                    },
+                    "@bp2": {
+                        mt: "$14"
+                    }
+                }}
             >
                 <Text
                     typography={{

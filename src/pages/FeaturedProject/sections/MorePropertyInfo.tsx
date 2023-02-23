@@ -225,9 +225,9 @@ export const MorePropertyInfo = ( { propertyData }: MorePropertyInfoProps ) => {
                         </FlexBox>
                     </FlexBox> */}
                     <hr />
-                    <Box css={enquireNowCss} width={"half"}>
+                    {/* <Box css={enquireNowCss} width={"half"}>
                         <Button variant={"generalButton"}>Enquire Now</Button>
-                    </Box>
+                    </Box> */}
                 </FlexBox>
             </FlexBox>
 
