@@ -1,4 +1,11 @@
-import { HomeBg } from "@src/assets";
+import {
+    Birla_Niyara_banner,
+    HomeBg,
+    Marina_Bay_1,
+    Marina_Bay_2,
+    Racecourse,
+    RustomjeeBanner
+} from "@src/assets";
 import { Box } from "@src/components";
 import { CSS } from "@src/styles";
 import { Intro, Management } from "./sections";
@@ -17,9 +24,11 @@ const homeIntroBgCss: CSS = {
 };
 
 const bgImages: string[] = [
-    "https://images.pexels.com/photos/126271/pexels-photo-126271.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    "https://images.pexels.com/photos/2555635/pexels-photo-2555635.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    "https://images.pexels.com/photos/4322027/pexels-photo-4322027.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    Marina_Bay_2,
+    Marina_Bay_1,
+    Racecourse,
+    RustomjeeBanner,
+    Birla_Niyara_banner
 ];
 
 export const About = () => {
