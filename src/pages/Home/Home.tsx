@@ -1,37 +1,51 @@
-import lottie from "lottie-web";
-import { useEffect, useRef } from "react";
-import { useNavigate } from "react-router-dom";
-import "./home.scss";
-import underconstruction from "./underconstruction.json";
+import {
+    Birla_Niyara_banner,
+    HomeBg,
+    Marina_Bay_1,
+    Marina_Bay_2,
+    Racecourse,
+    RustomjeeBanner
+} from "@src/assets";
+import { Box, Loader } from "@src/components";
+import { Contact } from "@src/components/Contact";
+import { CSS } from "@src/styles";
+import { Suspense } from "react";
+import { BackgroundCarousel } from "@src/components/BackgroundCarousel";
+
+import {
+    Blogs,
+    Developers,
+    Featured,
+    HomeAbout,
+    Intro,
+    Services,
+    Stats,
+    Testimonials
+} from "./sections";
+
+const bgImages: string[] = [
+    Marina_Bay_2,
+    Marina_Bay_1,
+    Racecourse,
+    RustomjeeBanner,
+    Birla_Niyara_banner
+];
 
 export const Home = () => {
-    const container = useRef<HTMLDivElement | null>(null);
-    const navigate = useNavigate();
-
-    useEffect(() => {
-        lottie.loadAnimation({
-            container: container.current as Element,
-            renderer: "svg",
-            loop: true,
-            autoplay: true,
-            animationData: underconstruction,
-        });
-    });
-
     return (
-        <div className="under-construction">
-            <img
-                src="/images/logo.PNG"
-                alt="Logo"
-                className="logo"
-                onClick={() => {
-                    navigate("/");
-                }}
-            />
-            <div className="lottie-container" ref={container}></div>
-            <div className="content">
-                <h2>This website is under construction, we will be right back shortly.</h2>
-            </div>
-        </div>
+        <>
+            <BackgroundCarousel height={"75vh"} imgSrc={bgImages} />
+            <Intro />
+            <HomeAbout />
+            <Services />
+            <Featured />
+            <Testimonials />
+            <Developers />
+            <Stats />
+            <Suspense fallback={<Loader />}>
+                <Blogs />
+            </Suspense>
+            <Contact />
+        </>
     );
 };
