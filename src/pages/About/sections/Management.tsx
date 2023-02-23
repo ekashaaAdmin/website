@@ -51,8 +51,7 @@ export const Management = () => {
                 <ImgContainer
                     src={belaShah_pic1}
                     alt="blog-thubnail"
-                    css={{ flex: 1 }}
-                    width={"half"}
+                    css={{ flex: 1, width: "20rem" }}
                 />
                 <Flex
                     direction="column"
@@ -63,10 +62,10 @@ export const Management = () => {
                     <Text
                         typography={{
                             "@initial": "mbPara1",
-                            "@bp3": "dtHeading3"
+                            "@bp3": "dtHeading2"
                         }}
                         align={"center"}
-                        css={{ fontWeight: "$dtHeading1" }}
+                        css={{ fontWeight: "$dtHeading1", alignSelf: "center" }}
                     >
                         Bela Shah
                     </Text>
@@ -77,25 +76,14 @@ export const Management = () => {
                         }}
                     >
                         Bela Shah is founder and proprietor of Ekashaa Realty.
-                        She has recorded sales worth ₹1900 million (₹190 crores)
-                        in the last five years alone. In terms of area, her
-                        sales accounts for a staggering 32000 square feet of
-                        premium real estate in South Mumbai. Over the year, she
-                        has been associated with prestigious residential
-                        projects that house Bollywood celebrities and well-known
-                        industrialists such as Piramal Mahalaxmi, XXX, XXXX.
+                        She has sold a staggering 32000 square feet of premium
+                        real estate in South Mumbai worth ₹1900 million (₹190
+                        crores) in the last five years.
                         <br />
-                        Among her clients are CEOs and CFOs of tech, advertising
-                        and automotive firms, who rely on her deep market
-                        knowledge and insights for their purchase decisions. A
-                        keen listener with an affable personality, Bela is well
-                        known for her ability to find and make personal
-                        connections everywhere she goes. Her intuitive
-                        understanding of client needs and her knack to persuade
-                        without pestering sets her apart from the rest.
-                        <br />
-                        Through Ekashaa, Bela hopes to augment the unique voice
-                        and vision that she brings to the premium real estate
+                        <br />A keen listener with an affable personality,
+                        Bela’s intuitive understanding of client needs, deep
+                        market knowledge and honest communication makes her one
+                        of the most reliable voices in the premium realty
                         market.
                     </Text>
                 </Flex>
