@@ -15,7 +15,7 @@ export const TestimonialsCarousel = () => {
             align={"center"}
             css={{
                 px: "0",
-                "@bp3": { maxWidth: "$laptopS" }
+                "@bp3": { maxWidth: "$laptopL" }
             }}
         >
             <Text
@@ -30,8 +30,8 @@ export const TestimonialsCarousel = () => {
             <FlexBox
                 css={{
                     maxWidth: "$full",
-                    "@bp2": {
-                        maxWidth: "$tablet"
+                    "@bp3": {
+                        maxWidth: "$laptopS"
                     }
                 }}
             >
@@ -43,8 +43,8 @@ export const TestimonialsCarousel = () => {
                     }}
                     modules={[ Pagination ]}
                     breakpoints={{
-                        768: {
-                            slidesPerView: 2
+                        1024: {
+                            slidesPerView: 3
                         }
                     }}
                 >
