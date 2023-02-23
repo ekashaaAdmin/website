@@ -50,11 +50,12 @@ export const Intro = () => {
                         "@bp3": "dtPageHead"
                     }}
                 >
-                    FIND YOUR <br /> PERFECT HOME
+                    Good things <br /> come to those…
                 </Text>
                 <Text typography={{ "@initial": "mbPara1", "@bp3": "dtPara1" }}>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Sapiente commodi pariatur cupiditate rem, odio ipsum?
+                    who know whom to trust. At Ekashaa, we value the journey
+                    that has led you to us, and it’s why we know you deserve a
+                    slice of paradise
                 </Text>
             </IntroCard>
 
@@ -66,11 +67,11 @@ export const Intro = () => {
                 <Text typography={"dtHeading3"}>Explore Ekashaa</Text>
                 <Text typography={"dtPara1"}>Scroll Down</Text>
             </Flex>
-            <IoIosArrowDropdownCircle
+            {/* <IoIosArrowDropdownCircle
                 color="#1C99CD"
                 size={"2rem"}
                 style={arrowDownCss as any}
-            />
+            /> */}
         </Section>
     );
 };

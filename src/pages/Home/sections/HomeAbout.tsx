@@ -27,10 +27,10 @@ export const HomeAbout = () => {
             <LogoSmall css={{ minWidth: "$logoMedium" }} />
             <Flex direction={"column"} center gap={"4"} css={textContentCss}>
                 <Text typography={{ "@initial": "mbPara1", "@bp3": "dtPara1" }}>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Enim, hic illo! Deserunt ullam nobis hic accusantium
-                    corporis veritatis tenetur nisi ipsum saepe aliquid! Iusto
-                    excepturi possimus aliquid illo impedit ducimus?
+                    We are a specialized property advisory service for luxury
+                    homes and high-end commercial spaces in Mumbai. We bring you
+                    all the information, analysis and advice you need to make
+                    high-value property purchases in the heart of the city.
                 </Text>
                 <Link to={`/about`}>
                     <Button variant={"generalButton"}>More About Us</Button>

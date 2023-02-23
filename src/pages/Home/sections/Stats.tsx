@@ -3,14 +3,15 @@ import { Flex, Section, Text } from "@components";
 export const Stats = () => {
     return (
         <Section id="stats" center direction={"column"} gap="10">
-            <Flex direction="column">
+            <Flex direction="column" align={"center"} justify={"center"}>
                 <Text
+                    align={"center"}
                     typography={{
                         "@initial": "mbHeading1",
                         "@bp3": "dtHeading1"
                     }}
                 >
-                    A complete solution for
+                    A complete solution for all your{" "}
                 </Text>
                 <Text
                     typography={{
@@ -18,7 +19,6 @@ export const Stats = () => {
                         "@bp3": "dtHeading1"
                     }}
                 >
-                    all your{" "}
                     <Text css={{ fontWeight: "$dtPara1" }}>
                         property needs!
                     </Text>
