@@ -25,7 +25,7 @@ export const DevelopersGrid = () => {
                 gap={"5"}
                 columns={{
                     "@initial": "1",
-                    "@bp1": "3",
+                    "@bp2": "3",
                     "@bp3": "5"
                 }}
                 justify={"center"}
@@ -38,7 +38,6 @@ export const DevelopersGrid = () => {
                             src={dev}
                             alt="developer-logo"
                             css={{
-                                width: "$full",
                                 margin: "$3 auto"
                             }}
                         />
