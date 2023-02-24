@@ -38,7 +38,7 @@ function App() {
                             element={<PropertyTemplate />}
                         />
                     </Route>
-                    {/* <Route path="*" element={<NotFound />} /> */}
+                    <Route path="*" element={<NotFound />} />
                 </Routes>
             </BrowserRouter>
             <ToastContainer

@@ -5,8 +5,10 @@ import {
     ImgContainer,
     ProperyCardCarousel,
     Grid,
-    Text
+    Text,
+    Anchor
 } from "@src/components";
+import { Contact } from "@src/components/Contact";
 import { CSS } from "@src/styles";
 import { Property } from "@src/utils";
 import { A11y, EffectFade, Navigation, Pagination, Scrollbar } from "swiper";
@@ -225,9 +227,13 @@ export const MorePropertyInfo = ( { propertyData }: MorePropertyInfoProps ) => {
                         </FlexBox>
                     </FlexBox> */}
                     <hr />
-                    {/* <Box css={enquireNowCss} width={"half"}>
-                        <Button variant={"generalButton"}>Enquire Now</Button>
-                    </Box> */}
+                    <Anchor href={"#contactUs"}>
+                        <Box css={enquireNowCss} width={"half"}>
+                            <Button variant={"generalButton"}>
+                                Interested
+                            </Button>
+                        </Box>
+                    </Anchor>
                 </FlexBox>
             </FlexBox>
 
@@ -243,6 +249,7 @@ export const MorePropertyInfo = ( { propertyData }: MorePropertyInfoProps ) => {
             <Amenities amenitiesData={{ amenities }} />
             <Location locationData={{ location }} />
             <Developer developerData={{ developer }} />
+            <Contact />
         </>
     );
 };
