@@ -75,9 +75,9 @@ export const OverView = ( { overviewData }: OverviewProps ) => {
 
                     <Text>{projectInfo?.projectDescription}</Text>
 
-                    <Button css={downloadNowCss} variant={"generalButton"}>
+                    {/* <Button css={downloadNowCss} variant={"generalButton"}>
                         Download Brochure
-                    </Button>
+                    </Button> */}
                 </FlexBox>
             </Section>
             <Section variant={"seperatorCss"}></Section>

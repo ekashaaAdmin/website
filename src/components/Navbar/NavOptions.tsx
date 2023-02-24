@@ -36,7 +36,6 @@ export const navOptionsCss: CSS = {
 };
 
 export const NavOptions = () => {
-    const element = document.getElementById( "#contactUs" );
     return (
         <Flex direction={"column"} gap={"1"} css={navOptionsCss}>
             <Text typography={"navOptions"}>
@@ -49,12 +48,7 @@ export const NavOptions = () => {
             <Text typography={"navOptions"}>
                 <Link to={`/services`}>Services</Link>
             </Text>
-            <Anchor
-                href={"#contactUs"}
-                // onClick={() => {
-                //     element?.scrollIntoView();
-                // }}
-            >
+            <Anchor href={"#contactUs"}>
                 <Text typography={"navOptions"}> Contact Us</Text>
             </Anchor>
         </Flex>

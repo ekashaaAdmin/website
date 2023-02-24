@@ -14,7 +14,7 @@ export interface CardDetailsProps {
 }
 
 export const CardDetails = ( { overviewData }: CardDetailsProps ) => {
-    const { name, developer, projectInfo, priceInfo } = overviewData;
+    const { name, developer, projectInfo, priceInfo, location } = overviewData;
 
     return (
         <FlexBox
@@ -38,7 +38,7 @@ export const CardDetails = ( { overviewData }: CardDetailsProps ) => {
                         {developer?.developerName}
                     </Text>
                 </Text>
-                <Text typography={"dtPara2"}>Malabar Hills, Mumbai</Text>
+                <Text typography={"dtPara2"}>{location?.shortAddress}</Text>
             </FlexBox>
             <FlexBox
                 direction={"column"}
