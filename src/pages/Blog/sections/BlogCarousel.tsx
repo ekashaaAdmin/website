@@ -34,49 +34,45 @@ interface BlogCarouselProps {
 export const BlogCarousel = ( { unwatedBlogSlug }: BlogCarouselProps ) => {
     const { data: blogCarouselData } = useGetBlogs( unwatedBlogSlug );
 
-    return (
-        blogCarouselData && (
-            <Box css={blogCarouselCss}>
-                <Swiper
-                    navigation
-                    pagination={{ clickable: true }}
-                    modules={[ Navigation, Pagination, Scrollbar, A11y ]}
-                    watchOverflow={true}
-                    breakpoints={{
-                        640: {
-                            slidesPerView: 2
-                        },
-                        1024: {
-                            slidesPerView: 3
-                        }
-                    }}
-                >
-                    {blogCarouselData?.map( ( blog ) => (
-                        <SwiperSlide key={blog._id}>
-                            <FlexBox
-                                css={blogCardCss}
-                                direction={"column"}
-                                gap={"1"}
-                            >
-                                <Link to={`/blog/${blog.slug}`}>
-                                    <ImgContainer
-                                        fullHeight
-                                        css={{ flex: 1 }}
-                                        src={Blog2}
-                                        alt={"blogimage"}
-                                    />
-                                    <Text typography={"dtPara1"}>
-                                        {blog.title}
-                                    </Text>
-                                    <Text typography={"dtPara3"}>
-                                        {blog.subTitle}
-                                    </Text>
-                                </Link>
-                            </FlexBox>
-                        </SwiperSlide>
-                    ) )}
-                </Swiper>
-            </Box>
-        )
-    );
+    return blogCarouselData ? (
+        <Box css={blogCarouselCss}>
+            <Swiper
+                navigation
+                pagination={{ clickable: true }}
+                modules={[ Navigation, Pagination, Scrollbar, A11y ]}
+                watchOverflow={true}
+                breakpoints={{
+                    640: {
+                        slidesPerView: 2
+                    },
+                    1024: {
+                        slidesPerView: 3
+                    }
+                }}
+            >
+                {blogCarouselData?.map( ( blog ) => (
+                    <SwiperSlide key={blog._id}>
+                        <FlexBox
+                            css={blogCardCss}
+                            direction={"column"}
+                            gap={"1"}
+                        >
+                            <Link to={`/blog/${blog.slug}`}>
+                                <ImgContainer
+                                    fullHeight
+                                    css={{ flex: 1 }}
+                                    src={Blog2}
+                                    alt={"blogimage"}
+                                />
+                                <Text typography={"dtPara1"}>{blog.title}</Text>
+                                <Text typography={"dtPara3"}>
+                                    {blog.subTitle}
+                                </Text>
+                            </Link>
+                        </FlexBox>
+                    </SwiperSlide>
+                ) )}
+            </Swiper>
+        </Box>
+    ) : null;
 };
