@@ -11,7 +11,7 @@ export const BlogTemplate = () => {
         <Section direction={"column"}>
             <Intro />
             <BlogSection blogSlug={blogSlug} />
-            <BlogCarousel />
+            <BlogCarousel unwatedBlogSlug={blogSlug} />
         </Section>
     );
 };

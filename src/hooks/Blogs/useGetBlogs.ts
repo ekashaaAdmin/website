@@ -23,21 +23,27 @@ export interface Blog {
     title: string;
 }
 
-export const getBlogsFn = async () => {
-    const query = `*[_type == 'post'] 
+export const getBlogsFn = async ( unwantedBlogSlug?: string ) => {
+    const query = `*[_type == 'post' ${
+        unwantedBlogSlug ? `&& slug.current != "${unwantedBlogSlug}"` : ""
+    }] 
     { 
         _id, 
         publishedAt, 
         subTitle,
         title, 
         body,
+        'slug': slug.current,
         'authorName': author -> {name}, 
         'mainImage': mainImage.asset -> {url} 
     }`;
+
     const response = await client.fetch( query );
     return response;
 };
 
-export const useGetBlogs = () => {
-    return useQuery<Blog[]>( [], () => getBlogsFn() );
+export const useGetBlogs = ( unwantedBlogSlug?: string ) => {
+    return useQuery<Blog[]>( [ "unwantedBlogSlug" ], () =>
+        getBlogsFn( unwantedBlogSlug )
+    );
 };

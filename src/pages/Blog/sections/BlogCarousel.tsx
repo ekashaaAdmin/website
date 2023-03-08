@@ -5,9 +5,11 @@ import { CSS } from "@src/styles";
 import { A11y, Navigation, Pagination, Scrollbar } from "swiper";
 
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Link } from "@src/components/Link";
 
 const blogCarouselCss: CSS = {
     margin: "$0 auto",
+    width: "$full",
     "@mobileM": {
         maxWidth: "$mobileS"
     },
@@ -21,49 +23,60 @@ const blogCarouselCss: CSS = {
 };
 
 const blogCardCss: CSS = {
-    maxWidth: "260px"
+    maxWidth: "260px",
+    width: "fit-content"
 };
 
-export const BlogCarousel = () => {
-    const { data } = useGetBlogs();
-    const blogCarouselData = data;
+interface BlogCarouselProps {
+    unwatedBlogSlug?: string;
+}
+
+export const BlogCarousel = ( { unwatedBlogSlug }: BlogCarouselProps ) => {
+    const { data: blogCarouselData } = useGetBlogs( unwatedBlogSlug );
 
     return (
-        <Box css={blogCarouselCss}>
-            <Swiper
-                navigation
-                pagination={{ clickable: true }}
-                modules={[ Navigation, Pagination, Scrollbar, A11y ]}
-                spaceBetween={1}
-                slidesPerView={1}
-                // breakpoints={{
-                //     640: {
-                //         slidesPerView: 2
-                //     },
-                //     1024: {
-                //         slidesPerView: 3
-                //     }
-                // }}
-            >
-                {blogCarouselData?.map( ( key ) => (
-                    <SwiperSlide key={key._id}>
-                        <FlexBox
-                            css={blogCardCss}
-                            direction={"column"}
-                            gap={"1"}
-                        >
-                            <ImgContainer
-                                fullHeight
-                                css={{ flex: 1 }}
-                                src={Blog2}
-                                alt={"blogimage"}
-                            />
-                            <Text typography={"dtPara1"}>{key.title}</Text>
-                            <Text typography={"dtPara3"}>{key.subTitle}</Text>
-                        </FlexBox>
-                    </SwiperSlide>
-                ) )}
-            </Swiper>
-        </Box>
+        blogCarouselData && (
+            <Box css={blogCarouselCss}>
+                <Swiper
+                    navigation
+                    pagination={{ clickable: true }}
+                    modules={[ Navigation, Pagination, Scrollbar, A11y ]}
+                    watchOverflow={true}
+                    breakpoints={{
+                        640: {
+                            slidesPerView: 2
+                        },
+                        1024: {
+                            slidesPerView: 3
+                        }
+                    }}
+                >
+                    {blogCarouselData?.map( ( blog ) => (
+                        <SwiperSlide key={blog._id}>
+                            <FlexBox
+                                css={blogCardCss}
+                                direction={"column"}
+                                gap={"1"}
+                            >
+                                <Link to={`/blog/${blog.slug}`}>
+                                    <ImgContainer
+                                        fullHeight
+                                        css={{ flex: 1 }}
+                                        src={Blog2}
+                                        alt={"blogimage"}
+                                    />
+                                    <Text typography={"dtPara1"}>
+                                        {blog.title}
+                                    </Text>
+                                    <Text typography={"dtPara3"}>
+                                        {blog.subTitle}
+                                    </Text>
+                                </Link>
+                            </FlexBox>
+                        </SwiperSlide>
+                    ) )}
+                </Swiper>
+            </Box>
+        )
     );
 };

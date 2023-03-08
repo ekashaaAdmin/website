@@ -46,6 +46,13 @@ const myComponents: PortableTextComponents = {
 
 export const BlogSection = ( { blogSlug }: BlogSectionProps ) => {
     const { data } = useGetBlog( blogSlug ?? "" );
+    const publishedDate = new Date(
+        data?.publishedAt as string
+    ).toLocaleDateString( "en-EN", {
+        year: "numeric",
+        day: "numeric",
+        month: "short"
+    } );
 
     return (
         <FlexBox direction={"column"} gap={"1"} css={blogsectionCss}>
@@ -71,15 +78,17 @@ export const BlogSection = ( { blogSlug }: BlogSectionProps ) => {
                     "@bp3": "dtPara1"
                 }}
             >
-                Published at {` ${data?.publishedAt}`}
+                Published at {`${publishedDate}`}
             </Text>
-            <ImgContainer
-                css={{ flex: 1 }}
-                width={"full"}
-                heigth={"half"}
-                src={`${data?.mainImage?.url}`}
-                alt={"blogimage"}
-            />
+            {data?.mainImage?.url && (
+                <ImgContainer
+                    css={{ flex: 1 }}
+                    width={"full"}
+                    heigth={"half"}
+                    src={`${data?.mainImage?.url}`}
+                    alt={"blogimage"}
+                />
+            )}
             <PortableText value={data?.body as any} components={myComponents} />
         </FlexBox>
     );
