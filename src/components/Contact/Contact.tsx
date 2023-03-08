@@ -92,7 +92,7 @@ export const Contact = () => {
                     <ContactForm />
                     <Text>
                         or reach us at <br />
-                        +91 982045677
+                        +91 9820467249
                     </Text>
                 </Flex>
             </FlexBox>
