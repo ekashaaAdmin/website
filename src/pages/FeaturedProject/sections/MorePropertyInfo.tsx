@@ -117,7 +117,7 @@ export const MorePropertyInfo = ( { propertyData }: MorePropertyInfoProps ) => {
                                     src={img.url}
                                     alt="property-image"
                                     fullHeight
-                                    width={"full"}
+                                    size={"full"}
                                     css={{
                                         objectFit: "cover",
                                         maxHeight: "$mobileL"
@@ -163,12 +163,20 @@ export const MorePropertyInfo = ( { propertyData }: MorePropertyInfoProps ) => {
                         <Grid columns={"2"} gap={"7"} justify={"between"}>
                             <FlexBox direction={"column"}>
                                 <Text typography={"dtPara3"}>ReraID</Text>
-                                <Text
-                                    typography={"dtPara1"}
-                                    css={{ fontWeight: "$dtHeading2" }}
-                                >
-                                    {projectInfo?.reraId}
-                                </Text>
+                                {projectInfo?.reraId.map( ( id ) => (
+                                    <Text
+                                        typography={"dtPara1"}
+                                        css={{
+                                            fontWeight: "$dtHeading2",
+                                            mb: "$2"
+                                        }}
+                                        key={id._key}
+                                    >
+                                        {id?.towerName}
+                                        {id.towerName ? `\n` : ""}
+                                        {id.towerReraId}
+                                    </Text>
+                                ) )}
                             </FlexBox>
                             <FlexBox direction={"column"}>
                                 <Text typography={"dtPara3"}>Carpet Area</Text>
