@@ -1,5 +1,4 @@
 export * from "./Intro";
-export * from "./About";
 export * from "./Services";
 export * from "./Blogs";
 export * from "./Connect";
