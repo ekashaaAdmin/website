@@ -45,7 +45,13 @@ export interface Property {
         projectStatus: string;
         projectType: string;
         totalFloor: number;
-        reraId: string;
+        reraId: [
+            {
+                _key: string;
+                towerReraId: string;
+                towerName?: string;
+            }
+        ];
     };
     reraVerified: true;
 }

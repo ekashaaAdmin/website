@@ -1,24 +1,12 @@
-import {
-    Lodha,
-    Piramal,
-    Rustomjee,
-    Shapoorji_Po,
-    Birla_Estates
-} from "@assets";
+import { useDeveloperLogo } from "@src/hooks";
 import { Grid } from "../Grid";
 import { ImgContainer } from "../ImgContainer";
 import { Section } from "../Section";
 
-const developers: string[] = [
-    Lodha,
-    Piramal,
-    Birla_Estates,
-    Rustomjee,
-    Shapoorji_Po
-];
-
 export const DevelopersGrid = () => {
-    return (
+    const { data: developers } = useDeveloperLogo();
+
+    return developers ? (
         <Section>
             <Grid
                 css={{ width: "$full" }}
@@ -31,19 +19,24 @@ export const DevelopersGrid = () => {
                 justify={"center"}
                 align={"center"}
             >
-                {developers.map( ( dev, key ) => {
+                {developers?.map( ( dev, key ) => {
                     return (
                         <ImgContainer
                             key={key}
-                            src={dev}
+                            src={dev.logo?.url}
                             alt="developer-logo"
                             css={{
-                                margin: "$3 auto"
+                                margin: "$3 auto",
+                                filter: "grayScale(100%)",
+                                transition: "filter 0.5s ease-in-out",
+                                "&:hover": {
+                                    filter: "grayScale(0%)"
+                                }
                             }}
                         />
                     );
                 } )}
             </Grid>
         </Section>
-    );
+    ) : null;
 };

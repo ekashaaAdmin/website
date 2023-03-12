@@ -6,7 +6,7 @@ const getTestimonialsFn = async () => {
     const query = `*[_type == 'testimonial'] {
         _id, 
         name,
-        'propertyTestimonial': propertyTestimonial -> {name},
+        property,
         'profilePicture': profilePicture.asset -> {url},
         testimonialContent
     }`;

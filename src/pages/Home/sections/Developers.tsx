@@ -1,10 +1,4 @@
-import {
-    Box,
-    DevelopersCarousel,
-    DevelopersGrid,
-    Section,
-    Text
-} from "@components";
+import { Box, DevelopersGrid, Section, Text } from "@components";
 
 export const Developers = () => {
     return (

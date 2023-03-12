@@ -5,13 +5,12 @@ import { useQuery } from "@tanstack/react-query";
 export const getLogoFn = async () => {
     const query = `*[_type == 'developerIcons' ]
     {
-        'logo': logo.asset
+        'logo': logo.asset -> {url}
     }`;
     const response = await client.fetch( query );
-    console.log( response );
-    return response[ 0 ];
+    return response;
 };
 
 export const useDeveloperLogo = () => {
-    return useQuery<Partial<DevLogo>>( [], () => getLogoFn() );
+    return useQuery<DevLogo[]>( [ "developer-logo" ], () => getLogoFn() );
 };

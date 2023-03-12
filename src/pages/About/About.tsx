@@ -1,27 +1,13 @@
 import {
     Birla_Niyara_banner,
-    HomeBg,
     Marina_Bay_1,
     Marina_Bay_2,
     Racecourse,
     RustomjeeBanner
 } from "@src/assets";
-import { Box } from "@src/components";
-import { CSS } from "@src/styles";
-import { Intro, Management } from "./sections";
-import { About as AboutUs, Stats } from "../Home/sections";
-import { Contact } from "@src/components/Contact";
 import { BackgroundCarousel } from "@src/components/BackgroundCarousel";
-
-const homeIntroBgCss: CSS = {
-    backgroundImage: `url(${HomeBg})`,
-    backgroundSize: "cover",
-    backgroundPosition: "center",
-    left: "$0",
-    height: "40vh",
-    width: "100%",
-    position: "absolute"
-};
+import { Contact } from "@src/components/Contact";
+import { AboutServices, Intro, Management } from "./sections";
 
 const bgImages: string[] = [
     Marina_Bay_2,
@@ -36,9 +22,9 @@ export const About = () => {
         <>
             <BackgroundCarousel height={"40vh"} imgSrc={bgImages} />
             <Intro />
-            <AboutUs />
+            <AboutServices />
             <Management />
-            <Stats />
+            {/* <Stats /> */}
             <Contact />
         </>
     );

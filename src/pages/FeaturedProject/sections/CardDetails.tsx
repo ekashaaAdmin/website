@@ -50,7 +50,8 @@ export const CardDetails = ( { overviewData }: CardDetailsProps ) => {
                         "@bp3": "dtHeading2"
                     }}
                 >
-                    ₹ {priceInfo?.price} {priceInfo?.priceUnit}
+                    ₹ {parseFloat( String( priceInfo?.price ) ).toFixed( 2 )}{" "}
+                    {priceInfo?.priceUnit}
                 </Text>
                 <Text typography={"dtPara2"}>Onwards</Text>
             </FlexBox>

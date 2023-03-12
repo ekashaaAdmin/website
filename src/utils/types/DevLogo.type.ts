@@ -1,5 +1,5 @@
 export interface DevLogo {
     logo: {
-        url: string;
+        url?: string;
     };
 }
