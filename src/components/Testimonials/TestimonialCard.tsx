@@ -22,7 +22,7 @@ interface TestimonialProps {
 }
 
 export const TestimonialCard = ( { testimonialData }: TestimonialProps ) => {
-    const { name, profilePicture, propertyTestimonial, testimonialContent } =
+    const { name, profilePicture, property, testimonialContent } =
         testimonialData;
 
     return (
@@ -53,7 +53,7 @@ export const TestimonialCard = ( { testimonialData }: TestimonialProps ) => {
                 <Flex direction={"column"} align={"center"}>
                     <Text typography={"dtPara1"}>{name}</Text>
                     <Text typography={"dtPara2"} align={"center"}>
-                        {propertyTestimonial.name}
+                        {property}
                     </Text>
                 </Flex>
             </FlexBox>
