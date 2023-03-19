@@ -94,7 +94,7 @@ export const MorePropertyInfo = ( { propertyData }: MorePropertyInfoProps ) => {
     return (
         <>
             <FlexBox
-                align={"start"}
+                align={"center"}
                 direction={{ "@initial": "column", "@bp2": "row" }}
                 css={propertyInfoCss}
             >
@@ -108,6 +108,7 @@ export const MorePropertyInfo = ( { propertyData }: MorePropertyInfoProps ) => {
                             prevEl: ".swiper-button-prev"
                         }}
                         pagination={{ clickable: true }}
+                        loop
                         modules={[ Navigation, Pagination, Scrollbar, A11y ]}
                         scrollbar={{ draggable: true }}
                     >
@@ -257,7 +258,7 @@ export const MorePropertyInfo = ( { propertyData }: MorePropertyInfoProps ) => {
             <Amenities amenitiesData={{ amenities }} />
             <Location locationData={{ location }} />
             <Developer developerData={{ developer }} />
-            <Contact />
+            <Contact isPropertyPage propertyName={name} />
         </>
     );
 };

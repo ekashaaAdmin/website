@@ -5,3 +5,5 @@ export * from "./Configuration";
 export * from "./Location";
 export * from "./OverView";
 export * from "./Developer";
+export * from "./BrochureForm";
+export * from "./ContactForm";
