@@ -1,12 +1,5 @@
-import { belaShah_pic1, Management1, Management2 } from "@src/assets";
-import {
-    Box,
-    Button,
-    Flex,
-    ImgContainer,
-    Section,
-    Text
-} from "@src/components";
+import { belaShahProfile } from "@src/assets";
+import { Flex, ImgContainer, Section, Text } from "@src/components";
 
 export const Management = () => {
     return (
@@ -49,9 +42,15 @@ export const Management = () => {
                 }}
             >
                 <ImgContainer
-                    src={belaShah_pic1}
+                    src={belaShahProfile}
                     alt="blog-thubnail"
-                    css={{ flex: 1, width: "20rem" }}
+                    css={{
+                        flex: 1,
+                        width: "20rem",
+                        maxHeight: "20rem",
+                        borderRadius: "50%",
+                        overflow: "hidden"
+                    }}
                 />
                 <Flex
                     direction="column"

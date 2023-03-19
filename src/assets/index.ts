@@ -6,7 +6,7 @@ import HomeBg from "./HomeBg.webp";
 import Footer_Design_Bat from "./Footer_Design_Bat.png";
 import Blog1 from "./Blog1.png";
 import Blog2 from "./Blog2.png";
-import belaShah_pic1 from "./belaShah_pic1.png";
+import belaShahProfile from "./BelaShahProfile.jpg";
 import DeveloperLodha from "./DeveloperLodha.png";
 import DeveloperBirlaEstates from "./DeveloperBirlaEstates.png";
 import DeveloperPiramal from "./DeveloperPiramal.png";
@@ -90,7 +90,7 @@ export {
     Management1,
     Management2,
     ContactFormImg,
-    belaShah_pic1,
+    belaShahProfile,
     Buyer_Journey,
     Mobile_Buyer_Journey,
     Lodha,
