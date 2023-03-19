@@ -16,7 +16,12 @@ const contactInnerFlexCss: CSS = {
     width: "90%"
 };
 
-export const Contact = () => {
+interface ContactFormProps {
+    isPropertyPage?: boolean;
+    propertyName?: string;
+}
+
+export const Contact = ( { isPropertyPage, propertyName }: ContactFormProps ) => {
     return (
         <Section
             id="contactUs"
@@ -89,7 +94,10 @@ export const Contact = () => {
                     <Text css={{ maxWidth: "$mobileS" }} typography={"dtPara2"}>
                         Get your queries resolved from our experts
                     </Text>
-                    <ContactForm />
+                    <ContactForm
+                        isPropertyPage={isPropertyPage}
+                        propertyName={propertyName}
+                    />
                     <Text>
                         or reach us at <br />
                         +91 9820467249

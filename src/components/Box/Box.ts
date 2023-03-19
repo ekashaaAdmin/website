@@ -25,7 +25,7 @@ export const boxCss = css( {
             full: { width: "$full" },
             half: { width: "$half" }
         },
-        heigth: {
+        height: {
             full: { height: "$full" },
             half: { height: "$half" }
         }

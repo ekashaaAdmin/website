@@ -24,10 +24,21 @@ const schema = yup.object().shape( {
         .matches( /^(\+?91|0)?[6789]\d{9}$/, {
             message: "Invalid valid number.",
             excludeEmptyString: false
-        } )
+        } ),
+    configuration: yup.number().min( 1 ).max( 10 ),
+    location: yup.string(),
+    comparisonAnalysis: yup.boolean()
 } );
 
-export const ContactForm = () => {
+interface ContactFormProps {
+    isPropertyPage?: boolean;
+    propertyName?: string;
+}
+
+export const ContactForm = ( {
+    isPropertyPage,
+    propertyName
+}: ContactFormProps ) => {
     const form = useRef<HTMLFormElement>( null );
 
     const sendEmail = useCallback( () => {
@@ -64,7 +75,9 @@ export const ContactForm = () => {
             name: "",
             email: "",
             phone: "",
-            role: ""
+            configuration: "",
+            location: "",
+            compareAnalysis: false
         },
         validationSchema: schema,
         onSubmit: () => {
@@ -121,6 +134,53 @@ export const ContactForm = () => {
                     <Text color={"error"}>{errors.phone}</Text>
                 ) : null}
             </Flex>
+
+            {isPropertyPage ? (
+                <>
+                    <Flex direction="column" css={{ width: "$full" }}>
+                        <Input
+                            type="number"
+                            placeholder="Configuration (in BHK)"
+                            name="configuration"
+                            onChange={handleChange}
+                            onBlur={handleBlur}
+                            value={values.configuration}
+                        />
+                        {touched.configuration && errors.configuration ? (
+                            <Text color={"error"}>{errors.configuration}</Text>
+                        ) : null}
+                    </Flex>
+                    <Flex direction="column" css={{ width: "$full" }}>
+                        <Input
+                            type="text"
+                            placeholder="Location"
+                            name="location"
+                            onChange={handleChange}
+                            onBlur={handleBlur}
+                            value={values.location}
+                        />
+                        {touched.location && errors.location ? (
+                            <Text color={"error"}>{errors.location}</Text>
+                        ) : null}
+                    </Flex>
+                    <Flex direction="row" gap="1" css={{ width: "$full" }}>
+                        <Input
+                            type="checkbox"
+                            name="compareAnalysis"
+                            onChange={handleChange}
+                            onBlur={handleBlur}
+                        />
+                        <label>Want Comparison Analysis</label>
+                    </Flex>
+
+                    <Input
+                        type="text"
+                        name="propertyName"
+                        css={{ display: "none" }}
+                        value={propertyName!}
+                    />
+                </>
+            ) : null}
 
             <Flex direction="column" gap="1" css={{ width: "$full" }}>
                 <Button variant={"submitButton"} type="submit">
