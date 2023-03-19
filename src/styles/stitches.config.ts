@@ -24,7 +24,8 @@ export const {
             accentColor: "#1C99CD",
             secondaryColor: "#b5c0bc",
             primaryColor: "#ece1e0",
-            formBorder: "#D4D4D4"
+            formBorder: "#D4D4D4",
+            overlay: "rgba(0, 0, 0, .2)"
         },
         fonts: {
             montserrat: "'Montserrat', sans-serif"
