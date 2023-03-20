@@ -10,7 +10,7 @@ export const sectionCss = css( {
         variant: {
             propertyInfoCss: {
                 padding: "$2",
-                margin: "$2 auto",
+                margin: "$4 auto",
                 "@mobileS": {
                     maxWidth: "$mobileS"
                 },

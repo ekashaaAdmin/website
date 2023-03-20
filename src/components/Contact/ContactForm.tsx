@@ -1,14 +1,14 @@
 import emailjs from "@emailjs/browser";
 import { CSS } from "@src/styles";
-import { FormEvent, useCallback, useRef } from "react";
+import { useFormik } from "formik";
+import { useCallback, useRef } from "react";
+import { toast } from "react-toastify";
+import * as yup from "yup";
 import { Button } from "../Button";
+import { Flex } from "../Flex";
 import { Form } from "../Form";
 import { Input } from "../Input";
-import * as yup from "yup";
-import { useFormik } from "formik";
-import { Flex } from "../Flex";
 import { Text } from "../Text";
-import { toast } from "react-toastify";
 
 const formCss: CSS = {
     textAlign: "left",
@@ -21,13 +21,16 @@ const schema = yup.object().shape( {
     phone: yup
         .string()
         .required()
-        .matches( /^(\+?91|0)?[6789]\d{9}$/, {
-            message: "Invalid valid number.",
-            excludeEmptyString: false
-        } ),
+        .matches(
+            /^(\+?\d{0,4})?\s?-?\s?(\(?\d{3}\)?)\s?-?\s?(\(?\d{3}\)?)\s?-?\s?(\(?\d{4}\)?)?$/,
+            {
+                message: "Invalid valid number.",
+                excludeEmptyString: false
+            }
+        ),
     configuration: yup.number().min( 1 ).max( 10 ),
     location: yup.string(),
-    comparisonAnalysis: yup.boolean()
+    comparisonAnalysis: yup.string()
 } );
 
 interface ContactFormProps {
@@ -77,7 +80,7 @@ export const ContactForm = ( {
             phone: "",
             configuration: "",
             location: "",
-            compareAnalysis: false
+            compareAnalysis: ""
         },
         validationSchema: schema,
         onSubmit: () => {
@@ -167,6 +170,7 @@ export const ContactForm = ( {
                         <Input
                             type="checkbox"
                             name="compareAnalysis"
+                            value={values.compareAnalysis}
                             onChange={handleChange}
                             onBlur={handleBlur}
                         />
@@ -178,6 +182,7 @@ export const ContactForm = ( {
                         name="propertyName"
                         css={{ display: "none" }}
                         value={propertyName!}
+                        readOnly
                     />
                 </>
             ) : null}

@@ -9,6 +9,7 @@ const floatingTextCss: CSS = {
     boxShadow: "$shadowtype3",
     color: "White",
     padding: "$2 $7 $2 $2",
+    mb: "$5",
     position: "sticky",
     width: "fit-content",
     zIndex: "3"
