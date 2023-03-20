@@ -7,3 +7,4 @@ export * from "./OverView";
 export * from "./Developer";
 export * from "./BrochureForm";
 export * from "./ContactForm";
+export * from "./PropertyPageCarousel";

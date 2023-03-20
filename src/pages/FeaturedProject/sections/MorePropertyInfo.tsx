@@ -1,32 +1,15 @@
-import {
-    Box,
-    Button,
-    FlexBox,
-    ImgContainer,
-    ProperyCardCarousel,
-    Grid,
-    Text,
-    Anchor
-} from "@src/components";
+import { Anchor, Box, Button, FlexBox, Grid, Text } from "@src/components";
 import { Contact } from "@src/components/Contact";
 import { CSS } from "@src/styles";
-import { Property } from "@src/utils";
-import { A11y, EffectFade, Navigation, Pagination, Scrollbar } from "swiper";
-import { Swiper, SwiperSlide } from "swiper/react";
+import { Property, scrollCompIntoView } from "@src/utils";
 import {
-    OverView,
-    Location,
-    Developer,
+    Amenities,
     Configuration,
-    Amenities
+    Developer,
+    Location,
+    OverView,
+    PropertyPageCarousel
 } from "../sections";
-
-const images: string[] = [
-    "https://picsum.photos/300/400",
-    "https://picsum.photos/300/400",
-    "https://picsum.photos/300/400",
-    "https://picsum.photos/300/400"
-];
 
 const propertyInfoCss: CSS = {
     "@mobileS": {
@@ -55,6 +38,11 @@ const enquireNowCss: CSS = {
 };
 
 const propertyInfoNavbarCss: CSS = {
+    backgroundColor: "White",
+    position: "sticky",
+    top: "$11",
+    width: "$full",
+    zIndex: "$3",
     "@mobileS": {
         display: "none"
     },
@@ -64,11 +52,12 @@ const propertyInfoNavbarCss: CSS = {
     "@bp2": {
         maxWidth: "$tablet",
         display: "flex",
-        padding: "$5",
+        padding: "$5 $5 $5 $2",
         margin: "$0 auto"
     },
     "@bp3": {
-        maxWidth: "$laptopS"
+        maxWidth: "$laptopS",
+        top: "$13"
     }
 };
 
@@ -98,36 +87,7 @@ export const MorePropertyInfo = ( { propertyData }: MorePropertyInfoProps ) => {
                 direction={{ "@initial": "column", "@bp2": "row" }}
                 css={propertyInfoCss}
             >
-                <FlexBox
-                    css={{ flex: 1 }}
-                    width={{ "@initial": "full", "@bp2": "half" }}
-                >
-                    <Swiper
-                        navigation={{
-                            nextEl: ".swiper-button-next",
-                            prevEl: ".swiper-button-prev"
-                        }}
-                        pagination={{ clickable: true }}
-                        loop
-                        modules={[ Navigation, Pagination, Scrollbar, A11y ]}
-                        scrollbar={{ draggable: true }}
-                    >
-                        {imageUrls?.map( ( img, key ) => (
-                            <SwiperSlide key={key}>
-                                <ImgContainer
-                                    src={img.url}
-                                    alt="property-image"
-                                    fullHeight
-                                    size={"full"}
-                                    css={{
-                                        objectFit: "cover",
-                                        maxHeight: "$mobileL"
-                                    }}
-                                />
-                            </SwiperSlide>
-                        ) )}
-                    </Swiper>
-                </FlexBox>
+                <PropertyPageCarousel imageUrls={imageUrls} />
                 <FlexBox
                     direction={"column"}
                     width={"full"}
@@ -156,7 +116,7 @@ export const MorePropertyInfo = ( { propertyData }: MorePropertyInfoProps ) => {
                                     typography={"dtPara1"}
                                     css={{ fontWeight: "$dtHeading2" }}
                                 >
-                                    {possessionDate?.slice( 0, 7 )}
+                                    {possessionDate}
                                 </Text>
                             </FlexBox>
                         </Grid>
@@ -190,51 +150,6 @@ export const MorePropertyInfo = ( { propertyData }: MorePropertyInfoProps ) => {
                             </FlexBox>
                         </Grid>
                     </Grid>
-                    {/* <FlexBox direction={"row"} justify={"spaceBetween"}>
-                        <FlexBox direction={"column"}>
-                            <Text typography={"dtPara3"}>Configurations</Text>
-                            <Text
-                                typography={"dtPara1"}
-                                css={{ fontWeight: "$dtHeading2" }}
-                            >
-                                {configuration?.[ 0 ].rooms} BHK
-                            </Text>
-                        </FlexBox>
-                        <FlexBox direction={"column"} align={"flexStart"}>
-                            <Text typography={"dtPara3"}>Possession Date</Text>
-                            <Text
-                                typography={"dtPara1"}
-                                css={{ fontWeight: "$dtHeading2" }}
-                            >
-                                {possessionDate?.slice( 0, 7 )}
-                            </Text>
-                        </FlexBox>
-                    </FlexBox>
-                    <hr />
-                    <FlexBox
-                        direction={"row"}
-                        justify={"spaceBetween"}
-                        align={"flexStart"}
-                    >
-                        <FlexBox direction={"column"}>
-                            <Text typography={"dtPara3"}>ReraID</Text>
-                            <Text
-                                typography={"dtPara1"}
-                                css={{ fontWeight: "$dtHeading2" }}
-                            >
-                                {projectInfo?.reraId}
-                            </Text>
-                        </FlexBox>
-                        <FlexBox direction={"column"}>
-                            <Text typography={"dtPara3"}>Carpet Area</Text>
-                            <Text
-                                typography={"dtPara1"}
-                                css={{ fontWeight: "$dtHeading2" }}
-                            >
-                                {configuration?.[ 0 ].carpetArea} SqFt.
-                            </Text>
-                        </FlexBox>
-                    </FlexBox> */}
                     <hr />
                     <Anchor href={"#contactUs"}>
                         <Box css={enquireNowCss} width={"half"}>
@@ -246,18 +161,50 @@ export const MorePropertyInfo = ( { propertyData }: MorePropertyInfoProps ) => {
                 </FlexBox>
             </FlexBox>
 
-            {/* <FlexBox css={propertyInfoNavbarCss} gap={5} align={"center"}>
-                <Text typography={"dtPara1"}>Overview</Text>
-                <Text typography={"dtPara1"}>Configurations</Text>
-                <Text typography={"dtPara1"}>Amenities</Text>
-                <Text typography={"dtPara1"}>Localilty</Text>
-                <Text typography={"dtPara1"}>Developer</Text>
-            </FlexBox> */}
-            <OverView overviewData={{ name, location, projectInfo }} />
-            <Configuration configurationData={{ configuration }} />
-            <Amenities amenitiesData={{ amenities }} />
-            <Location locationData={{ location }} />
-            <Developer developerData={{ developer }} />
+            <Box>
+                <FlexBox css={propertyInfoNavbarCss} gap={5} align={"center"}>
+                    <Text
+                        typography={"dtPara1"}
+                        onClick={() => scrollCompIntoView( "overview" )}
+                        css={{ cursor: "pointer" }}
+                    >
+                        Overview
+                    </Text>
+                    <Text
+                        typography={"dtPara1"}
+                        onClick={() => scrollCompIntoView( "configuration" )}
+                        css={{ cursor: "pointer" }}
+                    >
+                        Configurations
+                    </Text>
+                    <Text
+                        typography={"dtPara1"}
+                        onClick={() => scrollCompIntoView( "amenities" )}
+                        css={{ cursor: "pointer" }}
+                    >
+                        Amenities
+                    </Text>
+                    <Text
+                        typography={"dtPara1"}
+                        onClick={() => scrollCompIntoView( "locality" )}
+                        css={{ cursor: "pointer" }}
+                    >
+                        Localilty
+                    </Text>
+                    <Text
+                        typography={"dtPara1"}
+                        onClick={() => scrollCompIntoView( "developer" )}
+                        css={{ cursor: "pointer" }}
+                    >
+                        Developer
+                    </Text>
+                </FlexBox>
+                <OverView overviewData={{ name, location, projectInfo }} />
+                <Configuration configurationData={{ configuration }} />
+                <Amenities amenitiesData={{ amenities }} />
+                <Location locationData={{ location }} />
+                <Developer developerData={{ developer }} />
+            </Box>
             <Contact isPropertyPage propertyName={name} />
         </>
     );
