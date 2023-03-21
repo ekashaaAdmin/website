@@ -4,6 +4,7 @@ import { FlexBox } from "../FlexBox";
 import { HamBurger } from "../HamBurger/HamBurger";
 import { Link } from "../Link";
 import { LogoSmall } from "../Logo";
+import { NavLink } from "../NavLink";
 import { NavOptions } from "./NavOptions";
 
 const navbarCss: CSS = {};
@@ -28,9 +29,9 @@ export const Navbar = () => {
             css={navContainerCss}
             className={navStatus ? `active` : ``}
         >
-            <Link to="/">
+            <NavLink to="/">
                 <LogoSmall size={{ "@initial": "7", "@bp3": "10" }} />
-            </Link>
+            </NavLink>
             <NavOptions />
             <HamBurger navStatus={navStatus} setNavStatus={setNavStatus} />
         </FlexBox>

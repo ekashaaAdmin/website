@@ -1,8 +1,9 @@
 import { CSS } from "@src/styles";
 import { Anchor } from "../Anchor";
 import { Flex } from "../Flex";
-import { Link } from "../Link";
+import { NavLink } from "../NavLink";
 import { Text } from "../Text";
+import { FiChevronDown } from "react-icons/fi";
 
 interface NavOptions {}
 
@@ -39,17 +40,21 @@ export const NavOptions = () => {
     return (
         <Flex direction={"column"} gap={"1"} css={navOptionsCss}>
             <Text typography={"navOptions"}>
-                <Link to={`/`}>Home</Link>
+                <NavLink to={`/`}>Home</NavLink>
             </Text>
             <Text typography={"navOptions"}>
-                <Link to="/about">About</Link>
+                <NavLink to="/about">About</NavLink>
             </Text>
 
             <Text typography={"navOptions"}>
-                <Link to={`/services`}>Services</Link>
+                <NavLink to={`/services`}>Services</NavLink>
             </Text>
+
             <Anchor href={"#contactUs"}>
-                <Text typography={"navOptions"}> Contact Us</Text>
+                <Flex align={"center"} gap="1">
+                    <Text typography={"navOptions"}> Contact Us</Text>
+                    <FiChevronDown />
+                </Flex>
             </Anchor>
         </Flex>
     );

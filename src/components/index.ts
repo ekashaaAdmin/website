@@ -15,6 +15,8 @@ export * from "./HamBurger";
 export * from "./Logo";
 export * from "./Loader";
 export * from "./Layout";
+export * from "./Link";
+export * from "./NavLink";
 export * from "./Navbar";
 export * from "./DropDown";
 export * from "./Text";
