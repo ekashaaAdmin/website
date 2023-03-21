@@ -38,7 +38,9 @@ const enquireNowCss: CSS = {
 };
 
 const propertyInfoNavbarCss: CSS = {
+    borderRadius: "$2",
     backgroundColor: "White",
+    boxShadow: "$shadowtype4",
     position: "sticky",
     top: "$11",
     width: "$full",
@@ -52,7 +54,7 @@ const propertyInfoNavbarCss: CSS = {
     "@bp2": {
         maxWidth: "$tablet",
         display: "flex",
-        padding: "$5 $5 $5 $2",
+        padding: "$5 $5 $4 $2",
         margin: "$0 auto"
     },
     "@bp3": {

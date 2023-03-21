@@ -16,6 +16,7 @@ import * as yup from "yup";
 export interface BrochureFormProps {
     propertyName: string;
     setOpen: Dispatch<SetStateAction<boolean>>;
+    brochureLink: string | undefined;
 }
 
 const schema = yup.object().shape( {
@@ -39,7 +40,11 @@ const userInfo: userInfoProps = JSON.parse(
     localStorage.getItem( "ekashaaUserInfo" ) as string
 );
 
-export const BrochureForm = ( { propertyName, setOpen }: BrochureFormProps ) => {
+export const BrochureForm = ( {
+    propertyName,
+    setOpen,
+    brochureLink
+}: BrochureFormProps ) => {
     const form = useRef<HTMLFormElement>( null );
 
     const closeForm = useCallback( () => {
@@ -60,10 +65,7 @@ export const BrochureForm = ( { propertyName, setOpen }: BrochureFormProps ) => 
                         toast( "Sorry couldn't submit the form, please retry " );
                     }
                     toast( "Form Submitted Successfully!" );
-                    downloadFile(
-                        "https://drive.google.com/file/d/1AnbE6AQqh9yN2OA7-6Iq_7T2Poz5-lr0/view?usp=share_link",
-                        "Esquire-Brochure.pdf"
-                    );
+                    downloadFile( brochureLink, "" );
                     const ekashaaUserInfo = {
                         email,
                         name
@@ -91,19 +93,6 @@ export const BrochureForm = ( { propertyName, setOpen }: BrochureFormProps ) => 
                 sendEmail( values.name, values.email );
             }
         } );
-
-    useEffect( () => {
-        const submitForm = ( e: KeyboardEvent ) => {
-            if ( e.key === "Enter" ) {
-                handleSubmit();
-            }
-        };
-        document.addEventListener( "keydown", submitForm );
-
-        return () => {
-            document.removeEventListener( "keydown", submitForm );
-        };
-    } );
 
     return (
         <FlexBox direction="column" gap="4" align="center" justify="center">
@@ -158,6 +147,7 @@ export const BrochureForm = ( { propertyName, setOpen }: BrochureFormProps ) => 
                     name="propertyName"
                     css={{ display: "none" }}
                     value={propertyName}
+                    readOnly
                 />
 
                 <Flex direction="column" gap="1" css={{ width: "$full" }}>

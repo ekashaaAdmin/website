@@ -89,22 +89,25 @@ export const OverView = ( { overviewData }: OverviewProps ) => {
 
                     <Text>{projectInfo?.projectDescription}</Text>
 
-                    <Dialog open={open} onOpenChange={setOpen}>
-                        <DialogTrigger asChild>
-                            <Button
-                                css={downloadNowCss}
-                                variant={"generalButton"}
-                            >
-                                Get Brochure
-                            </Button>
-                        </DialogTrigger>
-                        <DialogContent>
-                            <BrochureForm
-                                propertyName={name!}
-                                setOpen={setOpen}
-                            />
-                        </DialogContent>
-                    </Dialog>
+                    {projectInfo?.brochureLink ? (
+                        <Dialog open={open} onOpenChange={setOpen}>
+                            <DialogTrigger asChild>
+                                <Button
+                                    css={downloadNowCss}
+                                    variant={"generalButton"}
+                                >
+                                    Get Brochure
+                                </Button>
+                            </DialogTrigger>
+                            <DialogContent>
+                                <BrochureForm
+                                    propertyName={name!}
+                                    setOpen={setOpen}
+                                    brochureLink={projectInfo?.brochureLink}
+                                />
+                            </DialogContent>
+                        </Dialog>
+                    ) : null}
                 </FlexBox>
             </Section>
             <Section variant={"seperatorCss"}></Section>
