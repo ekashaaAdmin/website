@@ -13,10 +13,10 @@ export const gridCss = css( {
             baseline: { alignItems: "baseline" }
         },
         justify: {
-            start: { justifyContent: "start" },
-            center: { justifyContent: "center" },
-            end: { justifyContent: "end" },
-            between: { justifyContent: "space-between" }
+            start: { justifyItems: "start" },
+            center: { justifyItems: "center" },
+            end: { justifyItems: "end" },
+            between: { justifyItems: "space-between" }
         },
         flow: {
             row: { gridAutoFlow: "row" },

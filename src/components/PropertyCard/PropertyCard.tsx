@@ -2,6 +2,7 @@ import { Property } from "@src/utils";
 import { CSS } from "@styles";
 import "swiper/css";
 import "swiper/css/pagination";
+import { Box } from "../Box";
 import { ImgContainer } from "../ImgContainer";
 import { Link } from "../Link";
 import { PropertyCardContainer } from "./PropertyCardContainer";
@@ -45,30 +46,34 @@ interface PropertyCardProps {
 
 export const PropertyCard = ( { propertyData }: PropertyCardProps ) => {
     return (
-        <Link to={`/properties/${propertyData._id}`}>
-            <PropertyCardContainer
-                variant={{
-                    "@initial": "verticalCard",
-                    "@bp3": "horizontalCard"
-                }}
-                css={propertyCardCss}
-            >
-                <ImgContainer
-                    src={propertyData.imageUrls![ 0 ].url}
-                    alt="property image"
-                    fullHeight
-                    css={propertyImageCardCss}
-                />
-                {/* <ProperyCardCarousel src={propertyData.imageUrls!} /> */}
-                <PropertyContent
-                    price={propertyData.priceInfo?.price!}
-                    priceUnit={propertyData.priceInfo?.priceUnit!}
-                    propertyName={propertyData.name!}
-                    rooms={[ propertyData.configuration![ 0 ]?.rooms ]}
-                    multipleConfigs={propertyData.configuration?.length! > 1}
-                    shortAddress={propertyData.location?.shortAddress!}
-                />
-            </PropertyCardContainer>
-        </Link>
+        <Box css={{ size: "fit-content", m: "auto" }}>
+            <Link to={`/properties/${propertyData._id}`}>
+                <PropertyCardContainer
+                    variant={{
+                        "@initial": "verticalCard",
+                        "@bp3": "horizontalCard"
+                    }}
+                    css={propertyCardCss}
+                >
+                    <ImgContainer
+                        src={propertyData?.imageUrls?.[ 0 ].url!}
+                        alt="property image"
+                        fullHeight
+                        css={propertyImageCardCss}
+                    />
+                    {/* <ProperyCardCarousel src={propertyData.imageUrls!} /> */}
+                    <PropertyContent
+                        price={propertyData.priceInfo?.price!}
+                        priceUnit={propertyData.priceInfo?.priceUnit!}
+                        propertyName={propertyData.name!}
+                        rooms={[ propertyData?.configuration?.[ 0 ].rooms! ]}
+                        multipleConfigs={
+                            propertyData.configuration?.length! > 1
+                        }
+                        shortAddress={propertyData.location?.shortAddress!}
+                    />
+                </PropertyCardContainer>
+            </Link>
+        </Box>
     );
 };

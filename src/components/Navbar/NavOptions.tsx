@@ -43,9 +43,14 @@ export const NavOptions = () => {
                 <NavLink to={`/`}>Home</NavLink>
             </Text>
             <Text typography={"navOptions"}>
+                <NavLink to={`/properties`}>Properties</NavLink>
+            </Text>
+            <Text typography={"navOptions"}>
+                <NavLink to={`/blog`}>Blogs</NavLink>
+            </Text>
+            <Text typography={"navOptions"}>
                 <NavLink to="/about">About</NavLink>
             </Text>
-
             <Text typography={"navOptions"}>
                 <NavLink to={`/services`}>Services</NavLink>
             </Text>

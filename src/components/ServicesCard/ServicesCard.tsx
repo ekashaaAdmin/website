@@ -1,5 +1,6 @@
 import { CSS } from "@styles";
 import { ReactNode } from "react";
+import { Box } from "../Box";
 import { Flex } from "../Flex";
 import { ImgContainer } from "../ImgContainer";
 import { Link } from "../Link";
@@ -23,21 +24,23 @@ const serviceCardCss: CSS = {
 
 export const ServicesCard = ( { logo, name }: ServicesCardProps ) => {
     return (
-        <Link to={"/services"}>
-            <Flex
-                direction={"column"}
-                center
-                gap="1"
-                css={serviceCardCss}
-                className="services-card"
-            >
-                {typeof logo === "string" ? (
-                    <ImgContainer src={logo} alt="service-logo" />
-                ) : (
-                    logo
-                )}
-                <Text typography={"dtPara2"}>{name}</Text>
-            </Flex>
-        </Link>
+        <Box css={{ size: "fit-content", m: "auto" }}>
+            <Link to={"/services"}>
+                <Flex
+                    direction={"column"}
+                    center
+                    gap="1"
+                    css={serviceCardCss}
+                    className="services-card"
+                >
+                    {typeof logo === "string" ? (
+                        <ImgContainer src={logo} alt="service-logo" />
+                    ) : (
+                        logo
+                    )}
+                    <Text typography={"dtPara2"}>{name}</Text>
+                </Flex>
+            </Link>
+        </Box>
     );
 };

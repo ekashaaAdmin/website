@@ -6,7 +6,7 @@ export const Properties = () => {
 
     return (
         <Section direction={"column"}>
-            <Grid columns={"auto"}>
+            <Grid columns={"auto"} align={"center"} justify={"center"}>
                 {properties?.map( ( property ) => (
                     <PropertyCard key={property._id} propertyData={property} />
                 ) )}
