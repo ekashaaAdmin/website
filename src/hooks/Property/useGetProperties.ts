@@ -30,5 +30,5 @@ export const getPropertiesFn = async () => {
 };
 
 export const useGetProperties = () => {
-    return useQuery<Partial<Property>>( [], () => getPropertiesFn() );
+    return useQuery<Partial<Property>[]>( [], () => getPropertiesFn() );
 };

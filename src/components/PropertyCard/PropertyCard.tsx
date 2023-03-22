@@ -6,7 +6,6 @@ import { ImgContainer } from "../ImgContainer";
 import { Link } from "../Link";
 import { PropertyCardContainer } from "./PropertyCardContainer";
 import { PropertyContent } from "./PropertyContent";
-import { ProperyCardCarousel } from "./ProperyCardCarousel";
 
 export const propertyCardCss: CSS = {
     borderRadius: "$1",
@@ -46,7 +45,7 @@ interface PropertyCardProps {
 
 export const PropertyCard = ( { propertyData }: PropertyCardProps ) => {
     return (
-        <Link to={`/property/${propertyData._id}`}>
+        <Link to={`/properties/${propertyData._id}`}>
             <PropertyCardContainer
                 variant={{
                     "@initial": "verticalCard",
