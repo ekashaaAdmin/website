@@ -48,7 +48,7 @@ export const ContactForm = ( {
         emailjs
             .sendForm(
                 import.meta.env.VITE_EMAIL_SERVICE_ID,
-                import.meta.env.VITE_EMAIL_TEMPLATE_ID,
+                "contact_template",
                 form.current as HTMLFormElement,
                 import.meta.env.VITE_EMAIL_PUBLIC_ID
             )

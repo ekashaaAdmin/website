@@ -55,7 +55,7 @@ export const BrochureForm = ( {
         emailjs
             .sendForm(
                 import.meta.env.VITE_EMAIL_SERVICE_ID,
-                import.meta.env.VITE_BROCHURE_EMAIL_TEMPLATE_ID,
+                "brochure_template",
                 form.current as HTMLFormElement,
                 import.meta.env.VITE_EMAIL_PUBLIC_ID
             )
