@@ -16,10 +16,7 @@ export interface Blog {
     ];
     featuredblog: boolean;
     publishedAt: string;
-    slug: {
-        _type: string;
-        current: string;
-    };
+    slug: string;
     title: string;
     mainImage: {
         url: string;

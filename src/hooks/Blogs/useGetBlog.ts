@@ -10,7 +10,7 @@ export const getBlogFn = async ( blogSlug: string ) => {
         title, 
         body, 
         'authorName': author -> {name}, 
-        'mainImage': mainImage.asset -> {url} 
+        'mainImage': mainImage.asset -> {url}
     }`;
     const response = await client.fetch( query );
     return response[ 0 ];
