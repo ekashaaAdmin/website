@@ -2,8 +2,32 @@ import { Property } from "@src/utils";
 import client from "@src/utils/client";
 import { useQuery } from "@tanstack/react-query";
 
-export const getPropertiesFn = async () => {
-    const query = `*[_type == 'property'] {
+// *[
+//     _type =='property'
+//     && priceInfo.price > 2
+//     && priceInfo.price < 50
+//     && location.address match "Bandra"
+//     2 in configuration[].rooms
+//   ]
+
+type FilterParams = {
+    minPrice?: number;
+    maxPrice?: number;
+    address?: string | undefined;
+    configuration?: number;
+};
+
+export const getPropertiesFn = async ( {
+    minPrice,
+    maxPrice,
+    address,
+    configuration
+}: FilterParams ) => {
+    const query = `*[_type == 'property' 
+    && priceInfo.price > $minPrice
+    && priceInfo.price < $maxPrice
+    ${address ?? `&& location.address match $location`}
+    && $config in configuration[].rooms] {
         _id,
         'amenities': amenities[] -> {
             _id,
@@ -24,11 +48,34 @@ export const getPropertiesFn = async () => {
         reraVerified
     }`;
 
-    const response = await client.fetch( query );
+    const params = {
+        location: address,
+        minPrice: minPrice,
+        maxPrice: maxPrice,
+        config: configuration
+    };
+
+    const response = await client.fetch( query, params );
 
     return response;
 };
 
-export const useGetProperties = () => {
-    return useQuery<Partial<Property>[]>( [], () => getPropertiesFn() );
+export const useGetProperties = ( {
+    minPrice,
+    maxPrice,
+    address,
+    configuration
+}: FilterParams ) => {
+    return useQuery<Partial<Property>[]>(
+        [
+            {
+                address,
+                configuration,
+                maxPrice,
+                minPrice
+            },
+            "getProperties"
+        ],
+        () => getPropertiesFn( { address, configuration, maxPrice, minPrice } )
+    );
 };

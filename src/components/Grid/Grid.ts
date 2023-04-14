@@ -31,9 +31,18 @@ export const gridCss = css( {
             3: { gridTemplateColumns: "repeat(3, 1fr)" },
             4: { gridTemplateColumns: "repeat(4, 1fr)" },
             5: { gridTemplateColumns: "repeat(5, 1fr)" },
-            auto: {
-                display: "grid",
-                gridTemplateColumns: "repeat(auto-fill, minmax(34rem, 3fr))",
+            blogGrid: {
+                gridTemplateColumns: "repeat(auto-fill, minmax(15rem, 3fr))",
+                gridGap: "1rem"
+            },
+            propertiesGrid: {
+                gridTemplateColumns: "repeat(auto-fill, minmax(16rem, 3fr))",
+                "@mobileM": {
+                    gridTemplateColumns: "repeat(auto-fill, minmax(19rem, 3fr))"
+                },
+                "@bp2": {
+                    gridTemplateColumns: "repeat(auto-fill, minmax(34rem, 3fr))"
+                },
                 gridGap: "1rem"
             }
         },

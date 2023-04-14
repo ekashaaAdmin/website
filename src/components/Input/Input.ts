@@ -14,6 +14,15 @@ export const inputCss = css( {
     },
     [ `&[type="checkbox"]` ]: {
         all: "revert"
+    },
+    variants: {
+        variant: {
+            filterSearchbar: {
+                boxShadow: "none",
+                border: "none",
+                width: "$full"
+            }
+        }
     }
 } );
 
