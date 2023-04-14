@@ -44,6 +44,7 @@ import services5 from "./services5.png";
 import services6 from "./services6.png";
 import Marina_Bay_2 from "./Marina_Bay_2.webp";
 import Marina_Bay_1 from "./Marina_Bay_1.webp";
+import MarinaBay from "./MarinaBay.png";
 import Racecourse from "./Racecourse.webp";
 import RustomjeeBanner from "./RustomjeeBanner.webp";
 import Birla_Niyara_banner from "./Birla_Niyara_banner.webp";
@@ -54,6 +55,7 @@ export {
     RustomjeeBanner,
     Birla_Niyara_banner,
     Marina_Bay_2,
+    MarinaBay,
     services1,
     services2,
     services3,

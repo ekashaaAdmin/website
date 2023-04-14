@@ -30,7 +30,8 @@
         "react-router-dom": "^6.4.5",
         "react-toastify": "^9.1.1",
         "swiper": "^8.4.6",
-        "yup": "^0.32.11"
+        "yup": "^0.32.11",
+        "zustand": "^4.3.7"
     },
     "devDependencies": {
         "@types/react": "^18.0.26",
