@@ -1,10 +1,12 @@
 import { create } from "zustand";
 
 interface FilterParams {
-    location: string;
-    setLocation: ( newLocation: string ) => void;
-    configuration: number;
-    setConfiguration: ( newConfig: number ) => void;
+    location: string[];
+    setLocation: ( newLocations: string[] ) => void;
+    configuration: number[];
+    setConfiguration: ( newConfigs: number[] ) => void;
+    developers: string[];
+    setDevelopers: ( newConfigs: string[] ) => void;
     minPrice: number;
     setMinPrice: ( newMinPrice: number ) => void;
     maxPrice: number;
@@ -12,11 +14,15 @@ interface FilterParams {
 }
 
 export const useFilterStore = create<FilterParams>( ( set ) => ( {
-    location: "",
-    setLocation: ( location ) => set( ( state ) => ( { ...state, location } ) ),
-    configuration: 2,
-    setConfiguration: ( configuration ) =>
-        set( ( state ) => ( { ...state, configuration } ) ),
+    location: [],
+    setLocation: ( locations: string[] ) =>
+        set( ( state ) => ( { ...state, location: [ ...locations ] } ) ),
+    developers: [],
+    setDevelopers: ( developers: string[] ) =>
+        set( ( state ) => ( { ...state, developers: [ ...developers ] } ) ),
+    configuration: [],
+    setConfiguration: ( configs: number[] ) =>
+        set( ( state ) => ( { ...state, configuration: [ ...configs ] } ) ),
     minPrice: 2,
     setMinPrice: ( minPrice ) => set( ( state ) => ( { ...state, minPrice } ) ),
     maxPrice: 50,
