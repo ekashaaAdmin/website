@@ -39,6 +39,17 @@ export const getPropertiesFn = async ( {
             .join( " " )}`
         : ""
 }
+    ${
+    configuration.length > 0
+        ? `&& ${configuration
+            .map( ( c, i ) =>
+                configuration.length !== i + 1
+                    ? `${c} in configuration[].rooms ||`
+                    : `${c} in configuration[].rooms`
+            )
+            .join( " " )}`
+        : ""
+}
     ${developer.length > 0 ? `&& developer -> developerName in $devs` : ""}
     ] {
         _id,

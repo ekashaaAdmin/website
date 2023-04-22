@@ -13,11 +13,11 @@ const StyledBiSearch = styled( BiSearch, {
 } );
 
 export const SearchBar = () => {
-    const { location, setLocation } = useFilterStore( ( state ) => state );
+    const { setLocation } = useFilterStore( ( state ) => state );
     const [ locationInput, setLocationInput ] = useState( "" );
 
     const handleClick = () => {
-        setLocation( [ ...location, locationInput ] );
+        setLocation( [ locationInput ] );
     };
 
     useEffect( () => {

@@ -2,12 +2,10 @@ import { useGetDevelopers, useGetFilterLocations } from "@src/hooks";
 import { useFilterStore } from "@src/store";
 import { CSS } from "@src/styles";
 import { useState } from "react";
-import { Box } from "../Box";
 import { Button } from "../Button";
 import { CheckBoxRoot } from "../CheckBox";
 import { DialogTitle } from "../Dialog";
 import { Flex } from "../Flex";
-import { Input } from "../Input";
 import {
     SliderRange,
     SliderRoot,
