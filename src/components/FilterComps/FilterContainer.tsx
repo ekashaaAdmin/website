@@ -1,9 +1,10 @@
 import { useFilterStore } from "@src/store";
 import { CSS } from "@src/styles";
-import { useState } from "react";
+import { Suspense, useState } from "react";
 import { IoIosOptions } from "react-icons/io";
 import { Dialog, DialogContent, DialogTrigger } from "../Dialog";
 import { Flex } from "../Flex";
+import { Loader } from "../Loader";
 import { FilterForm } from "./FilterForm";
 import { SearchBar } from "./SearchBar";
 
@@ -12,7 +13,9 @@ const filterContainerCss: CSS = {
     boxShadow: "$inputFieldShadow",
     borderRadius: "20rem",
     maxWidth: "$tablet",
+    maxHeight: "$fullViewPortHeight",
     mx: "auto",
+    overflowY: "auto",
     p: "$2",
     width: "$full",
     transform: "translateY(-7.5rem)"
@@ -29,7 +32,9 @@ export const FilterContainer = () => {
                     <IoIosOptions />
                 </DialogTrigger>
                 <DialogContent>
-                    <FilterForm setOpen={setOpen} />
+                    <Suspense fallback={<Loader />}>
+                        <FilterForm setOpen={setOpen} />
+                    </Suspense>
                 </DialogContent>
             </Dialog>
         </Flex>

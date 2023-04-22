@@ -2,6 +2,7 @@ import { useGetDevelopers, useGetFilterLocations } from "@src/hooks";
 import { useFilterStore } from "@src/store";
 import { CSS } from "@src/styles";
 import { useState } from "react";
+import { Box } from "../Box";
 import { Button } from "../Button";
 import { CheckBoxRoot } from "../CheckBox";
 import { DialogTitle } from "../Dialog";
@@ -31,12 +32,18 @@ interface FilterFormProps {
 }
 
 export const FilterForm = ( { setOpen }: FilterFormProps ) => {
-    const storeConfigurations = useFilterStore( ( state ) => state.configuration );
-    const storeLocations = useFilterStore( ( state ) => state.location );
-    const storeDevelopers = useFilterStore( ( state ) => state.developers );
-    const setConfigurations = useFilterStore( ( state ) => state.setConfiguration );
-    const setLocations = useFilterStore( ( state ) => state.setLocation );
-    const setDevelopers = useFilterStore( ( state ) => state.setDevelopers );
+    const {
+        configuration: storeConfigurations,
+        location: storeLocations,
+        developers: storeDevelopers,
+        setConfiguration: setConfigurations,
+        setLocation: setLocations,
+        setDevelopers: setDevelopers,
+        minPrice: storeMinPrice,
+        setMinPrice,
+        maxPrice: storeMaxPrice,
+        setMaxPrice
+    } = useFilterStore( ( state ) => state );
 
     const { data: developers } = useGetDevelopers();
     const { data: locations } = useGetFilterLocations();
@@ -48,13 +55,15 @@ export const FilterForm = ( { setOpen }: FilterFormProps ) => {
     const [ developersInput, setDevelopersInput ] = useState<string[]>(
         storeDevelopers ?? []
     );
+    const [ minPriceInput, setMinPriceInput ] = useState( storeMinPrice );
+    const [ maxPriceInput, setMaxPriceInput ] = useState( storeMaxPrice );
 
     const applyFilters = () => {
         setConfigurations( configs );
         setLocations( locationsInput );
         setDevelopers( developersInput );
-        console.log( { configs, locationsInput, developersInput } );
-
+        setMinPrice( minPriceInput );
+        setMaxPrice( maxPriceInput );
         setOpen( false );
     };
 
@@ -65,6 +74,10 @@ export const FilterForm = ( { setOpen }: FilterFormProps ) => {
         setLocationsInput( [] );
         setDevelopers( [] );
         setDevelopersInput( [] );
+        setMinPrice( 2 );
+        setMinPriceInput( 2 );
+        setMaxPrice( 50 );
+        setMaxPriceInput( 50 );
     };
 
     return (
@@ -79,30 +92,44 @@ export const FilterForm = ( { setOpen }: FilterFormProps ) => {
                 </Text>
             </DialogTitle>
             <Flex direction="column" gap="1">
+                <Separator orientation="horizontal" />
+
                 <Flex direction="column">
-                    <Input placeholder="Search your dream property" />
+                    <Text typography={"dtHeading3"}>Price</Text>
+                    <Text typography={"dtPara3"}>Prices listed in Crores</Text>
+                </Flex>
+                <Flex direction="column" gap="2" css={{ mb: "$2" }}>
+                    <SliderRoot
+                        defaultValue={[ minPriceInput, maxPriceInput ]}
+                        min={2}
+                        max={50}
+                        step={2}
+                        aria-label="Price"
+                        value={[ minPriceInput, maxPriceInput ]}
+                        onValueChange={( e ) => {
+                            const [ min, max ] = e;
+                            setMinPriceInput( min );
+                            setMaxPriceInput( max );
+                        }}
+                    >
+                        <SliderTrack>
+                            <SliderRange />
+                        </SliderTrack>
+                        <SliderThumb />
+                        <SliderThumb />
+                    </SliderRoot>
+                    <Flex align="center" justify="spaceBetween">
+                        <Text>Min: {minPriceInput} Cr</Text>
+                        <Text>Max: {maxPriceInput} Cr</Text>
+                    </Flex>
                 </Flex>
 
                 <Separator orientation="horizontal" />
 
-                <Text typography={"dtHeading3"}>Price</Text>
-                <SliderRoot
-                    defaultValue={[ 2, 50 ]}
-                    min={2}
-                    max={50}
-                    step={2}
-                    aria-label="Price"
-                >
-                    <SliderTrack>
-                        <SliderRange />
-                    </SliderTrack>
-                    <SliderThumb />
-                    <SliderThumb />
-                </SliderRoot>
-
-                <Separator orientation="horizontal" />
-
-                <Text typography={"dtHeading3"}>Configuration</Text>
+                <Flex direction="column">
+                    <Text typography={"dtHeading3"}>Configuration</Text>
+                    <Text typography={"dtPara3"}>in BHK</Text>
+                </Flex>
                 <Flex gap="1" css={{ flexWrap: "wrap" }}>
                     {configurations.map( ( config, key ) => (
                         <CheckBoxRoot
@@ -130,7 +157,10 @@ export const FilterForm = ( { setOpen }: FilterFormProps ) => {
 
                 <Separator orientation="horizontal" />
 
-                <Text typography={"dtHeading3"}>Locations</Text>
+                <Flex direction="column">
+                    <Text typography={"dtHeading3"}>Locations</Text>
+                    <Text typography={"dtPara3"}>in and around Mumbai</Text>
+                </Flex>
                 <Flex gap="1" css={{ flexWrap: "wrap" }}>
                     {locations?.map( ( { location }, key ) => (
                         <CheckBoxRoot
@@ -160,7 +190,10 @@ export const FilterForm = ( { setOpen }: FilterFormProps ) => {
 
                 <Separator orientation="horizontal" />
 
-                <Text typography={"dtHeading3"}>Developers</Text>
+                <Flex direction="column">
+                    <Text typography={"dtHeading3"}>Developers</Text>
+                    <Text typography={"dtPara3"}>Creators of Happy Homes</Text>
+                </Flex>
                 <Flex gap="1" css={{ flexWrap: "wrap" }}>
                     {developers?.map( ( { developerName }, key ) => (
                         <CheckBoxRoot
