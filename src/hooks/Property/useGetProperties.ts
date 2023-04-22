@@ -13,21 +13,34 @@ import { useQuery } from "@tanstack/react-query";
 type FilterParams = {
     minPrice?: number;
     maxPrice?: number;
-    address?: string | undefined;
-    configuration?: number;
+    address: string[];
+    configuration: number[];
+    developer: string[];
 };
 
 export const getPropertiesFn = async ( {
-    minPrice,
-    maxPrice,
-    address,
-    configuration
+    minPrice = 2,
+    maxPrice = 50,
+    address = [],
+    configuration = [],
+    developer = []
 }: FilterParams ) => {
     const query = `*[_type == 'property' 
     && priceInfo.price > $minPrice
     && priceInfo.price < $maxPrice
-    ${address ?? `&& location.address match $location`}
-    && $config in configuration[].rooms] {
+    ${
+    address.length > 0
+        ? `&& ${address
+            .map( ( a, i ) =>
+                address.length !== i + 1
+                    ? `location.address match '${a}' ||`
+                    : `location.address match '${a}'`
+            )
+            .join( " " )}`
+        : ""
+}
+    ${developer.length > 0 ? `&& developer -> developerName in $devs` : ""}
+    ] {
         _id,
         'amenities': amenities[] -> {
             _id,
@@ -49,14 +62,14 @@ export const getPropertiesFn = async ( {
     }`;
 
     const params = {
-        location: address,
         minPrice: minPrice,
         maxPrice: maxPrice,
-        config: configuration
+        devs: developer
     };
 
-    const response = await client.fetch( query, params );
+    console.log( query );
 
+    const response = await client.fetch( query, params );
     return response;
 };
 
@@ -64,18 +77,27 @@ export const useGetProperties = ( {
     minPrice,
     maxPrice,
     address,
-    configuration
+    configuration,
+    developer
 }: FilterParams ) => {
     return useQuery<Partial<Property>[]>(
         [
             {
                 address,
                 configuration,
+                developer,
                 maxPrice,
                 minPrice
             },
             "getProperties"
         ],
-        () => getPropertiesFn( { address, configuration, maxPrice, minPrice } )
+        () =>
+            getPropertiesFn( {
+                address,
+                configuration,
+                maxPrice,
+                minPrice,
+                developer
+            } )
     );
 };
