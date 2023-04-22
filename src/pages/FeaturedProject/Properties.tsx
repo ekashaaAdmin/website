@@ -1,18 +1,19 @@
 import { FilterContainer, Grid, PropertyCard, Section } from "@src/components";
 import { useGetProperties } from "@src/hooks";
+import { useFilterStore } from "@src/store";
 import { useState } from "react";
 import { Intro } from "./sections";
 
 export const Properties = () => {
-    const [ filterProps, setFilterProps ] = useState( {
-        address: "",
-        configuration: 2,
-        maxPrice: 50,
-        minPrice: 2
-    } );
+    const { location, developers, maxPrice, minPrice, configuration } =
+        useFilterStore( ( state ) => state );
 
     const { data: properties } = useGetProperties( {
-        ...filterProps
+        address: location,
+        configuration: configuration,
+        developer: developers,
+        maxPrice: maxPrice,
+        minPrice: minPrice
     } );
 
     return (
