@@ -21,6 +21,8 @@ export * from "./NavLink";
 export * from "./Navbar";
 export * from "./DropDown";
 export * from "./Text";
+export * from "./Separator";
+export * from "./RangeSlider";
 export * from "./FilterComps";
 export * from "./Section";
 export * from "./ServicesCard";

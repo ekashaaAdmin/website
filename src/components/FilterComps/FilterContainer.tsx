@@ -21,8 +21,6 @@ const filterContainerCss: CSS = {
 export const FilterContainer = () => {
     const [ open, setOpen ] = useState<boolean>( false );
 
-    const location = useFilterStore( ( state ) => state.location );
-
     return (
         <Flex align="center" css={filterContainerCss}>
             <SearchBar />
@@ -31,7 +29,7 @@ export const FilterContainer = () => {
                     <IoIosOptions />
                 </DialogTrigger>
                 <DialogContent>
-                    <FilterForm />
+                    <FilterForm setOpen={setOpen} />
                 </DialogContent>
             </Dialog>
         </Flex>
