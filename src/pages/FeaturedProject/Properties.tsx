@@ -1,7 +1,13 @@
-import { FilterContainer, Grid, PropertyCard, Section } from "@src/components";
+import {
+    FilterContainer,
+    Flex,
+    Grid,
+    PropertyCard,
+    Section,
+    Text
+} from "@src/components";
 import { useGetProperties } from "@src/hooks";
 import { useFilterStore } from "@src/store";
-import { useState } from "react";
 import { Intro } from "./sections";
 
 export const Properties = () => {
@@ -21,13 +27,33 @@ export const Properties = () => {
             <Intro />
             <FilterContainer />
             <Grid
-                columns={"propertiesGrid"}
+                columns={
+                    properties && properties?.length > 0 ? "propertiesGrid" : 1
+                }
                 align={"center"}
                 justify={"center"}
             >
-                {properties?.map( ( property ) => (
-                    <PropertyCard key={property._id} propertyData={property} />
-                ) )}
+                {properties && properties?.length > 0 ? (
+                    properties?.map( ( property ) => (
+                        <PropertyCard
+                            key={property._id}
+                            propertyData={property}
+                        />
+                    ) )
+                ) : (
+                    <Flex>
+                        <Text
+                            typography={{
+                                "@initial": "dtHeading3",
+                                "@bp2": "dtHeading2"
+                            }}
+                            align="center"
+                        >
+                            No properties available for provided filter
+                            parameters.
+                        </Text>
+                    </Flex>
+                )}
             </Grid>
         </Section>
     );
