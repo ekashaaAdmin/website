@@ -36,12 +36,9 @@ export const gridCss = css( {
                 gridGap: "1rem"
             },
             propertiesGrid: {
-                gridTemplateColumns: "repeat(auto-fill, minmax(16rem, 3fr))",
+                gridTemplateColumns: "repeat(auto-fill, minmax(16rem, 4fr))",
                 "@mobileM": {
-                    gridTemplateColumns: "repeat(auto-fill, minmax(19rem, 3fr))"
-                },
-                "@bp2": {
-                    gridTemplateColumns: "repeat(auto-fill, minmax(34rem, 3fr))"
+                    gridTemplateColumns: "repeat(auto-fill, minmax(19rem, 4fr))"
                 },
                 gridGap: "1rem"
             }

@@ -13,7 +13,11 @@ import { css, styled } from "@src/styles";
 
 export const imgContainerBoxCss = css( {
     lineHeight: 0,
-    fontSize: 0
+    fontSize: 0,
+    width: "$full",
+    height: "$full",
+    overflow: "hidden",
+    objectFit: "cover"
 } );
 
 export const ImgContainerBox = styled( Box, imgContainerBoxCss );
@@ -41,3 +45,5 @@ export const ImgContainer = ( {
         </ImgContainerBox>
     );
 };
+
+ImgContainer.toString = () => ".img-container";
