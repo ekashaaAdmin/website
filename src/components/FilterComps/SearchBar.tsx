@@ -41,7 +41,7 @@ export const SearchBar = () => {
                 value={locationInput}
                 onChange={( { target: { value } } ) => setLocationInput( value )}
             />
-            <StyledBiSearch onClick={handleClick} />
+            <StyledBiSearch size={"1.5rem"} onClick={handleClick} />
         </Flex>
     );
 };

@@ -1,10 +1,11 @@
-import { useFilterStore } from "@src/store";
 import { CSS } from "@src/styles";
 import { Suspense, useState } from "react";
-import { IoIosOptions } from "react-icons/io";
+import { BiFilterAlt } from "react-icons/bi";
 import { Dialog, DialogContent, DialogTrigger } from "../Dialog";
 import { Flex } from "../Flex";
 import { Loader } from "../Loader";
+import { Separator } from "../Separator";
+import { Text } from "../Text";
 import { FilterForm } from "./FilterForm";
 import { SearchBar } from "./SearchBar";
 
@@ -13,10 +14,10 @@ const filterContainerCss: CSS = {
     boxShadow: "$inputFieldShadow",
     borderRadius: "20rem",
     maxWidth: "$tablet",
-    maxHeight: "$fullViewPortHeight",
     mx: "auto",
     overflowY: "auto",
     p: "$2",
+    height: "$9",
     width: "$full",
     transform: "translateY(-7.5rem)"
 };
@@ -27,9 +28,23 @@ export const FilterContainer = () => {
     return (
         <Flex align="center" css={filterContainerCss}>
             <SearchBar />
+
+            <Separator orientation="vertical" css={{ mx: "$2" }} />
+
             <Dialog open={open} onOpenChange={setOpen}>
                 <DialogTrigger asChild>
-                    <IoIosOptions />
+                    <Flex align="center" css={{ cursor: "pointer" }}>
+                        <BiFilterAlt size={"1.5rem"} />
+                        <Text
+                            typography={"dtPara1"}
+                            css={{
+                                display: "none",
+                                "@bp2": { display: "unset" }
+                            }}
+                        >
+                            Filters
+                        </Text>
+                    </Flex>
                 </DialogTrigger>
                 <DialogContent>
                     <Suspense fallback={<Loader />}>
