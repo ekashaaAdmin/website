@@ -29,7 +29,7 @@ export const FilterContainer = () => {
         <Flex align="center" css={filterContainerCss}>
             <SearchBar />
 
-            <Separator orientation="vertical" css={{ mx: "$2" }} />
+            <Separator orientation="vertical" css={{ mx: "$1" }} />
 
             <Dialog open={open} onOpenChange={setOpen}>
                 <DialogTrigger asChild>

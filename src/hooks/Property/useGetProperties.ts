@@ -78,8 +78,6 @@ export const getPropertiesFn = async ( {
         devs: developer
     };
 
-    console.log( query );
-
     const response = await client.fetch( query, params );
     return response;
 };
