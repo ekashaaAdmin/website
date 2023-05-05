@@ -28,13 +28,13 @@ export const Footer = () => {
                     align={"center"}
                     gap={"6"}
                     css={{
-                        mb: "$2",
+                        m: "0 auto $2",
                         width: "100%",
+                        maxWidth: "$laptopM",
                         "@bp3": {
                             flexDirection: "row",
-                            justifyContent: "center",
-                            alignItems: "center",
-                            gap: "15rem"
+                            justifyContent: "space-between",
+                            alignItems: "start"
                         }
                     }}
                 >
