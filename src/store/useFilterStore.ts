@@ -11,6 +11,7 @@ interface FilterParams {
     setMinPrice: ( newMinPrice: number ) => void;
     maxPrice: number;
     setMaxPrice: ( newManPrice: number ) => void;
+    resetStore: () => void;
 }
 
 export const useFilterStore = create<FilterParams>( ( set ) => ( {
@@ -26,5 +27,13 @@ export const useFilterStore = create<FilterParams>( ( set ) => ( {
     minPrice: 2,
     setMinPrice: ( minPrice ) => set( ( state ) => ( { ...state, minPrice } ) ),
     maxPrice: 50,
-    setMaxPrice: ( maxPrice ) => set( ( state ) => ( { ...state, maxPrice } ) )
+    setMaxPrice: ( maxPrice ) => set( ( state ) => ( { ...state, maxPrice } ) ),
+    resetStore: () =>
+        set( ( state ) => ( {
+            configuration: [],
+            developers: [],
+            location: [],
+            minPrice: 2,
+            maxPrice: 50
+        } ) )
 } ) );

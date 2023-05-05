@@ -1,4 +1,5 @@
 import {
+    Button,
     FilterContainer,
     Flex,
     Grid,
@@ -11,8 +12,14 @@ import { useFilterStore } from "@src/store";
 import { Intro } from "./sections";
 
 export const Properties = () => {
-    const { location, developers, maxPrice, minPrice, configuration } =
-        useFilterStore( ( state ) => state );
+    const {
+        location,
+        developers,
+        maxPrice,
+        minPrice,
+        configuration,
+        resetStore
+    } = useFilterStore( ( state ) => state );
 
     const { data: properties } = useGetProperties( {
         address: location,
@@ -41,7 +48,7 @@ export const Properties = () => {
                         />
                     ) )
                 ) : (
-                    <Flex>
+                    <Flex direction="column" gap="3" align="center">
                         <Text
                             typography={{
                                 "@initial": "dtHeading3",
@@ -52,6 +59,13 @@ export const Properties = () => {
                             No properties available for provided filter
                             parameters.
                         </Text>
+                        <Button
+                            variant={"generalButton"}
+                            css={{ maxWidth: "$mobileS" }}
+                            onClick={() => resetStore()}
+                        >
+                            Reset Filters
+                        </Button>
                     </Flex>
                 )}
             </Grid>

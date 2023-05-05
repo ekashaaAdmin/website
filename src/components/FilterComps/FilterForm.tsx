@@ -40,7 +40,8 @@ export const FilterForm = ( { setOpen }: FilterFormProps ) => {
         minPrice: storeMinPrice,
         setMinPrice,
         maxPrice: storeMaxPrice,
-        setMaxPrice
+        setMaxPrice,
+        resetStore
     } = useFilterStore( ( state ) => state );
 
     const { data: developers } = useGetDevelopers();
@@ -66,16 +67,12 @@ export const FilterForm = ( { setOpen }: FilterFormProps ) => {
     };
 
     const resetFilters = () => {
-        setConfigurations( [] );
         setconfigs( [] );
-        setLocations( [] );
         setLocationsInput( [] );
-        setDevelopers( [] );
         setDevelopersInput( [] );
-        setMinPrice( 2 );
         setMinPriceInput( 2 );
-        setMaxPrice( 50 );
         setMaxPriceInput( 50 );
+        resetStore();
     };
 
     return (
