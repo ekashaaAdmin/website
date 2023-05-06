@@ -48,6 +48,7 @@ import MarinaBay from "./MarinaBay.png";
 import Racecourse from "./Racecourse.webp";
 import RustomjeeBanner from "./RustomjeeBanner.webp";
 import Birla_Niyara_banner from "./Birla_Niyara_banner.webp";
+import Ekashaa_Blogs from "./Ekashaa_Blogs.png";
 
 export {
     Marina_Bay_1,
@@ -82,6 +83,7 @@ export {
     LoansLogo,
     Ekashaa_Footer_Logo,
     Footer_Design_Bat,
+    Ekashaa_Blogs,
     Blog1,
     Blog2,
     DeveloperLodha,
