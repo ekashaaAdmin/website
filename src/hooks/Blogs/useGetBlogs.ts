@@ -34,5 +34,7 @@ export const useGetBlogs = ( unwantedBlogSlug?: string ) => {
             | "mainImage"
             | "authorName"
         >[]
-    >( [ "unwantedBlogSlug" ], () => getBlogsFn( unwantedBlogSlug ) );
+    >( [ "unwantedBlogSlug", unwantedBlogSlug ], () =>
+        getBlogsFn( unwantedBlogSlug )
+    );
 };

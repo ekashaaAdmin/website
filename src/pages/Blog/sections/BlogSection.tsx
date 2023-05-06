@@ -1,6 +1,6 @@
 import { PortableText, PortableTextComponents } from "@portabletext/react";
 import imageUrlBuilder from "@sanity/image-url";
-import { FlexBox, ImgContainer, Text } from "@src/components";
+import { Box, FlexBox, ImgContainer, Text } from "@src/components";
 import { useGetBlog } from "@src/hooks";
 import { CSS } from "@src/styles";
 import client from "@src/utils/client";
@@ -81,9 +81,10 @@ export const BlogSection = ( { blogSlug }: BlogSectionProps ) => {
             </Text>
             {data?.mainImage?.url && (
                 <ImgContainer
-                    css={{ flex: 1 }}
+                    css={{ height: "25rem" }}
                     width={"full"}
-                    height={"half"}
+                    fullHeight
+                    objectFit="contain"
                     src={`${data?.mainImage?.url}`}
                     alt={"blogimage"}
                 />

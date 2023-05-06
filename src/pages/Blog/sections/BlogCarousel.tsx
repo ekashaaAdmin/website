@@ -28,14 +28,18 @@ const blogCardCss: CSS = {
 };
 
 interface BlogCarouselProps {
-    unwatedBlogSlug?: string;
+    unwantedBlogSlug?: string;
 }
 
-export const BlogCarousel = ( { unwatedBlogSlug }: BlogCarouselProps ) => {
-    const { data: blogCarouselData } = useGetBlogs( unwatedBlogSlug );
+export const BlogCarousel = ( { unwantedBlogSlug }: BlogCarouselProps ) => {
+    const { data: blogCarouselData } = useGetBlogs( unwantedBlogSlug );
 
     return blogCarouselData ? (
         <Box css={blogCarouselCss}>
+            <Text typography={"dtHeading3"} css={{ py: "$4" }}>
+                More Blogs
+            </Text>
+
             <Swiper
                 navigation
                 pagination={{ clickable: true }}
@@ -61,7 +65,7 @@ export const BlogCarousel = ( { unwatedBlogSlug }: BlogCarouselProps ) => {
                                 <ImgContainer
                                     fullHeight
                                     css={{ flex: 1 }}
-                                    src={Blog2}
+                                    src={blog.mainImage.url}
                                     alt={"blogimage"}
                                 />
                                 <Text typography={"dtPara1"}>{blog.title}</Text>
