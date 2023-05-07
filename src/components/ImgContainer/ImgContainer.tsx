@@ -15,7 +15,6 @@ export const imgContainerBoxCss = css( {
     lineHeight: 0,
     fontSize: 0,
     width: "$full",
-    height: "$full",
     overflow: "hidden",
     objectFit: "cover"
 } );
