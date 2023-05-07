@@ -21,6 +21,13 @@ const blogsectionCss: CSS = {
     },
     "@bp3": {
         maxWidth: "$laptopS"
+    },
+    "& p": {
+        fontSize: "$dtPara2",
+        mb: "$1",
+        "@bp1": {
+            fontSize: "$mbPara1"
+        }
     }
 };
 

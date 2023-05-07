@@ -68,9 +68,11 @@ export const BlogCarousel = ( { unwantedBlogSlug }: BlogCarouselProps ) => {
                                     src={blog.mainImage.url}
                                     alt={"blogimage"}
                                 />
-                                <Text typography={"dtPara1"}>{blog.title}</Text>
+                                <Text typography={"dtHeading3"}>
+                                    {`${blog.title.substring( 0, 40 )}...`}
+                                </Text>
                                 <Text typography={"dtPara3"}>
-                                    {blog.subTitle}
+                                    {`${blog.subTitle.substring( 0, 100 )}...`}
                                 </Text>
                             </Link>
                         </FlexBox>
