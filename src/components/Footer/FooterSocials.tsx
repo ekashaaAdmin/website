@@ -5,7 +5,6 @@ import {
     BsLinkedin,
     BsWhatsapp
 } from "react-icons/bs";
-import { Box } from "../Box";
 import { Flex } from "../Flex";
 import { Text } from "../Text";
 
@@ -28,10 +27,34 @@ export const FooterSocials = () => {
                 }}
                 gap={"3"}
             >
-                <BsInstagram />
-                <BsWhatsapp />
-                <BsFacebook />
-                <BsLinkedin />
+                <a href="https://instagram.com/ekashaa.realty?igshid=ZGUzMzM3NWJiOQ==">
+                    <BsInstagram
+                        style={{
+                            color: "black"
+                        }}
+                    />
+                </a>
+                <a href="https://wa.me/message/MX5LPIMY2X6ZJ1">
+                    <BsWhatsapp
+                        style={{
+                            color: "black"
+                        }}
+                    />
+                </a>
+                <a href="https://www.facebook.com/profile.php?id=100091623601628&mibextid=ZbWKwL">
+                    <BsFacebook
+                        style={{
+                            color: "black"
+                        }}
+                    />
+                </a>
+                <a href="https://www.linkedin.com/in/ekashaa-realty-advisory-87b2a5262">
+                    <BsLinkedin
+                        style={{
+                            color: "black"
+                        }}
+                    />
+                </a>
             </Flex>
         </Flex>
     );
