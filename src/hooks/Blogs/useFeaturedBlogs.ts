@@ -8,7 +8,7 @@ export const getFeaturedBlogsFn = async () => {
         _id, 
         publishedAt, 
         subTitle,
-        slug,
+        'slug': slug.current,
         title, 
         body, 
         'authorName': author -> {name}, 

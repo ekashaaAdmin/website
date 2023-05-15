@@ -2,8 +2,56 @@ import { Property } from "@src/utils";
 import client from "@src/utils/client";
 import { useQuery } from "@tanstack/react-query";
 
-export const getPropertiesFn = async () => {
-    const query = `*[_type == 'property'] {
+// *[
+//     _type =='property'
+//     && priceInfo.price > 2
+//     && priceInfo.price < 50
+//     && location.address match "Bandra"
+//     2 in configuration[].rooms
+//   ]
+
+type FilterParams = {
+    minPrice?: number;
+    maxPrice?: number;
+    address: string[];
+    configuration: number[];
+    developer: string[];
+};
+
+export const getPropertiesFn = async ( {
+    minPrice = 2,
+    maxPrice = 50,
+    address = [],
+    configuration = [],
+    developer = []
+}: FilterParams ) => {
+    const query = `*[_type == 'property' 
+    && priceInfo.price > $minPrice
+    && priceInfo.price < $maxPrice
+    ${
+    address.length > 0
+        ? `&& ${address
+            .map( ( a, i ) =>
+                address.length !== i + 1
+                    ? `location.address match '${a}' ||`
+                    : `location.address match '${a}'`
+            )
+            .join( " " )}`
+        : ""
+}
+    ${
+    configuration.length > 0
+        ? `&& ${configuration
+            .map( ( c, i ) =>
+                configuration.length !== i + 1
+                    ? `${c} in configuration[].rooms ||`
+                    : `${c} in configuration[].rooms`
+            )
+            .join( " " )}`
+        : ""
+}
+    ${developer.length > 0 ? `&& developer -> developerName in $devs` : ""}
+    ] {
         _id,
         'amenities': amenities[] -> {
             _id,
@@ -24,11 +72,41 @@ export const getPropertiesFn = async () => {
         reraVerified
     }`;
 
-    const response = await client.fetch( query );
+    const params = {
+        minPrice: minPrice,
+        maxPrice: maxPrice,
+        devs: developer
+    };
 
+    const response = await client.fetch( query, params );
     return response;
 };
 
-export const useGetProperties = () => {
-    return useQuery<Partial<Property>>( [], () => getPropertiesFn() );
+export const useGetProperties = ( {
+    minPrice,
+    maxPrice,
+    address,
+    configuration,
+    developer
+}: FilterParams ) => {
+    return useQuery<Partial<Property>[]>(
+        [
+            {
+                address,
+                configuration,
+                developer,
+                maxPrice,
+                minPrice
+            },
+            "getProperties"
+        ],
+        () =>
+            getPropertiesFn( {
+                address,
+                configuration,
+                maxPrice,
+                minPrice,
+                developer
+            } )
+    );
 };

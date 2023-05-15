@@ -1,4 +1,4 @@
-import { Section } from "@src/components";
+import { Section, Text } from "@src/components";
 import { useGetBlog, useGetBlogs } from "@src/hooks";
 import { useParams } from "react-router-dom";
 import { BlogCarousel, BlogSection, Intro } from "./sections";
@@ -11,7 +11,7 @@ export const BlogTemplate = () => {
         <Section direction={"column"}>
             <Intro />
             <BlogSection blogSlug={blogSlug} />
-            <BlogCarousel unwatedBlogSlug={blogSlug} />
+            <BlogCarousel unwantedBlogSlug={blogSlug} />
         </Section>
     );
 };

@@ -1,9 +1,8 @@
-import { FlexBox, ImgContainer, Text } from "@src/components";
+import { PortableText, PortableTextComponents } from "@portabletext/react";
+import imageUrlBuilder from "@sanity/image-url";
+import { Box, FlexBox, ImgContainer, Text } from "@src/components";
 import { useGetBlog } from "@src/hooks";
 import { CSS } from "@src/styles";
-import { PortableText, PortableTextComponents } from "@portabletext/react";
-import { array } from "yup";
-import imageUrlBuilder from "@sanity/image-url";
 import client from "@src/utils/client";
 
 const builder = imageUrlBuilder( client );
@@ -22,6 +21,13 @@ const blogsectionCss: CSS = {
     },
     "@bp3": {
         maxWidth: "$laptopS"
+    },
+    "& p": {
+        fontSize: "$dtPara2",
+        mb: "$1",
+        "@bp1": {
+            fontSize: "$mbPara1"
+        }
     }
 };
 
@@ -82,9 +88,10 @@ export const BlogSection = ( { blogSlug }: BlogSectionProps ) => {
             </Text>
             {data?.mainImage?.url && (
                 <ImgContainer
-                    css={{ flex: 1 }}
+                    css={{ height: "25rem" }}
                     width={"full"}
-                    heigth={"half"}
+                    fullHeight
+                    objectFit="contain"
                     src={`${data?.mainImage?.url}`}
                     alt={"blogimage"}
                 />

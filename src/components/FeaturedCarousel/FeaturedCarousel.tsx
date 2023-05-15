@@ -71,7 +71,10 @@ export const FeaturedCarousel = () => {
                 >
                     {featuredProperties?.map( ( property ) => (
                         <SwiperSlide key={property._id}>
-                            <PropertyCard propertyData={property} />
+                            <PropertyCard
+                                propertyData={property}
+                                orientation={{ "@bp3": "horizontal" }}
+                            />
                         </SwiperSlide>
                     ) )}
                 </Swiper>

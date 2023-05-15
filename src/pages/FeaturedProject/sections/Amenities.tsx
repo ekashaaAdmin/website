@@ -31,7 +31,8 @@ export const Amenities = ( { amenitiesData }: AmenitiesProps ) => {
                                     size={"1"}
                                     css={{
                                         backgroundColor: "$accentColor",
-                                        borderRadius: "$2"
+                                        borderRadius: "$2",
+                                        flexShrink: 0
                                     }}
                                 ></Box>
                                 <Text typography={"dtPara1"} key={amenity._id}>

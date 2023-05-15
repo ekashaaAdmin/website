@@ -3,7 +3,8 @@ import { FlexBox } from "../FlexBox";
 import { Text } from "../Text";
 
 const propertyContentCss: CSS = {
-    p: "$2"
+    p: "$2",
+    flex: 1
 };
 
 interface PropertyContentProps {

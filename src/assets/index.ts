@@ -6,7 +6,7 @@ import HomeBg from "./HomeBg.webp";
 import Footer_Design_Bat from "./Footer_Design_Bat.png";
 import Blog1 from "./Blog1.png";
 import Blog2 from "./Blog2.png";
-import belaShah_pic1 from "./belaShah_pic1.png";
+import belaShahProfile from "./BelaShahProfile.jpg";
 import DeveloperLodha from "./DeveloperLodha.png";
 import DeveloperBirlaEstates from "./DeveloperBirlaEstates.png";
 import DeveloperPiramal from "./DeveloperPiramal.png";
@@ -44,9 +44,11 @@ import services5 from "./services5.png";
 import services6 from "./services6.png";
 import Marina_Bay_2 from "./Marina_Bay_2.webp";
 import Marina_Bay_1 from "./Marina_Bay_1.webp";
+import MarinaBay from "./MarinaBay.png";
 import Racecourse from "./Racecourse.webp";
 import RustomjeeBanner from "./RustomjeeBanner.webp";
 import Birla_Niyara_banner from "./Birla_Niyara_banner.webp";
+import Ekashaa_Blogs from "./Ekashaa_Blogs.png";
 
 export {
     Marina_Bay_1,
@@ -54,6 +56,7 @@ export {
     RustomjeeBanner,
     Birla_Niyara_banner,
     Marina_Bay_2,
+    MarinaBay,
     services1,
     services2,
     services3,
@@ -80,6 +83,7 @@ export {
     LoansLogo,
     Ekashaa_Footer_Logo,
     Footer_Design_Bat,
+    Ekashaa_Blogs,
     Blog1,
     Blog2,
     DeveloperLodha,
@@ -90,7 +94,7 @@ export {
     Management1,
     Management2,
     ContactFormImg,
-    belaShah_pic1,
+    belaShahProfile,
     Buyer_Journey,
     Mobile_Buyer_Journey,
     Lodha,

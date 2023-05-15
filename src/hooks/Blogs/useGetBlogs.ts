@@ -1,27 +1,6 @@
-import { axiosInstance } from "@src/utils";
 import client from "@src/utils/client";
 import { useQuery } from "@tanstack/react-query";
-
-export interface Blog {
-    _createdAt: Date;
-    _id: string;
-    _rev: string;
-    _type: string;
-    _updatedAt: Date;
-    author: {
-        _ref: string;
-        type: string;
-    };
-    body: unknown;
-    subTitle: string;
-    categories: [];
-    publishedAt: Date;
-    slug: {
-        _type: string;
-        current: string;
-    };
-    title: string;
-}
+import { Blog } from "@src/utils";
 
 export const getBlogsFn = async ( unwantedBlogSlug?: string ) => {
     const query = `*[_type == 'post' ${
@@ -43,7 +22,19 @@ export const getBlogsFn = async ( unwantedBlogSlug?: string ) => {
 };
 
 export const useGetBlogs = ( unwantedBlogSlug?: string ) => {
-    return useQuery<Blog[]>( [ "unwantedBlogSlug" ], () =>
+    return useQuery<
+        Pick<
+            Blog,
+            | "_id"
+            | "publishedAt"
+            | "subTitle"
+            | "title"
+            | "body"
+            | "slug"
+            | "mainImage"
+            | "authorName"
+        >[]
+    >( [ "unwantedBlogSlug", unwantedBlogSlug ], () =>
         getBlogsFn( unwantedBlogSlug )
     );
 };

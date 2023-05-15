@@ -52,6 +52,7 @@ export interface Property {
                 towerName?: string;
             }
         ];
+        brochureLink: string;
     };
     reraVerified: true;
 }

@@ -6,8 +6,7 @@ import {
     Racecourse,
     RustomjeeBanner
 } from "@src/assets";
-import { Box, Loader } from "@src/components";
-import { Contact } from "@src/components/Contact";
+import { Box, Loader, Contact } from "@src/components";
 import { CSS } from "@src/styles";
 import { Suspense } from "react";
 import { BackgroundCarousel } from "@src/components/BackgroundCarousel";

@@ -1,8 +1,6 @@
 import { Suspense } from "react";
 import { Outlet } from "react-router-dom";
-import { Footer } from "../Footer";
-import { Loader } from "../Loader";
-import { Navbar } from "../Navbar";
+import { FloatingText, Footer, Loader, Navbar } from "../";
 
 export const Layout = () => {
     return (
@@ -10,6 +8,7 @@ export const Layout = () => {
             <Navbar />
             <Suspense fallback={<Loader />}>
                 <Outlet />
+                <FloatingText />
             </Suspense>
             <Footer />
         </>

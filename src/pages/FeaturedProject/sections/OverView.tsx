@@ -1,6 +1,18 @@
-import { Button, FlexBox, Text, Grid, Section } from "@src/components";
+import {
+    Button,
+    FlexBox,
+    Text,
+    Grid,
+    Section,
+    Dialog,
+    DialogTrigger,
+    DialogContent,
+    Contact
+} from "@src/components";
 import { CSS } from "@src/styles";
 import { Property } from "@src/utils";
+import { useState } from "react";
+import { BrochureForm } from "./BrochureForm";
 
 const downloadNowCss: CSS = {
     width: "max-content",
@@ -18,6 +30,8 @@ interface OverviewProps {
 
 export const OverView = ( { overviewData }: OverviewProps ) => {
     const { name, location, projectInfo } = overviewData;
+
+    const [ open, setOpen ] = useState<boolean>( false );
 
     return (
         <>
@@ -75,9 +89,25 @@ export const OverView = ( { overviewData }: OverviewProps ) => {
 
                     <Text>{projectInfo?.projectDescription}</Text>
 
-                    {/* <Button css={downloadNowCss} variant={"generalButton"}>
-                        Download Brochure
-                    </Button> */}
+                    {projectInfo?.brochureLink ? (
+                        <Dialog open={open} onOpenChange={setOpen}>
+                            <DialogTrigger asChild>
+                                <Button
+                                    css={downloadNowCss}
+                                    variant={"generalButton"}
+                                >
+                                    Get Brochure
+                                </Button>
+                            </DialogTrigger>
+                            <DialogContent>
+                                <BrochureForm
+                                    propertyName={name!}
+                                    setOpen={setOpen}
+                                    brochureLink={projectInfo?.brochureLink}
+                                />
+                            </DialogContent>
+                        </Dialog>
+                    ) : null}
                 </FlexBox>
             </Section>
             <Section variant={"seperatorCss"}></Section>

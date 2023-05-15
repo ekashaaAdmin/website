@@ -9,10 +9,10 @@ export const Footerlinksgrid = () => {
                 gapX={"1"}
                 gapY={"3"}
                 align={"start"}
-                justify={"center"}
+                justify={"start"}
                 css={{
                     "@bp1": {
-                        gridTemplateColumns: "repeat(3, 1fr)",
+                        gridTemplateColumns: "repeat(4, 1fr)",
                         columnGap: "$6"
                     }
                 }}
@@ -53,6 +53,11 @@ export const Footerlinksgrid = () => {
                     <Text>Privacy Policy</Text>
                     <Text>User Agreements</Text>
                     <Text>Disclaimer</Text>
+                </Flex>
+
+                <Flex direction="column" gap="1">
+                    <Text css={{ fontWeight: "$dtHeading1" }}>Rera ID</Text>
+                    <Text>A51800040029</Text>
                 </Flex>
             </Grid>
         </Flex>

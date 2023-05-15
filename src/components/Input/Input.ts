@@ -11,6 +11,18 @@ export const inputCss = css( {
     height: "$full",
     [ `&[type="radio"]` ]: {
         all: "revert"
+    },
+    [ `&[type="checkbox"]` ]: {
+        all: "revert"
+    },
+    variants: {
+        variant: {
+            filterSearchbar: {
+                boxShadow: "none",
+                border: "none",
+                width: "$full"
+            }
+        }
     }
 } );
 

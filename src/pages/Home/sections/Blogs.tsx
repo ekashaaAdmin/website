@@ -80,7 +80,7 @@ export const Blogs = () => {
                         {featuredBlogData![ 0 ].subTitle}
                     </Text>
 
-                    <Link to={`/blog/${featuredBlogData![ 0 ].slug?.current}`}>
+                    <Link to={`/blog/${featuredBlogData![ 0 ].slug}`}>
                         <Button variant={"blueButton"}>Read More</Button>
                     </Link>
                 </Flex>
@@ -140,9 +140,7 @@ export const Blogs = () => {
                         >
                             {featuredBlogData![ 1 ].subTitle}
                         </Text>
-                        <Link
-                            to={`/blog/${featuredBlogData![ 1 ].slug?.current}`}
-                        >
+                        <Link to={`/blog/${featuredBlogData![ 1 ].slug}`}>
                             <Button variant={"whiteButton"}>Read More</Button>
                         </Link>
                     </Flex>

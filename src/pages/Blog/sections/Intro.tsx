@@ -1,6 +1,6 @@
-import { FlexBox, Section, Text } from "@src/components";
+import { FlexBox, ImgContainer } from "@src/components";
 import { CSS } from "@src/styles";
-import React from "react";
+import { Ekashaa_Blogs } from "@src/assets";
 
 const introSectionCss: CSS = {
     position: "relative"
@@ -12,24 +12,9 @@ export const Intro = () => {
             direction={"column"}
             align={"center"}
             justify={"center"}
-            css={{ textAlign: "center", my: "$5" }}
+            css={{ maxWidth: "$mobileM", mx: "auto", my: "$9" }}
         >
-            <Text
-                typography={{
-                    "@initial": "mbHeading1",
-                    "@bp3": "dtPageHead"
-                }}
-            >
-                ekashaa Blogs
-            </Text>
-            <Text
-                typography={{
-                    "@initial": "mbSubHeading1",
-                    "@bp3": "dtSubHeading1"
-                }}
-            >
-                TOP GOSSIPS ONLY FOR YOU
-            </Text>
+            <ImgContainer src={Ekashaa_Blogs} alt="Ekashaa Blogs Title" />
         </FlexBox>
     );
 };

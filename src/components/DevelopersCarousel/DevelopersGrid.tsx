@@ -25,6 +25,7 @@ export const DevelopersGrid = () => {
                             key={key}
                             src={dev.logo?.url}
                             alt="developer-logo"
+                            fullHeight={false}
                             css={{
                                 margin: "$3 auto",
                                 filter: "grayScale(100%)",

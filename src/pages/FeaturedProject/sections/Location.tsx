@@ -15,6 +15,7 @@ export const Location = ( { locationData }: LocationProps ) => {
             <Section
                 variant={"propertyInfoCss"}
                 css={{ flexDirection: "column" }}
+                id="locality"
             >
                 <FlexBox direction={"column"} gap={"3"}>
                     <Text typography={"dtHeading3"}>Location</Text>
