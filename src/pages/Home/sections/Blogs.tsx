@@ -111,7 +111,7 @@ export const Blogs = () => {
                     }}
                 >
                     <ImgContainer
-                        src={featuredBlogData![ 1 ].mainImage?.url}
+                        src={featuredBlogData![ 1 ]?.mainImage?.url ?? ""}
                         fullHeight
                         alt="blog-thubnail"
                         css={{ flex: 1, size: "$featuredBlogImageHeight" }}
@@ -129,7 +129,7 @@ export const Blogs = () => {
                             }}
                             css={{ fontWeight: "$dtHeading1" }}
                         >
-                            {featuredBlogData![ 1 ].title}
+                            {featuredBlogData![ 1 ]?.title}
                         </Text>
                         <Text
                             align={"right"}
@@ -138,9 +138,9 @@ export const Blogs = () => {
                                 "@bp3": "dtPara1"
                             }}
                         >
-                            {featuredBlogData![ 1 ].subTitle}
+                            {featuredBlogData![ 1 ]?.subTitle}
                         </Text>
-                        <Link to={`/blog/${featuredBlogData![ 1 ].slug}`}>
+                        <Link to={`/blog/${featuredBlogData![ 1 ]?.slug}`}>
                             <Button variant={"whiteButton"}>Read More</Button>
                         </Link>
                     </Flex>

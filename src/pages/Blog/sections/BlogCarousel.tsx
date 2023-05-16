@@ -65,7 +65,7 @@ export const BlogCarousel = ( { unwantedBlogSlug }: BlogCarouselProps ) => {
                                 <ImgContainer
                                     fullHeight
                                     css={{ flex: 1 }}
-                                    src={blog.mainImage.url}
+                                    src={blog?.mainImage?.url ?? ''}
                                     alt={"blogimage"}
                                 />
                                 <Text typography={"dtHeading3"}>

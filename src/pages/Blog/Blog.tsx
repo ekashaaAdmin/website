@@ -24,7 +24,7 @@ export const Blog = () => {
                                 title={title}
                                 subTitle={subTitle}
                                 authorName={authorName}
-                                mainImage={mainImage}
+                                mainImage={mainImage ?? ''}
                             />
                         </Link>
                     )
