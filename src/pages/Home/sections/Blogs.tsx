@@ -7,7 +7,7 @@ export const Blogs = () => {
     const { data: featuredBlogData } = useFeaturedBlogs();
 
     return (
-        featuredBlogData?.length && (
+        featuredBlogData?.length ? (
             <Section
                 direction={"column"}
                 align="center"
@@ -161,6 +161,6 @@ export const Blogs = () => {
                     </Box>
                 )}
             </Section>
-        )
+        ) : null
     );
 };
