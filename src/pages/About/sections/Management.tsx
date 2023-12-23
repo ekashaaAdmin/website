@@ -74,16 +74,21 @@ export const Management = () => {
                             "@bp3": "dtPara1"
                         }}
                     >
-                        Bela Shah is founder and proprietor of Ekashaa Realty.
-                        She has sold a staggering 32000 square feet of premium
-                        real estate in South Mumbai worth ₹1900 million (₹190
-                        crores) in the last five years.
+                        Bela Shah is the founder and proprietor of Ekashaa
+                        Realty. She has sold a staggering 44000 square feet of
+                        premium real estate in South Mumbai worth ₹2700 million
+                        (₹270 crores) in the last six years. In August 2023, she
+                        topped the state in the MahaRera Real Estate
+                        examination, which is the only government-recognized
+                        professional certification for real estate agents in
+                        Maharashtra. Since then, she has been featured in
+                        several national dailies and industry-based publications{" "}
                         <br />
                         <br />A keen listener with an affable personality,
                         Bela’s intuitive understanding of client needs, deep
                         market knowledge and honest communication makes her one
-                        of the most reliable voices in the premium realty
-                        market.
+                        of the most reliable voices in the
+                        premium realty market.
                     </Text>
                 </Flex>
             </Flex>
