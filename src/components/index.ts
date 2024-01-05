@@ -34,3 +34,4 @@ export * from "./ImgContainer";
 export * from "./ScrollToTop";
 export * from "./LocationLink";
 export * from "./Testimonials";
+export * from "./TeamMemberCard";
