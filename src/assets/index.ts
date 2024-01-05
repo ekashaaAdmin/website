@@ -49,6 +49,8 @@ import Racecourse from "./Racecourse.webp";
 import RustomjeeBanner from "./RustomjeeBanner.webp";
 import Birla_Niyara_banner from "./Birla_Niyara_banner.webp";
 import Ekashaa_Blogs from "./Ekashaa_Blogs.png";
+import anamProfilePicture from "./anam_profile.jpg";
+import atishProfilePicture from "./atish_profile.jpg";
 
 export {
     Marina_Bay_1,
@@ -101,5 +103,7 @@ export {
     Piramal,
     Rustomjee,
     Shapoorji_Po,
-    Birla_Estates
+    Birla_Estates,
+    anamProfilePicture,
+    atishProfilePicture
 };
