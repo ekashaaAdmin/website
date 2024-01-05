@@ -44,7 +44,14 @@ export const Footerlinksgrid = () => {
                         <br />
                         +91 9820 467249
                     </Text>
-                    <Text>info@ekashaa.com</Text>
+                    <Text>
+                        <a
+                            style={{ textDecoration: "none", color: "inherit" }}
+                            href={"mailto:info@ekashaa.com"}
+                        >
+                            info@ekashaa.com
+                        </a>
+                    </Text>
                 </Flex>
 
                 <Flex direction="column" gap="1">
