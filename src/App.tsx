@@ -11,7 +11,8 @@ import {
     Blog,
     BlogTemplate,
     PropertyTemplate,
-    Properties
+    Properties,
+    PrivacyPolicy
 } from "./pages";
 import "./custom-swiper.css";
 import "react-toastify/dist/ReactToastify.css";
@@ -41,6 +42,12 @@ function App() {
                             <Route
                                 path=":propertyId"
                                 element={<PropertyTemplate />}
+                            />
+                        </Route>
+                        <Route path="/compliances">
+                            <Route
+                                path=":privacy-policy"
+                                element={<PrivacyPolicy />}
                             />
                         </Route>
                     </Route>
