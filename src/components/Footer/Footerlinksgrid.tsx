@@ -57,7 +57,14 @@ export const Footerlinksgrid = () => {
                 <Flex direction="column" gap="1">
                     <Text css={{ fontWeight: "$dtHeading1" }}>More Links</Text>
                     <Text>FAQ</Text>
-                    <Text>Privacy Policy</Text>
+                    <Text>
+                        <a
+                            style={{ textDecoration: "none", color: "inherit" }}
+                            href={"/compliances/privacy-policy"}
+                        >
+                            Privacy Policy
+                        </a>
+                    </Text>
                     <Text>User Agreements</Text>
                     <Text>Disclaimer</Text>
                 </Flex>
