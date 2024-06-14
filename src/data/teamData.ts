@@ -27,13 +27,5 @@ export const teamData = [
         name: "Atish Mane",
         profilePicture: atishProfilePicture,
         description: `Atish heads the Luxury Residential and Second Homes division. Over the last 10 years, Atish has worked as a realty advisor with the most reputed brands in the luxury real estate industry, including Oberoi Realty, Lodha and Kalpataru. A MahaRera-certified agent, he built on his valuable expertise to lead and manage a holiday home business for an MNC that featured beachside and hillside villas in picturesque locations around Mumbai, including Alibaug, Lonavala, and Pawna. Atish’s extensive network of connections and nuanced knowledge of market offerings ensure that he can always find what the client is looking for.`
-    },
-    {
-        name: "Anam Shiekh",
-        profilePicture: anamProfilePicture,
-        description: `Handles sales at Ekashaa. A seasoned sales professional with over a half a decade of experience in luxury real estate, 
-        Anam’s strengths are her strong interpersonal skills and communication. 
-        A telling sign of her commitment is the fact that she was the only employee at her previous organization to be promoted to a senior role during the pandemic year of 2020. 
-        Anam has been instrumental in effecting the sale of over 50000 square feet of premium real estate in Mumbai alone.`
     }
 ];
