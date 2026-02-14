@@ -9,9 +9,9 @@ export const teamData = [
         name: "Bela Shah",
         profilePicture: belaShahProfile,
         description: `Bela Shah is the founder and proprietor of Ekashaa
-        Realty. She has sold a staggering 44000 square feet of
-        premium real estate in South Mumbai worth ₹2700 million
-        (₹270 crores) in the last six years. In August 2023, she
+        Realty. She has sold a staggering 60000 square feet of
+        premium real estate in South Mumbai worth ₹4400 million
+        (₹440 crores) in the last eight years. In August 2023, she
         topped the state in the MahaRera Real Estate
         examination, which is the only government-recognized
         professional certification for real estate agents in
